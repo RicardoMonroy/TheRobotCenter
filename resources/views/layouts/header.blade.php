@@ -15,8 +15,17 @@
                             <option data-icon="flag flag-us">English US</option>
                         </select>
                     </li> -->
-                    <li><a href="{{ route('login') }}">Login</a></li>
-                    <li><a href="{{ route('register') }}">Registrarse</a></li>
+                    @if (Route::has('login'))
+                        @auth
+                            <li><a href="{{ url('/home') }}">Dashboard</a></li>
+                        @else
+                            <li><a href="{{ route('login') }}">Login</a></li>
+
+                            @if (Route::has('register'))
+                                <li><a href="{{ route('register') }}">Registro</a></li>
+                            @endif
+                        @endauth
+                    @endif
                 </ul>
             </div>
         </div>
@@ -126,7 +135,7 @@
                         </ul> -->
                     </li>
 
-                    <li class="nav-dashboard"><a href="{{ url('/home') }}">Dashboard <!--<i class="fa fa-chevron-down">--></i></a>
+                    {{-- <li class="nav-dashboard"><a href="{{ url('/home') }}">Dashboard <!--<i class="fa fa-chevron-down">--></i></a> --}}
                         <!-- <ul class="sub-menu">
                             <li><a href="admin/index.html">Dashboard</a></li>
                             <li><a href="admin/add-listing.html">Add Listing</a></li>

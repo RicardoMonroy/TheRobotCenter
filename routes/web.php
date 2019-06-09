@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('courses', 'CourseController@index')->name('courses');
+// Route::get('courses', function () {
+//     return view('courses');
+// });
+
 Auth::routes();
 
 Route::group(['middleware' => 'Dashboard'], function () {

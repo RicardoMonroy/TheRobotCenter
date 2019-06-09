@@ -2,7 +2,6 @@
 
 @section('content')
 <!-- Content -->
-<div class="page-content bg-white">
     <!-- inner page banner -->
     <div class="page-banner ovbl-dark" style="background-image:url(assets/images/banner/banner3.jpg);">
         <div class="container">
@@ -137,6 +136,5 @@
         </div>
     </div>
 	<!-- contact area END -->
-</div>
 <!-- Content END-->
 @endsection

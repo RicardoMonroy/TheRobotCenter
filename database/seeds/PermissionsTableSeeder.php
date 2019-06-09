@@ -12,6 +12,19 @@ class PermissionsTableSeeder extends Seeder
      */
     public function run()
     {
+        //Menus
+        Permission::create([
+            'name'          => 'Herramientas',
+            'slug'          => 'settings',
+            'description'   => 'Visualizar el grupo de herramientas administrativas del sistema',
+        ]);
+
+        Permission::create([
+            'name'          => 'Academico',
+            'slug'          => 'academic',
+            'description'   => 'Visualizar el grupo de herramientas academicas del sistema',
+        ]);
+
         //Users
         Permission::create([
             'name'          => 'Navegar usuarios',

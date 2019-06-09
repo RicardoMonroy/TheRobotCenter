@@ -5,6 +5,10 @@
     </a>
 </li>
 
+<li class="nav-title">Academico</li>
+
+
+<li class="nav-title">Herramientas</li>
 @can('roles.index')
     <li class="nav-item {{ Request::is('roles*') ? 'active' : '' }}">
         <a class="nav-link" href="{!! route('roles.index') !!}">

@@ -7,13 +7,13 @@
         <a href="{{ route('home') }}">Dashboard</a>
     </li>
     <li class="breadcrumb-item">
-        Cursos
+        Profesores
     </li>
     <!-- Breadcrumb Menu-->
     <li class="breadcrumb-menu d-md-down-none">
     <div class="btn-group" role="group" aria-label="Button group">
-        @can('courses.create')
-            <a class="btn" href="{{ route('courses.create') }}">
+        @can('teachers.create')
+            <a class="btn" href="{{ route('teachers.create') }}">
                 <i class="icon-plus"></i> Crear</a>
         @endcan
     </div>
@@ -33,44 +33,46 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        Cursos
+                        Profesores
                     </div>
                     <div class="card-body">
                         <table class="table table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th width="10px">ID</th>
+                                    <th width="10px">Título</th>
                                     <th>Nombre</th>
                                     <th colspan="3">&nbsp;</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($courses as $course)
+                                @foreach($teachers as $teacher)
                                 <tr>
-                                    <td>{{ $course->id }}</td>
-                                    <td>{{ $course->name }}</td>
-                                    @can('courses.show')
+                                    <td>{{ $teacher->id }}</td>
+                                    <td>{{ $teacher->title }}</td>
+                                    <td>{{ $teacher->user->name }}</td>
+                                    @can('teachers.show')
                                         <td width="10px">
                                             <div class="btn-group" role="group" aria-label="Button group">
-                                                <a href="{{ route('courses.show', $course->id) }}"
+                                                <a href="{{ route('teachers.show', $teacher->id) }}"
                                                     class="btn btn-sm btn-primary">
                                                     <i class="icon-eye"></i></a>
                                             </div>
                                         </td>
                                     @endcan
-                                    @can('courses.edit')
+                                    @can('teachers.edit')
                                         <td width="10px">
                                             <div class="btn-group" role="group" aria-label="Button group" alt="Editar">
-                                                <a href="{{ route('courses.edit', $course->id) }}"
+                                                <a href="{{ route('teachers.edit', $teacher->id) }}"
                                                     class="btn btn-sm btn-success">
                                                     <i class="icon-pencil"></i></a>
                                             </div>
                                         </td>
                                     @endcan
-                                    @can('courses.destroy')
+                                    @can('teachers.destroy')
                                         <td width="10px">
                                             <div class="btn-group" role="group" aria-label="Button group">
-                                                {!! Form::open(['route' => ['courses.destroy', $course->id],
+                                                {!! Form::open(['route' => ['teachers.destroy', $teacher->id],
                                                 'method' => 'DELETE']) !!}
                                                 <button class="btn btn-sm btn-danger">
                                                     <i class="icon-close"></i>
@@ -83,7 +85,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $courses->render() }}
+                        {{ $teachers->render() }}
                     </div>
                 </div>
             </div>

@@ -6,7 +6,41 @@
 </li>
 
 <li class="nav-title">Academico</li>
+@can('levels.index')
+    <li class="nav-item {{ Request::is('levels*') ? 'active' : '' }}">
+        <a class="nav-link" href="{!! route('levels.index') !!}">
+            <i class="nav-icon icon-layers"></i>
+            <span>Niveles</span>
+        </a>
+    </li>
+@endcan
 
+@can('categories.index')
+    <li class="nav-item {{ Request::is('categories*') ? 'active' : '' }}">
+        <a class="nav-link" href="{!! route('categories.index') !!}">
+            <i class="nav-icon icon-book-open"></i>
+            <span>Categorías</span>
+        </a>
+    </li>
+@endcan
+
+@can('teachers.index')
+    <li class="nav-item {{ Request::is('teachers*') ? 'active' : '' }}">
+        <a class="nav-link" href="{!! route('teachers.index') !!}">
+            <i class="nav-icon icon-eyeglass"></i>
+            <span>Profesores</span>
+        </a>
+    </li>
+@endcan
+
+@can('courses.index')
+    <li class="nav-item {{ Request::is('courses*') ? 'active' : '' }}">
+        <a class="nav-link" href="{!! route('courses.index') !!}">
+            <i class="nav-icon icon-notebook"></i>
+            <span>Cursos</span>
+        </a>
+    </li>
+@endcan
 
 <li class="nav-title">Herramientas</li>
 @can('roles.index')

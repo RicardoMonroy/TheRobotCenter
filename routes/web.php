@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('courses', 'CourseController@index')->name('courses.index');
-
+Route::get('viewcourses', 'CourseController@viewcourses')->name('courses.viewcourses');
+Route::get('coursedetails', 'CourseController@coursedetails')->name('courses.coursedetails');
 
 Auth::routes();
 
@@ -25,8 +25,10 @@ Route::group(['middleware' => 'Dashboard'], function () {
 
 });
 
-
 Route::middleware(['auth', 'Dashboard'])->group(function () {
+    //FrontEnd
+    // Route::get('coursedetails', 'CourseController@coursedetails')->name('courses.coursedetails');
+
 	//Roles
 	Route::post('roles/store', 'RoleController@store')->name('roles.store')
 		->middleware('permission:roles.create');
@@ -92,4 +94,93 @@ Route::middleware(['auth', 'Dashboard'])->group(function () {
 
 	Route::get('permissions/{permission}/edit', 'PermissionController@edit')->name('permissions.edit')
         ->middleware('permission:permissions.edit');
+
+
+    //Niveles
+    Route::post('levels/store', 'LevelController@store')->name('levels.store')
+        ->middleware('permission:levels.create');
+
+	Route::get('levels', 'LevelController@index')->name('levels.index')
+        ->middleware('permission:levels.index');
+
+    Route::get('levels/create', 'LevelController@create')->name('levels.create')
+		->middleware('permission:levels.create');
+
+	Route::put('levels/{level}', 'LevelController@update')->name('levels.update')
+		->middleware('permission:levels.edit');
+
+	Route::get('levels/{level}', 'LevelController@show')->name('levels.show')
+		->middleware('permission:levels.show');
+
+	Route::delete('levels/{level}', 'LevelController@destroy')->name('levels.destroy')
+		->middleware('permission:levels.destroy');
+
+	Route::get('levels/{level}/edit', 'LevelController@edit')->name('levels.edit')
+        ->middleware('permission:levels.edit');
+
+    //Categorías
+    Route::post('categories/store', 'CategoryController@store')->name('categories.store')
+        ->middleware('permission:categories.create');
+
+	Route::get('categories', 'CategoryController@index')->name('categories.index')
+        ->middleware('permission:categories.index');
+
+    Route::get('categories/create', 'CategoryController@create')->name('categories.create')
+		->middleware('permission:categories.create');
+
+	Route::put('categories/{category}', 'CategoryController@update')->name('categories.update')
+		->middleware('permission:categories.edit');
+
+	Route::get('categories/{category}', 'CategoryController@show')->name('categories.show')
+		->middleware('permission:categories.show');
+
+	Route::delete('categories/{category}', 'CategoryController@destroy')->name('categories.destroy')
+		->middleware('permission:categories.destroy');
+
+	Route::get('categories/{category}/edit', 'CategoryController@edit')->name('categories.edit')
+        ->middleware('permission:categories.edit');
+
+    //Profesores
+    Route::post('teachers/store', 'TeacherController@store')->name('teachers.store')
+        ->middleware('permission:teachers.create');
+
+	Route::get('teachers', 'TeacherController@index')->name('teachers.index')
+        ->middleware('permission:teachers.index');
+
+    Route::get('teachers/create', 'TeacherController@create')->name('teachers.create')
+		->middleware('permission:teachers.create');
+
+	Route::put('teachers/{teacher}', 'TeacherController@update')->name('teachers.update')
+		->middleware('permission:teachers.edit');
+
+	Route::get('teachers/{teacher}', 'TeacherController@show')->name('teachers.show')
+		->middleware('permission:teachers.show');
+
+	Route::delete('teachers/{teacher}', 'TeacherController@destroy')->name('teachers.destroy')
+		->middleware('permission:teachers.destroy');
+
+	Route::get('teachers/{teacher}/edit', 'TeacherController@edit')->name('teachers.edit')
+        ->middleware('permission:teachers.edit');
+
+    //Cursos
+    Route::post('courses/store', 'CourseController@store')->name('courses.store')
+        ->middleware('permission:courses.create');
+
+	Route::get('courses', 'CourseController@index')->name('courses.index')
+        ->middleware('permission:courses.index');
+
+    Route::get('courses/create', 'CourseController@create')->name('courses.create')
+		->middleware('permission:courses.create');
+
+	Route::put('courses/{course}', 'CourseController@update')->name('courses.update')
+		->middleware('permission:courses.edit');
+
+	Route::get('courses/{course}', 'CourseController@show')->name('courses.show')
+		->middleware('permission:courses.show');
+
+	Route::delete('courses/{course}', 'CourseController@destroy')->name('courses.destroy')
+		->middleware('permission:courses.destroy');
+
+	Route::get('courses/{course}/edit', 'CourseController@edit')->name('courses.edit')
+        ->middleware('permission:courses.edit');
 });

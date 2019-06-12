@@ -5,7 +5,7 @@
 <div class="page-banner ovbl-dark" style="background-image:url(assets/images/banner/banner2.jpg);">
     <div class="container">
         <div class="page-banner-entry">
-            <h1 class="text-white">Detalles del curso</h1>
+            <h1 class="text-white">{{ $course->name }}</h1>
          </div>
     </div>
 </div>
@@ -80,14 +80,14 @@
                         </div>
                         <div class="ttr-post-info">
                             <div class="ttr-post-title ">
-                                <h2 class="post-title">VEHICULOS ROBOTICOS</h2>
+                                <h2 class="post-title">{{ $course->name }}</h2>
                             </div>
                             <div class="ttr-post-text">
-                                <p>¿Quién conoce que es un UBER? ¿Te imaginas que pidieras un UBER y que este llegara sin un chofer?</p>
+                                <p>{{ $course->description }}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="courese-overview" id="overview">
+                    {{-- <div class="courese-overview" id="overview">
                         <h4>Overview</h4>
                         <div class="row">
                             <div class="col-md-12 col-lg-4">
@@ -116,13 +116,14 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="m-b30" id="curriculum">
-                        <h4>Plan de estudios</h4>
+                        <h4>Contenido del curso</h4>
                         <ul class="curriculum-list">
                                 <li>
-                                    <h5>Primer Bloque: MI AUTO DEL FUTURO</h5>
-                                    <ul>
+                                    <h5>Primer sección: PREGUNTAR</h5>
+                                    <p>{{ $course->section_one }}</p>
+                                    {{-- <ul>
                                         <li>
                                             <div class="curriculum-list-box">
                                                 <span>Lección 1.</span> Introducción
@@ -141,11 +142,12 @@
                                             </div>
                                             <span>60 minutes</span>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </li>
                                 <li>
-                                    <h5>Segundo Bloque: GIROS Y VUELTAS</h5>
-                                    <ul>
+                                    <h5>Segunda sección: DISEÑAR O CONSTRUIR</h5>
+                                    <p>{{ $course->section_two }}</p>
+                                    {{-- <ul>
                                         <li>
                                             <div class="curriculum-list-box">
                                                 <span>Lección 1.</span> Preguntar e imaginar
@@ -164,11 +166,12 @@
                                             </div>
                                             <span>120 minutos</span>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </li>
                                 <li>
-                                    <h5>Tercer Bloque: ESQUIVANDO OBSTÁCULOS</h5>
-                                    <ul>
+                                    <h5>Tercer sección: ANALIZAR</h5>
+                                    <p>{{ $course->section_tree }}</p>
+                                    {{-- <ul>
                                         <li>
                                             <div class="curriculum-list-box">
                                                 <span>Lección 1.</span> Introducción
@@ -187,11 +190,12 @@
                                             </div>
                                             <span>60 minutes</span>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </li>
                                 <li>
-                                    <h5>Final: RECORRIDO AUTÓNOMO</h5>
-                                    <ul>
+                                    <h5>Cuarta sección: INNOVAR</h5>
+                                    <p>{{ $course->section_four }}</p>
+                                    {{-- <ul>
                                         <li>
                                             <div class="curriculum-list-box">
                                                 <span>Parte 1.</span> Así son los taxis autónomos en Singapur
@@ -204,19 +208,60 @@
                                             </div>
                                             <span>120 minutos</span>
                                         </li>
-                                    </ul>
+                                    </ul> --}}
                                 </li>
                             </ul>
+
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12">
-                    <h4>Curso</h4>
-                    <iframe src ="{{asset('/assets/pdf/CLASES-EXTRAS-1-4.pdf')}}" width="100%" height="600px"></iframe>
-                    <!-- <a href="{{asset('/assets/pdf/CLASES-EXTRAS-1-4.pdf')}}">PDF</a> -->
-                    <!-- {{asset('/assets/pdf/CLASES-EXTRAS-1-4.pdf')}} -->
+                    {{-- <h4>Curso</h4>
+                        <iframe src ="{{asset('/assets/pdf/CLASES-EXTRAS-1-4.pdf')}}" width="100%" height="600px"></iframe> --}}
+                        <h5>Test de Evaluación</h5>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <form action="">
+                                <div class="class="col-lg-6 col-md-6 col-sm-12"">
+                                    <label for="pregunta1">Preguntas de opción múltiple</label>
+                                    <div class="respuestas">
+                                        <input type="radio" name="preg1" value="1" /> Respuesta 1<br />
+                                        <input type="radio" name="preg1" value="2" /> Respuesta 2<br />
+                                        <input type="radio" name="preg1" value="3" /> Respuesta 3<br />
+                                    </div>
+                                </div>
+                                <br><br>
+                                <div class="class="col-lg-4 col-md-4 col-sm-12"">
+                                    <label for="pregunta2">Pregunta con select</label>
+                                    <select name="pregunta2">
+                                    <option>Respuesta 1</option>
+                                    <option>Respuesta 2</option>
+                                    <option>Respuesta 3</option>
+                                    </select>
+                                </div>
+                                <br><br>
+                                <div class="class="col-lg-4 col-md-4 col-sm-12"">
+                                    <label for="pregunta3">Pregunta con varias respuestas</label><br>
+                                    <input type="checkbox" name="transporte" value="1"> Opción 1<br>
+                                    <input type="checkbox" name="transporte" value="2" checked> Opción 2<br>
+                                    <input type="checkbox" name="transporte" value="3"> Opción 3<br>
+                                    <input type="checkbox" name="transporte" value="4"> Opción 4<br>
+                                    <input type="checkbox" name="transporte" value="5"> Opción 5<br>
+                                </div>
+                                <br><br>
+                                <div class="class="col-lg-4 col-md-4 col-sm-12"">
+                                    <label for="pregunta3">Pregunta con respuesta abierta</label><br>
+                                    <input type="text">
+                                </div>
+                                <br><br>
+                                <div class="class="col-lg-4 col-md-4 col-sm-12"">
+                                    <label for="pregunta3">Pregunta con respuesta abierta larga</label><br>
+                                    <textarea name="textarea" rows="6" cols="50"></textarea>
+                                </div>
+                                <br><br>
+                            </form>
+                        </div>
                     </div>
                     <div class="" id="instructor">
                         <h4>Instructor</h4>
-                        <div class="instructor-bx">
+                        {{-- <div class="instructor-bx">
                             <div class="instructor-author">
                                 <img src="assets/images/testimonials/pic1.jpg" alt="">
                             </div>
@@ -231,7 +276,7 @@
                                 </ul>
                                 <p class="m-b0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="instructor-bx">
                             <div class="instructor-author">
                                 <img src="assets/images/testimonials/pic2.jpg" alt="">
@@ -245,7 +290,7 @@
                                     <li><a href="#" class="btn sharp-sm linkedin"><i class="fa fa-linkedin"></i></a></li>
                                     <li><a href="#" class="btn sharp-sm google-plus"><i class="fa fa-google-plus"></i></a></li>
                                 </ul>
-                                <p class="m-b0">Es un profesor gordo</p>
+                                <p class="m-b0"></p>
                             </div>
                         </div>
                     </div>

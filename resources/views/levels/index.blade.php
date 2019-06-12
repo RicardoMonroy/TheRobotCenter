@@ -7,13 +7,13 @@
         <a href="{{ route('home') }}">Dashboard</a>
     </li>
     <li class="breadcrumb-item">
-        Cursos
+        Levels
     </li>
     <!-- Breadcrumb Menu-->
     <li class="breadcrumb-menu d-md-down-none">
     <div class="btn-group" role="group" aria-label="Button group">
-        @can('courses.create')
-            <a class="btn" href="{{ route('courses.create') }}">
+        @can('levels.create')
+            <a class="btn" href="{{ route('levels.create') }}">
                 <i class="icon-plus"></i> Crear</a>
         @endcan
     </div>
@@ -33,7 +33,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        Cursos
+                        Niveles
                     </div>
                     <div class="card-body">
                         <table class="table table-striped table-hover">
@@ -45,32 +45,32 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($courses as $course)
+                                @foreach($levels as $level)
                                 <tr>
-                                    <td>{{ $course->id }}</td>
-                                    <td>{{ $course->name }}</td>
-                                    @can('courses.show')
+                                    <td>{{ $level->id }}</td>
+                                    <td>{{ $level->name }}</td>
+                                    @can('levels.show')
                                         <td width="10px">
                                             <div class="btn-group" role="group" aria-label="Button group">
-                                                <a href="{{ route('courses.show', $course->id) }}"
+                                                <a href="{{ route('levels.show', $level->id) }}"
                                                     class="btn btn-sm btn-primary">
                                                     <i class="icon-eye"></i></a>
                                             </div>
                                         </td>
                                     @endcan
-                                    @can('courses.edit')
+                                    @can('levels.edit')
                                         <td width="10px">
                                             <div class="btn-group" role="group" aria-label="Button group" alt="Editar">
-                                                <a href="{{ route('courses.edit', $course->id) }}"
+                                                <a href="{{ route('levels.edit', $level->id) }}"
                                                     class="btn btn-sm btn-success">
                                                     <i class="icon-pencil"></i></a>
                                             </div>
                                         </td>
                                     @endcan
-                                    @can('courses.destroy')
+                                    @can('levels.destroy')
                                         <td width="10px">
                                             <div class="btn-group" role="group" aria-label="Button group">
-                                                {!! Form::open(['route' => ['courses.destroy', $course->id],
+                                                {!! Form::open(['route' => ['levels.destroy', $level->id],
                                                 'method' => 'DELETE']) !!}
                                                 <button class="btn btn-sm btn-danger">
                                                     <i class="icon-close"></i>
@@ -83,7 +83,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $courses->render() }}
+                        {{ $levels->render() }}
                     </div>
                 </div>
             </div>

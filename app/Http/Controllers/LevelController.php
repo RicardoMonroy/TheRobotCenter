@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Level;
 use Illuminate\Http\Request;
+use Caffeinated\Shinobi\Models\Permission;
 
 class LevelController extends Controller
 {
@@ -14,7 +15,9 @@ class LevelController extends Controller
      */
     public function index()
     {
-        //
+        $levels = Level::paginate();
+
+        return view('levels.index', compact('levels'));
     }
 
     /**
@@ -24,7 +27,9 @@ class LevelController extends Controller
      */
     public function create()
     {
-        //
+        $permissions = Permission::get();
+
+        return view('levels.create', compact('permissions'));
     }
 
     /**
@@ -35,7 +40,10 @@ class LevelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $level = Level::create($request->all());
+
+        return redirect()->route('levels.index', $level->id)
+            ->with('info', 'Nivel guardado con éxito');
     }
 
     /**
@@ -44,9 +52,11 @@ class LevelController extends Controller
      * @param  \App\Level  $level
      * @return \Illuminate\Http\Response
      */
-    public function show(Level $level)
+    public function show($id)
     {
-        //
+        $level = Level::find($id);
+
+        return view('levels.show', compact('level'));
     }
 
     /**
@@ -55,9 +65,11 @@ class LevelController extends Controller
      * @param  \App\Level  $level
      * @return \Illuminate\Http\Response
      */
-    public function edit(Level $level)
+    public function edit($id)
     {
-        //
+        $level = Level::find($id);
+
+        return view('levels.edit', compact('level'));
     }
 
     /**
@@ -67,9 +79,13 @@ class LevelController extends Controller
      * @param  \App\Level  $level
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Level $level)
+    public function update(Request $request, $id)
     {
-        //
+        $level = Level::find($id);
+        $level->update($request->all());
+
+        return redirect()->route('levels.index', $level->id)
+            ->with('info', 'Nivel actualizado con éxito');
     }
 
     /**
@@ -78,8 +94,10 @@ class LevelController extends Controller
      * @param  \App\Level  $level
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Level $level)
+    public function destroy($id)
     {
-        //
+        $level = Level::find($id)->delete();
+
+        return back()->with('info', 'Eliminado correctamente');
     }
 }

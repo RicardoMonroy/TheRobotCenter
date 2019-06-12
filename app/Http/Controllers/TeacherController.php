@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Teacher;
+use Caffeinated\Shinobi\Models\Role;
 use Illuminate\Http\Request;
+use Caffeinated\Shinobi\Models\Permission;
 
 class TeacherController extends Controller
 {
@@ -14,7 +17,9 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        //
+        $teachers = Teacher::paginate();
+
+        return view('teachers.index', compact('teachers'));
     }
 
     /**
@@ -24,7 +29,8 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::get();
+        return view('teachers.create', compact('users'));
     }
 
     /**
@@ -35,7 +41,10 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $teacher = Teacher::create($request->all());
+
+        return redirect()->route('teachers.index', $teacher->id)
+            ->with('info', 'Nivel guardado con éxito');
     }
 
     /**
@@ -44,9 +53,11 @@ class TeacherController extends Controller
      * @param  \App\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function show(Teacher $teacher)
+    public function show($id)
     {
-        //
+        $teacher = Teacher::find($id);
+
+        return view('teachers.show', compact('teacher'));
     }
 
     /**
@@ -55,9 +66,11 @@ class TeacherController extends Controller
      * @param  \App\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function edit(Teacher $teacher)
+    public function edit($id)
     {
-        //
+        $teacher = Teacher::find($id);
+
+        return view('teachers.edit', compact('teacher'));
     }
 
     /**
@@ -67,9 +80,13 @@ class TeacherController extends Controller
      * @param  \App\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Teacher $teacher)
+    public function update(Request $request, $id)
     {
-        //
+        $teacher = Teacher::find($id);
+        $teacher->update($request->all());
+
+        return redirect()->route('teachers.index', $teacher->id)
+            ->with('info', 'Nivel actualizado con éxito');
     }
 
     /**
@@ -78,8 +95,11 @@ class TeacherController extends Controller
      * @param  \App\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Teacher $teacher)
+    public function destroy($id)
     {
-        //
+        $teacher = Teacher::find($id)->delete();
+
+        return back()->with('info', 'Eliminado correctamente');
     }
 }
+

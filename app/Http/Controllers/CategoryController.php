@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use Caffeinated\Shinobi\Models\Permission;
 
 class CategoryController extends Controller
 {
@@ -14,7 +15,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::paginate();
+
+        return view('categories.index', compact('categories'));
     }
 
     /**
@@ -24,7 +27,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $permissions = Permission::get();
+
+        return view('categories.create', compact('permissions'));
     }
 
     /**
@@ -35,7 +40,10 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = Category::create($request->all());
+
+        return redirect()->route('categories.index', $category->id)
+            ->with('info', 'Nivel guardado con éxito');
     }
 
     /**
@@ -44,9 +52,11 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($id)
     {
-        //
+        $category = Category::find($id);
+
+        return view('categories.show', compact('category'));
     }
 
     /**
@@ -55,9 +65,11 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
-        //
+        $category = Category::find($id);
+
+        return view('categories.edit', compact('category'));
     }
 
     /**
@@ -67,9 +79,13 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
-        //
+        $category = Category::find($id);
+        $category->update($request->all());
+
+        return redirect()->route('categories.index', $category->id)
+            ->with('info', 'Nivel actualizado con éxito');
     }
 
     /**
@@ -78,8 +94,11 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-        //
+        $category = Category::find($id)->delete();
+
+        return back()->with('info', 'Eliminado correctamente');
     }
 }
+

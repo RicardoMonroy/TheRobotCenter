@@ -113,11 +113,11 @@
                             <li class="add-menu-left">
                                 <h5 class="menu-adv-title">Mis Courses</h5>
                                 <ul>
-                                    <li><a href="{{ route('courses.index') }}">Cursos </a></li>
-                                    <li><a href="{{ url('courses-details') }}">Detalles del curso</a></li>
+                                    <li><a href="{{ route('courses.viewcourses') }}">Cursos </a></li>
+                                    {{-- <li><a href="{{ route('courses.coursedetails') }}">Detalles del curso</a></li>
                                     <li><a href="#">Perfil del instructor</a></li>
                                     <li><a href="#">Eventos</a></li>
-                                    <li><a href="#">Membresía</a></li>
+                                    <li><a href="#">Membresía</a></li> --}}
                                 </ul>
                             </li>
                             <li class="add-menu-right">

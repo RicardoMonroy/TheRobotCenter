@@ -6,8 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Teacher extends Model
 {
+    protected $fillable = [
+        'title', 'biography', 'website_url', 'user_id',
+    ];
+
     public function user()
     {
         return $this->belongsTo('App\User');
+    }
+
+    public function course()
+    {
+        return $this->hasMany('App\Course');
     }
 }

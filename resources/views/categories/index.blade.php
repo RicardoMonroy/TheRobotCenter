@@ -7,13 +7,13 @@
         <a href="{{ route('home') }}">Dashboard</a>
     </li>
     <li class="breadcrumb-item">
-        Cursos
+        Categorías
     </li>
     <!-- Breadcrumb Menu-->
     <li class="breadcrumb-menu d-md-down-none">
     <div class="btn-group" role="group" aria-label="Button group">
-        @can('courses.create')
-            <a class="btn" href="{{ route('courses.create') }}">
+        @can('categories.create')
+            <a class="btn" href="{{ route('categories.create') }}">
                 <i class="icon-plus"></i> Crear</a>
         @endcan
     </div>
@@ -33,7 +33,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        Cursos
+                        Categorías
                     </div>
                     <div class="card-body">
                         <table class="table table-striped table-hover">
@@ -45,32 +45,32 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($courses as $course)
+                                @foreach($categories as $category)
                                 <tr>
-                                    <td>{{ $course->id }}</td>
-                                    <td>{{ $course->name }}</td>
-                                    @can('courses.show')
+                                    <td>{{ $category->id }}</td>
+                                    <td>{{ $category->name }}</td>
+                                    @can('categories.show')
                                         <td width="10px">
                                             <div class="btn-group" role="group" aria-label="Button group">
-                                                <a href="{{ route('courses.show', $course->id) }}"
+                                                <a href="{{ route('categories.show', $category->id) }}"
                                                     class="btn btn-sm btn-primary">
                                                     <i class="icon-eye"></i></a>
                                             </div>
                                         </td>
                                     @endcan
-                                    @can('courses.edit')
+                                    @can('categories.edit')
                                         <td width="10px">
                                             <div class="btn-group" role="group" aria-label="Button group" alt="Editar">
-                                                <a href="{{ route('courses.edit', $course->id) }}"
+                                                <a href="{{ route('categories.edit', $category->id) }}"
                                                     class="btn btn-sm btn-success">
                                                     <i class="icon-pencil"></i></a>
                                             </div>
                                         </td>
                                     @endcan
-                                    @can('courses.destroy')
+                                    @can('categories.destroy')
                                         <td width="10px">
                                             <div class="btn-group" role="group" aria-label="Button group">
-                                                {!! Form::open(['route' => ['courses.destroy', $course->id],
+                                                {!! Form::open(['route' => ['categories.destroy', $category->id],
                                                 'method' => 'DELETE']) !!}
                                                 <button class="btn btn-sm btn-danger">
                                                     <i class="icon-close"></i>
@@ -83,7 +83,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $courses->render() }}
+                        {{ $categories->render() }}
                     </div>
                 </div>
             </div>

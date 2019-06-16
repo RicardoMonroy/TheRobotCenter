@@ -40,6 +40,7 @@
                             <thead>
                                 <tr>
                                     <th width="10px">ID</th>
+                                    <th width="150px">Portada</th>
                                     <th>Nombre</th>
                                     <th colspan="3">&nbsp;</th>
                                 </tr>
@@ -48,6 +49,7 @@
                                 @foreach($courses as $course)
                                 <tr>
                                     <td>{{ $course->id }}</td>
+                                    <th><img src="{{ $course->picture }}" alt="{{ $course->name }}" class="img-responsive" width="150"></th>
                                     <td>{{ $course->name }}</td>
                                     @can('courses.show')
                                         <td width="10px">

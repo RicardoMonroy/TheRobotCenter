@@ -11,10 +11,10 @@
     {{ Form::file('picture', null, ['class' => 'form-control', 'id' => 'picture', 'id' => 'picture']) }}
 </div>
 <div class="form-group">
-    {{ Form::label('section_one', 'Primer sección: PREGUNTAR') }}
-    {{ Form::textarea('section_one', null, ['class' => 'form-control', 'id' => 'section_one']) }}
+    {{ Form::label('editor', 'Contenido del curso') }}
+    {{ Form::textarea('editor', null, ['class' => 'form-control', 'id' => 'editor']) }}
 </div>
-<div class="form-group">
+{{-- <div class="form-group">
     {{ Form::label('section_two', 'Segunda sección: DISEÑAR O CONSTRUIR') }}
     {{ Form::textarea('section_two', null, ['class' => 'form-control', 'id' => 'section_two']) }}
 </div>
@@ -23,9 +23,9 @@
     {{ Form::textarea('section_tree', null, ['class' => 'form-control', 'id' => 'section_tree']) }}
 </div>
 <div class="form-group">
-    {{ Form::label('section_for', 'Cuarta sección: INNOVAR') }}
-    {{ Form::textarea('section_for', null, ['class' => 'form-control', 'id' => 'section_for']) }}
-</div>
+    {{ Form::label('section_four', 'Cuarta sección: INNOVAR') }}
+    {{ Form::textarea('section_four', null, ['class' => 'form-control', 'id' => 'section_four']) }}
+</div> --}}
 
 <div class="form-group">
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}

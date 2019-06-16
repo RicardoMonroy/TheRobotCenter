@@ -33,11 +33,8 @@
                         <div class="card-body">
                             <p><strong>Nombre: </strong>     {{ $course->name }}</p>
                             <p><strong>Descripción: </strong>     {{ $course->description }}</p>
-                            <p><strong>Portada:</strong>  {{ $course->picture }}</p>
-                            <p><strong>PREGUNTAR:</strong>  {{ $course->section_one }}</p>
-                            <p><strong>DISEÑAR O CONSTRUIR:</strong>  {{ $course->section_two }}</p>
-                            <p><strong>ANALIZAR:</strong>  {{ $course->section_tree }}</p>
-                            <p><strong>INNOVAR:</strong>  {{ $course->section_four }}</p>
+                            <p><strong>Portada:</strong>  <img src="{{ $course->picture }}" alt="{{ $course->name }}"></p>
+                            <p><strong>PREGUNTAR:</strong>  {!! $course->editor !!}</p>
                         </div>
                     </div>
                 </div>

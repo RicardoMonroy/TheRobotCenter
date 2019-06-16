@@ -36,7 +36,7 @@
         <div class="container clearfix">
             <!-- Header Logo ==== -->
             <div class="menu-logo">
-                <a href="{{ url('/') }}"><img src="assets/images/logo-white.png" alt=""></a>
+                <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo-white.png') }}" alt=""></a>
             </div>
             <!-- Mobile Nav Button ==== -->
             <!-- <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -108,22 +108,22 @@
                             <li><a href="error-404.html">404 Page</a></li>
                         </ul>
                     </li> -->
-                    <li class="add-mega-menu"><a href="javascript:;">Mis Cursos <i class="fa fa-chevron-down"></i></a>
-                        <ul class="sub-menu add-menu">
+                    <li class="add-mega-menu"><a href="{{ route('courses.view') }}">Mis Cursos </a>
+                        {{-- <ul class="sub-menu add-menu">
                             <li class="add-menu-left">
                                 <h5 class="menu-adv-title">Mis Courses</h5>
                                 <ul>
                                     <li><a href="{{ route('courses.viewcourses') }}">Cursos </a></li>
-                                    {{-- <li><a href="{{ route('courses.coursedetails') }}">Detalles del curso</a></li>
+                                    <li><a href="{{ route('courses.coursedetails') }}">Detalles del curso</a></li>
                                     <li><a href="#">Perfil del instructor</a></li>
                                     <li><a href="#">Eventos</a></li>
-                                    <li><a href="#">Membresía</a></li> --}}
+                                    <li><a href="#">Membresía</a></li>
                                 </ul>
                             </li>
                             <li class="add-menu-right">
                                 <img src="assets/images/adv/adv.jpg" alt=""/>
                             </li>
-                        </ul>
+                        </ul> --}}
                     </li>
                     <li><a href="javascript:;">Blog <!--<i class="fa fa-chevron-down">--></i></a>
                         <!-- <ul class="sub-menu">

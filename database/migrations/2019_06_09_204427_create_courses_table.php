@@ -18,10 +18,7 @@ class CreateCoursesTable extends Migration
             $table->string('name');
             $table->string('description')->nullable();
             $table->string('picture')->nullable();
-            $table->text('section_one')->nullable();
-            $table->text('section_two')->nullable();
-            $table->text('section_tree')->nullable();
-            $table->text('section_four')->nullable();
+            $table->text('editor')->nullable();
 
 
             $table->unsignedBigInteger('teacher_id')->nullable();

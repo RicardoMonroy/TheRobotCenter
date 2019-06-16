@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- inner page banner -->
-<div class="page-banner ovbl-dark" style="background-image:url(assets/images/banner/banner2.jpg);">
+<div class="page-banner ovbl-dark" style="background-image:url({{ $course->picture }});">
     <div class="container">
         <div class="page-banner-entry">
             <h1 class="text-white">{{ $course->name }}</h1>
@@ -75,9 +75,9 @@
                 <!-- <div class="col-lg-9 col-md-8 col-sm-12"> -->
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="courses-post">
-                        <div class="ttr-post-media media-effect">
-                            <a href="#"><img src="assets/images/courses/VehiculosRoboticos.png" alt="Photo by Jean-Philippe Delberghe on Unsplash"></a>
-                        </div>
+                        {{-- <div class="ttr-post-media media-effect">
+                            <a href="#"><img src="{{ $course->picture }}" alt="Photo by Jean-Philippe Delberghe on Unsplash"></a>
+                        </div> --}}
                         <div class="ttr-post-info">
                             <div class="ttr-post-title ">
                                 <h2 class="post-title">{{ $course->name }}</h2>
@@ -121,8 +121,8 @@
                         <h4>Contenido del curso</h4>
                         <ul class="curriculum-list">
                                 <li>
-                                    <h5>Primer sección: PREGUNTAR</h5>
-                                    <p>{{ $course->section_one }}</p>
+                                    <h5>Contenido del Curso</h5>
+                                    <p>{!! $course->editor !!}</p>
                                     {{-- <ul>
                                         <li>
                                             <div class="curriculum-list-box">
@@ -144,72 +144,6 @@
                                         </li>
                                     </ul> --}}
                                 </li>
-                                <li>
-                                    <h5>Segunda sección: DISEÑAR O CONSTRUIR</h5>
-                                    <p>{{ $course->section_two }}</p>
-                                    {{-- <ul>
-                                        <li>
-                                            <div class="curriculum-list-box">
-                                                <span>Lección 1.</span> Preguntar e imaginar
-                                            </div>
-                                            <span>10 minutos</span>
-                                        </li>
-                                        <li>
-                                            <div class="curriculum-list-box">
-                                                <span>Lección 2.</span> These Autonomous Robots Might Steal Your Job Autoblog Minute
-                                            </div>
-                                            <span>1:30 minutos</span>
-                                        </li>
-                                        <li>
-                                            <div class="curriculum-list-box">
-                                                <span>Lección 3.</span> Diseñar y construir
-                                            </div>
-                                            <span>120 minutos</span>
-                                        </li>
-                                    </ul> --}}
-                                </li>
-                                <li>
-                                    <h5>Tercer sección: ANALIZAR</h5>
-                                    <p>{{ $course->section_tree }}</p>
-                                    {{-- <ul>
-                                        <li>
-                                            <div class="curriculum-list-box">
-                                                <span>Lección 1.</span> Introducción
-                                            </div>
-                                            <span>12 minutos</span>
-                                        </li>
-                                        <li>
-                                            <div class="curriculum-list-box">
-                                                <span>Lección 2.</span> ¿Cómo actuará un coche autónomo ante un accidente inevitable?
-                                            </div>
-                                            <span>1:30 minutos</span>
-                                        </li>
-                                        <li>
-                                            <div class="curriculum-list-box">
-                                                <span>Lección 3.</span> Diseñar y construir
-                                            </div>
-                                            <span>60 minutes</span>
-                                        </li>
-                                    </ul> --}}
-                                </li>
-                                <li>
-                                    <h5>Cuarta sección: INNOVAR</h5>
-                                    <p>{{ $course->section_four }}</p>
-                                    {{-- <ul>
-                                        <li>
-                                            <div class="curriculum-list-box">
-                                                <span>Parte 1.</span> Así son los taxis autónomos en Singapur
-                                            </div>
-                                            <span>12 minutos</span>
-                                        </li>
-                                        <li>
-                                            <div class="curriculum-list-box">
-                                                <span>Parte 2.</span> Reto Desafío
-                                            </div>
-                                            <span>120 minutos</span>
-                                        </li>
-                                    </ul> --}}
-                                </li>
                             </ul>
 
                     </div>
@@ -217,47 +151,82 @@
                     {{-- <h4>Curso</h4>
                         <iframe src ="{{asset('/assets/pdf/CLASES-EXTRAS-1-4.pdf')}}" width="100%" height="600px"></iframe> --}}
                         <h5>Test de Evaluación</h5>
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <form action="">
-                                <div class="class="col-lg-6 col-md-6 col-sm-12"">
-                                    <label for="pregunta1">Preguntas de opción múltiple</label>
-                                    <div class="respuestas">
+
+                        <div class="ttr-accordion m-b30 faq-bx" id="accordion1">
+                            <div class="panel">
+                                <div class="acod-head">
+                                    <h6 class="acod-title">
+                                        <a data-toggle="collapse" href="#faq1" class="collapsed" data-parent="#faq1" aria-expanded="false">
+                                        Pregunta de opción múltiple </a> </h6>
+                                </div>
+                                <div id="faq1" class="acod-body collapse" style="">
+                                    <div class="acod-content">
+                                        <div class="respuestas">
                                         <input type="radio" name="preg1" value="1" /> Respuesta 1<br />
                                         <input type="radio" name="preg1" value="2" /> Respuesta 2<br />
                                         <input type="radio" name="preg1" value="3" /> Respuesta 3<br />
                                     </div>
+                                    </div>
                                 </div>
-                                <br><br>
-                                <div class="class="col-lg-4 col-md-4 col-sm-12"">
-                                    <label for="pregunta2">Pregunta con select</label>
-                                    <select name="pregunta2">
-                                    <option>Respuesta 1</option>
-                                    <option>Respuesta 2</option>
-                                    <option>Respuesta 3</option>
-                                    </select>
+                            </div>
+                            <div class="panel">
+                                <div class="acod-head">
+                                    <h6 class="acod-title">
+                                        <a data-toggle="collapse" href="#faq2" class="collapsed" data-parent="#faq2" aria-expanded="false">
+                                        Pregunta tipo select</a> </h6>
                                 </div>
-                                <br><br>
-                                <div class="class="col-lg-4 col-md-4 col-sm-12"">
-                                    <label for="pregunta3">Pregunta con varias respuestas</label><br>
-                                    <input type="checkbox" name="transporte" value="1"> Opción 1<br>
-                                    <input type="checkbox" name="transporte" value="2" checked> Opción 2<br>
-                                    <input type="checkbox" name="transporte" value="3"> Opción 3<br>
-                                    <input type="checkbox" name="transporte" value="4"> Opción 4<br>
-                                    <input type="checkbox" name="transporte" value="5"> Opción 5<br>
+                                <div id="faq2" class="acod-body collapse" style="">
+                                    <div class="acod-content">
+                                        <select name="pregunta2">
+                                            <option>Respuesta 1</option>
+                                            <option>Respuesta 2</option>
+                                            <option>Respuesta 3</option>
+                                        </select>
+                                    </div>
                                 </div>
-                                <br><br>
-                                <div class="class="col-lg-4 col-md-4 col-sm-12"">
-                                    <label for="pregunta3">Pregunta con respuesta abierta</label><br>
-                                    <input type="text">
+                            </div>
+                            <div class="panel">
+                                <div class="acod-head">
+                                    <h6 class="acod-title">
+                                        <a data-toggle="collapse" href="#faq3" class="collapsed" data-parent="#faq3" aria-expanded="false">
+                                        Pregunta con múltiples respuestas </a> </h6>
                                 </div>
-                                <br><br>
-                                <div class="class="col-lg-4 col-md-4 col-sm-12"">
-                                    <label for="pregunta3">Pregunta con respuesta abierta larga</label><br>
-                                    <textarea name="textarea" rows="6" cols="50"></textarea>
+                                <div id="faq3" class="acod-body collapse" style="">
+                                    <div class="acod-content">
+                                        <input type="checkbox" name="transporte" value="1"> Opción 1<br>
+                                        <input type="checkbox" name="transporte" value="2" checked> Opción 2<br>
+                                        <input type="checkbox" name="transporte" value="3"> Opción 3<br>
+                                        <input type="checkbox" name="transporte" value="4"> Opción 4<br>
+                                        <input type="checkbox" name="transporte" value="5"> Opción 5<br>
+                                    </div>
                                 </div>
-                                <br><br>
-                            </form>
+                            </div>
+                            <div class="panel">
+                                <div class="acod-head">
+                                    <h6 class="acod-title">
+                                        <a data-toggle="collapse" href="#faq4" class="collapsed" data-parent="#faq4" aria-expanded="false">
+                                        Respuesta abierta corta </a> </h6>
+                                </div>
+                                <div id="faq4" class="acod-body collapse" style="">
+                                    <div class="acod-content">
+                                        <input type="text" placeholder="Tu respuesta aquí...">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="acod-head">
+                                    <h6 class="acod-title">
+                                        <a data-toggle="collapse" href="#faq5" class="collapsed" data-parent="#faq5">
+                                        Respuesta abierta larga </a> </h6>
+                                </div>
+                                <div id="faq5" class="acod-body collapse">
+                                    <div class="acod-content">
+                                        <textarea name="textarea" rows="12" cols="50" placeholder="Tu respuesta aquí..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                     <div class="" id="instructor">
                         <h4>Instructor</h4>

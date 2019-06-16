@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('viewcourses', 'CourseController@viewcourses')->name('courses.viewcourses');
-Route::get('coursedetails', 'CourseController@coursedetails')->name('courses.coursedetails');
+Route::get('view', 'CourseController@view')->name('courses.view');
+Route::get('mycourse/{course}', 'CourseController@mycourse')->name('courses.mycourse');
 
 Auth::routes();
 

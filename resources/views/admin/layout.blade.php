@@ -63,5 +63,27 @@
     <script src="{{ asset('dashboard/node_modules/pace-progress/pace.min.js') }}"></script>
     <script src="{{ asset('dashboard/node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('dashboard/node_modules/@coreui/coreui/dist/js/coreui.min.js') }}"></script>
+
+    {{-- <script src="{{ asset('dashboard/vendors/ckeditor/ckeditor.js') }}"></script>
+    <script>
+        CKEDITOR.config.height = 400;
+        CKEDITOR.config.width = 'auto';
+
+        CKEDITOR.replace('editor');
+    </script> --}}
+
+    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    <script>
+            var options = {
+              filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+              filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
+              filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+              filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'
+            };
+    </script>
+    <script>
+            CKEDITOR.replace('editor', options);
+            </script>
+
   </body>
 </html>

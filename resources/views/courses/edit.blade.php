@@ -31,8 +31,7 @@
                             Crear
                         </div>
                         <div class="card-body">
-                            {!! Form::model($course, ['route' => ['courses.update', $course->id],
-                                'method' => 'PUT']) !!}
+                            {!! Form::model($course, ['route' => ['courses.update', $course->id], 'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
                                 @include('courses.partials.form')
                             {!! Form::close() !!}
                         </div>

@@ -31,7 +31,7 @@
                             Crear
                         </div>
                         <div class="card-body">
-                            {{ Form::open(['route' => 'courses.store']) }}
+                            {{ Form::open(['route' => 'courses.store', 'enctype' => 'multipart/form-data']) }}
                                 @include('courses.partials.form')
                             {{ Form::close() }}
                         </div>

@@ -93,11 +93,11 @@
                                 <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
                                     <div class="cours-bx">
                                         <div class="action-box">
-                                            <img src="assets/images/courses/course-autos.jpg" alt="">
-                                            <a href="#" class="btn">Leer más</a>
+                                            <img src="{{ $course->picture }}" alt="{{ $course->name }}">
+                                            <a href="{{ route('courses.mycourse', $course->id) }}" class="btn">Ir al curso</a>
                                         </div>
                                         <div class="info-bx text-center">
-                                            <h5><a href="{{ route('courses.coursedetails') }}">{{ $course->name }}</a></h5>
+                                            <h5><a href="{{ route('courses.mycourse', $course->id) }}">{{ $course->name }}</a></h5>
                                             <span>Robótica</span>
                                         </div>
                                         <div class="cours-more-info">

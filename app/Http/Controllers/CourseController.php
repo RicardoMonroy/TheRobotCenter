@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Course;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CourseController extends Controller
 {
@@ -12,11 +13,11 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function viewcourses()
+    public function view()
     {
         $courses = Course::paginate();
 
-        return view('courses.viewcourses', compact('courses'));
+        return view('courses.view', compact('courses'));
     }
 
     /**
@@ -24,12 +25,11 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function coursedetails()
+    public function mycourse($id)
     {
-        // $course = Course::find($id);
-        $course = Course::first();
+        $course = Course::find($id);
 
-        return view('courses.coursedetails', compact('course'));
+        return view('courses.mycourse', compact('course'));
     }
 
     /**
@@ -64,6 +64,11 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         $course = Course::create($request->all());
+
+        if ($request->file('picture')){
+            $path = Storage::disk('public')->put('PortadasCursos', $request->file('picture'));
+            $course->fill(['picture' => asset($path)])->save();
+        }
 
         return redirect()->route('courses.index', $course->id)
             ->with('info', 'Curso guardado con éxito');
@@ -106,6 +111,11 @@ class CourseController extends Controller
     {
         $course = Course::find($id);
         $course->update($request->all());
+
+        if ($request->file('picture')){
+            $path = Storage::disk('public')->put('PortadasCursos', $request->file('picture'));
+            $course->fill(['picture' => asset($path)])->save();
+        }
 
         return redirect()->route('courses.index', $course->id)
             ->with('info', 'Curso actualizado con éxito');

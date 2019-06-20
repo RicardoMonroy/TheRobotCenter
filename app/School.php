@@ -4,16 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Level extends Model
+class School extends Model
 {
     protected $fillable = [
-        'name', 'description',
+        'name', 'address', 'phone',
     ];
-
-    public function course()
-    {
-        return $this->belongsTo('App\Course');
-    }
 
     public function groups()
     {

@@ -5,70 +5,106 @@
     </a>
 </li>
 
-<li class="nav-title">Academico</li>
-@can('levels.index')
-    <li class="nav-item {{ Request::is('levels*') ? 'active' : '' }}">
-        <a class="nav-link" href="{!! route('levels.index') !!}">
-            <i class="nav-icon icon-layers"></i>
-            <span>Niveles</span>
-        </a>
-    </li>
-@endcan
+<li class="nav-item nav-dropdown {{ Request::is('groups*') ? 'open' : '' }}
+                                 {{ Request::is('levels*') ? 'open' : '' }}
+                                 {{ Request::is('categories*') ? 'open' : '' }}
+                                 {{ Request::is('teachers*') ? 'open' : '' }}
+                                 {{ Request::is('curses*') ? 'open' : '' }}
+                                 ">
+    <a class="nav-link nav-dropdown-toggle" href="">
+    <i class="nav-icon icon-graduation"></i> Academico</a>
+    <ul class="nav-dropdown-items">
+        @can('schools.index')
+            <li class="nav-item {{ Request::is('schools*') ? 'active' : '' }}">
+                <a class="nav-link" href="{!! route('schools.index') !!}">
+                    <i class="nav-icon icon-home"></i>
+                    <span>Escuelas</span>
+                </a>
+            </li>
+        @endcan
+        @can('groups.index')
+            <li class="nav-item {{ Request::is('groups*') ? 'active' : '' }}">
+                <a class="nav-link" href="{!! route('groups.index') !!}">
+                    <i class="nav-icon icon-list"></i>
+                    <span>Grupos</span>
+                </a>
+            </li>
+        @endcan
+        @can('levels.index')
+            <li class="nav-item {{ Request::is('levels*') ? 'active' : '' }}">
+                <a class="nav-link" href="{!! route('levels.index') !!}">
+                    <i class="nav-icon icon-layers"></i>
+                    <span>Niveles</span>
+                </a>
+            </li>
+        @endcan
 
-@can('categories.index')
-    <li class="nav-item {{ Request::is('categories*') ? 'active' : '' }}">
-        <a class="nav-link" href="{!! route('categories.index') !!}">
-            <i class="nav-icon icon-book-open"></i>
-            <span>Categorías</span>
-        </a>
-    </li>
-@endcan
+        @can('categories.index')
+            <li class="nav-item {{ Request::is('categories*') ? 'active' : '' }}">
+                <a class="nav-link" href="{!! route('categories.index') !!}">
+                    <i class="nav-icon icon-book-open"></i>
+                    <span>Categorías</span>
+                </a>
+            </li>
+        @endcan
 
-@can('teachers.index')
-    <li class="nav-item {{ Request::is('teachers*') ? 'active' : '' }}">
-        <a class="nav-link" href="{!! route('teachers.index') !!}">
-            <i class="nav-icon icon-eyeglass"></i>
-            <span>Profesores</span>
-        </a>
-    </li>
-@endcan
+        @can('teachers.index')
+            <li class="nav-item {{ Request::is('teachers*') ? 'active' : '' }}">
+                <a class="nav-link" href="{!! route('teachers.index') !!}">
+                    <i class="nav-icon icon-eyeglass"></i>
+                    <span>Profesores</span>
+                </a>
+            </li>
+        @endcan
 
-@can('courses.index')
-    <li class="nav-item {{ Request::is('courses*') ? 'active' : '' }}">
-        <a class="nav-link" href="{!! route('courses.index') !!}">
-            <i class="nav-icon icon-notebook"></i>
-            <span>Cursos</span>
-        </a>
-    </li>
-@endcan
+        @can('courses.index')
+            <li class="nav-item {{ Request::is('courses*') ? 'active' : '' }}">
+                <a class="nav-link" href="{!! route('courses.index') !!}">
+                    <i class="nav-icon icon-notebook"></i>
+                    <span>Cursos</span>
+                </a>
+            </li>
+        @endcan
+    </ul>
+</li>
 
-<li class="nav-title">Herramientas</li>
-@can('roles.index')
-    <li class="nav-item {{ Request::is('roles*') ? 'active' : '' }}">
-        <a class="nav-link" href="{!! route('roles.index') !!}">
-            <i class="nav-icon icon-mustache"></i>
-            <span>Roles</span>
-        </a>
-    </li>
-@endcan
 
-@can('users.index')
-    <li class="nav-item {{ Request::is('roles*') ? 'active' : '' }}">
-        <a class="nav-link" href="{!! route('users.index') !!}">
-            <i class="nav-icon icon-people"></i>
-            <span>Usuarios</span>
-        </a>
-    </li>
-@endcan
 
-@can('permissions.index')
-    <li class="nav-item {{ Request::is('permissions*') ? 'active' : '' }}">
-        <a class="nav-link" href="{!! route('permissions.index') !!}">
-            <i class="nav-icon icon-lock"></i>
-            <span>Permisos</span>
-        </a>
-    </li>
-@endcan
+<li class="nav-item nav-dropdown {{ Request::is('roles*') ? 'open' : '' }}
+                                 {{ Request::is('users*') ? 'open' : '' }}
+                                 {{ Request::is('permissions*') ? 'open' : '' }}
+                                 ">
+    <a class="nav-link nav-dropdown-toggle" href="">
+    <i class="nav-icon icon-settings"></i> Herramientas</a>
+    <ul class="nav-dropdown-items">
+        @can('roles.index')
+            <li class="nav-item {{ Request::is('roles*') ? 'active' : '' }}">
+                <a class="nav-link" href="{!! route('roles.index') !!}">
+                    <i class="nav-icon icon-mustache"></i>
+                    <span>Roles</span>
+                </a>
+            </li>
+        @endcan
+
+        @can('users.index')
+            <li class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
+                <a class="nav-link" href="{!! route('users.index') !!}">
+                    <i class="nav-icon icon-people"></i>
+                    <span>Usuarios</span>
+                </a>
+            </li>
+        @endcan
+
+        @can('permissions.index')
+            <li class="nav-item {{ Request::is('permissions*') ? 'active' : '' }}">
+                <a class="nav-link" href="{!! route('permissions.index') !!}">
+                    <i class="nav-icon icon-lock"></i>
+                    <span>Permisos</span>
+                </a>
+            </li>
+        @endcan
+    </ul>
+</li>
 
 
 {{--

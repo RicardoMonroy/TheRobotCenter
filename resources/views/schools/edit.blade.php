@@ -7,16 +7,16 @@
             <a href="{{ route('home') }}">Dashboard</a>
         </li>
         <li class="breadcrumb-item">
-            <a href="{{ route('levels.index') }}">Nivel</a>
+            <a href="{{ route('schools.index') }}">Escuelas</a>
         </li>
         <li class="breadcrumb-item">
-            Creación
+            Edición
         </li>
         <!-- Breadcrumb Menu-->
         <li class="breadcrumb-menu d-md-down-none">
         <div class="btn-group" role="group" aria-label="Button group">
-            @can('levels.create')
-                <a class="btn" href="{{ route('levels.create') }}">
+            @can('schools.create')
+                <a class="btn" href="{{ route('schools.create') }}">
                     <i class="icon-plus"></i> Crear</a>
             @endcan
         </div>
@@ -31,9 +31,10 @@
                             Crear
                         </div>
                         <div class="card-body">
-                            {{ Form::open(['route' => 'levels.store']) }}
-                                @include('levels.partials.form')
-                            {{ Form::close() }}
+                            {!! Form::model($school, ['route' => ['schools.update', $school->id],
+                                'method' => 'PUT']) !!}
+                                @include('schools.partials.form')
+                            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>

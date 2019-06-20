@@ -183,4 +183,48 @@ Route::middleware(['auth', 'Dashboard'])->group(function () {
 
 	Route::get('courses/{course}/edit', 'CourseController@edit')->name('courses.edit')
         ->middleware('permission:courses.edit');
+
+        //Cursos
+    Route::post('groups/store', 'GroupController@store')->name('groups.store')
+        ->middleware('permission:groups.create');
+
+    Route::get('groups', 'GroupController@index')->name('groups.index')
+        ->middleware('permission:groups.index');
+
+    Route::get('groups/create', 'GroupController@create')->name('groups.create')
+        ->middleware('permission:groups.create');
+
+    Route::put('groups/{course}', 'GroupController@update')->name('groups.update')
+        ->middleware('permission:groups.edit');
+
+    Route::get('groups/{course}', 'GroupController@show')->name('groups.show')
+        ->middleware('permission:groups.show');
+
+    Route::delete('groups/{course}', 'GroupController@destroy')->name('groups.destroy')
+        ->middleware('permission:groups.destroy');
+
+    Route::get('groups/{course}/edit', 'GroupController@edit')->name('groups.edit')
+        ->middleware('permission:groups.edit');
+
+    //Escuelas
+    Route::post('schools/store', 'SchoolController@store')->name('schools.store')
+        ->middleware('permission:schools.create');
+
+	Route::get('schools', 'SchoolController@index')->name('schools.index')
+        ->middleware('permission:schools.index');
+
+    Route::get('schools/create', 'SchoolController@create')->name('schools.create')
+		->middleware('permission:schools.create');
+
+	Route::put('schools/{course}', 'SchoolController@update')->name('schools.update')
+		->middleware('permission:schools.edit');
+
+	Route::get('schools/{course}', 'SchoolController@show')->name('schools.show')
+		->middleware('permission:schools.show');
+
+	Route::delete('schools/{course}', 'SchoolController@destroy')->name('schools.destroy')
+		->middleware('permission:schools.destroy');
+
+	Route::get('schools/{course}/edit', 'SchoolController@edit')->name('schools.edit')
+        ->middleware('permission:schools.edit');
 });

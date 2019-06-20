@@ -228,5 +228,67 @@ class PermissionsTableSeeder extends Seeder
             'slug'          => 'teachers.destroy',
             'description'   => 'Podría eliminar cualquier profesor del sistema',
         ]);
+
+        //Grupos
+        Permission::create([
+            'name'          => 'Navegar grupos',
+            'slug'          => 'groups.index',
+            'description'   => 'Lista y navega todos los grupos del sistema',
+        ]);
+
+        Permission::create([
+            'name'          => 'Ver detalle de un grupo',
+            'slug'          => 'groups.show',
+            'description'   => 'Ve en detalle cada grupo del sistema',
+        ]);
+
+        Permission::create([
+            'name'          => 'Creación de grupos',
+            'slug'          => 'groups.create',
+            'description'   => 'Podría crear nuevos grupos en el sistema',
+        ]);
+
+        Permission::create([
+            'name'          => 'Edición de grupos',
+            'slug'          => 'groups.edit',
+            'description'   => 'Podría editar cualquier dato de un grupo del sistema',
+        ]);
+
+        Permission::create([
+            'name'          => 'Eliminar grupos',
+            'slug'          => 'groups.destroy',
+            'description'   => 'Podría eliminar cualquier grupo del sistema',
+        ]);
+
+        //Escuelas
+        Permission::create([
+            'name'          => 'Navegar escuelas',
+            'slug'          => 'schools.index',
+            'description'   => 'Lista y navega todos los escuelas del sistema',
+        ]);
+
+        Permission::create([
+            'name'          => 'Ver detalle de un escuela',
+            'slug'          => 'schools.show',
+            'description'   => 'Ve en detalle cada escuela del sistema',
+        ]);
+
+        Permission::create([
+            'name'          => 'Creación de escuelas',
+            'slug'          => 'schools.create',
+            'description'   => 'Podría crear nuevos escuelas en el sistema',
+        ]);
+
+        Permission::create([
+            'name'          => 'Edición de escuelas',
+            'slug'          => 'schools.edit',
+            'description'   => 'Podría editar cualquier dato de un escuela del sistema',
+        ]);
+
+        Permission::create([
+            'name'          => 'Eliminar escuelas',
+            'slug'          => 'schools.destroy',
+            'description'   => 'Podría eliminar cualquier escuela del sistema',
+        ]);
     }
 }

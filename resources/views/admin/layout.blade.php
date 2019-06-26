@@ -64,15 +64,15 @@
     <script src="{{ asset('dashboard/node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('dashboard/node_modules/@coreui/coreui/dist/js/coreui.min.js') }}"></script>
 
-    {{-- <script src="{{ asset('dashboard/vendors/ckeditor/ckeditor.js') }}"></script>
-    <script>
+    <script src="{{ asset('dashboard/vendors/ckeditor/ckeditor.js') }}"></script>
+    {{-- <script>
         CKEDITOR.config.height = 400;
         CKEDITOR.config.width = 'auto';
 
         CKEDITOR.replace('editor');
     </script> --}}
 
-    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    {{-- <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script> --}}
     <script>
             var options = {
               filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',

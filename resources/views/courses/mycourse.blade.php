@@ -150,7 +150,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12">
                     {{-- <h4>Curso</h4>
                         <iframe src ="{{asset('/assets/pdf/CLASES-EXTRAS-1-4.pdf')}}" width="100%" height="600px"></iframe> --}}
-                        <h5>Test de Evaluación</h5>
+                        {{-- <h5>Test de Evaluación</h5>
 
                         <div class="ttr-accordion m-b30 faq-bx" id="accordion1">
                             <div class="panel">
@@ -225,12 +225,12 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                     </div>
-                    <div class="" id="instructor">
+                    {{-- <div class="" id="instructor">
                         <h4>Instructor</h4>
-                        {{-- <div class="instructor-bx">
+                        <div class="instructor-bx">
                             <div class="instructor-author">
                                 <img src="assets/images/testimonials/pic1.jpg" alt="">
                             </div>
@@ -245,7 +245,7 @@
                                 </ul>
                                 <p class="m-b0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
                             </div>
-                        </div> --}}
+                        </div>
                         <div class="instructor-bx">
                             <div class="instructor-author">
                                 <img src="assets/images/testimonials/pic2.jpg" alt="">
@@ -262,8 +262,8 @@
                                 <p class="m-b0"></p>
                             </div>
                         </div>
-                    </div>
-                    <div class="" id="reviews">
+                    </div> --}}
+                    {{-- <div class="" id="reviews">
                         <h4>Reviews</h4>
 
                         <div class="review-bx">
@@ -346,7 +346,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
 

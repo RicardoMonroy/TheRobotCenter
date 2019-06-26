@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WellcomeConroller@view')->name('welcome');
 
 Route::get('view', 'CourseController@view')->name('courses.view');
 Route::get('mycourse/{course}', 'CourseController@mycourse')->name('courses.mycourse');

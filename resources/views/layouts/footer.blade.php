@@ -1,4 +1,4 @@
-<div class="footer-top">
+{{-- <div class="footer-top">
     <div class="pt-exebar">
         <div class="container">
             <div class="d-flex align-items-stretch">
@@ -14,7 +14,7 @@
                     </ul>
                 </div>
                 <div class="pt-btn-join">
-                    <a href="#" class="btn ">Registrate</a>
+                    <a href="{{ route('register') }}" class="btn ">Registrate</a>
                 </div>
             </div>
         </div>
@@ -92,11 +92,11 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <div class="footer-bottom">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 text-center"> <a href="#">Hecho por Ricardo Monroy</a></div>
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center"> 2019 The Robot Center</div>
         </div>
     </div>
 </div>

@@ -142,7 +142,7 @@
                         data-paddingright="[30,35,35,15]"
                         data-paddingbottom="[12,12,12,12]"
                         data-paddingleft="[30,35,35,15]"
-                        style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; background-color:var(--primary) !important; border:0; border-radius:30px; margin-right:5px;"> <a href="{{ url('/courses') }}"> CONOCE MÁS</a> </div>
+                        {{-- style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; background-color:var(--primary) !important; border:0; border-radius:30px; margin-right:5px;"> <a href="{{ url('/courses') }}"> CONOCE MÁS</a> </div> --}}
                     <div class="tp-caption Newspaper-Button rev-btn"
                         id="slide-100-layer-6"
                         data-x="['center','center','center','center']"
@@ -161,7 +161,7 @@
                         data-paddingright="[30,35,35,15]"
                         data-paddingbottom="[12,12,12,12]"
                         data-paddingleft="[30,35,35,15]"
-                        style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; border-radius:30px;">CONTACTANOS</div>
+                        {{-- style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; border-radius:30px;">CONTACTANOS</div> --}}
                 </li>
                 <li data-index="rs-200"
                 data-transition="parallaxvertical"
@@ -300,7 +300,7 @@
                         data-paddingright="[30,35,35,15]"
                         data-paddingbottom="[12,12,12,12]"
                         data-paddingleft="[30,35,35,15]"
-                        style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; background-color:var(--primary) !important; border:0; border-radius:30px; margin-right:5px;"> <a href="{{ url('/courses') }}">CONOCE MÁS</a> </div>
+                        {{-- style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; background-color:var(--primary) !important; border:0; border-radius:30px; margin-right:5px;"> <a href="{{ url('/courses') }}">CONOCE MÁS</a> </div> --}}
                     <div class="tp-caption Newspaper-Button rev-btn"
                         id="slide-200-layer-6"
                         data-x="['center','center','center','center']"
@@ -319,7 +319,7 @@
                         data-paddingright="[30,35,35,15]"
                         data-paddingbottom="[12,12,12,12]"
                         data-paddingleft="[30,35,35,15]"
-                        style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; border-radius:30px;">CONTACTANOS</div>
+                        {{-- style="z-index: 8; white-space: nowrap; outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer; border-radius:30px;">CONTACTANOS</div> --}}
                 </li>
                 <!-- SLIDE  -->
             </ul>
@@ -330,7 +330,7 @@
 <div class="content-block">
 
     <!-- Our Services -->
-    <div class="section-area content-inner service-info-bx">
+    {{-- <div class="section-area content-inner service-info-bx">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-6">
@@ -377,7 +377,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Our Services END -->
 
     <!-- Popular Courses -->
@@ -385,132 +385,52 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 heading-bx left">
-                    <h2 class="title-head">Talleres <span>Populares</span></h2>
+                    <h2 class="title-head">Cursos <span>Populares</span></h2>
                     <p>Deja que tu hijo desarrolle sus capacidades y habilidades con nosotros, a través de nuestros cursos y talleres, tus hijos ¡crearán, construirán, programarán y se divertirán!</p>
                 </div>
             </div>
             <div class="row">
-            <div class="courses-carousel owl-carousel owl-btn-1 col-12 p-lr0">
-                <div class="item">
-                    <div class="cours-bx">
-                        <div class="action-box">
-                            <img src="assets/images/courses/pic1.jpg" alt="">
-                            <a href="#" class="btn">Read More</a>
-                        </div>
-                        <div class="info-bx text-center">
-                            <h5><a href="#">Introduction a la Robótica (beginners)</a></h5>
-                            <span>Robótica</span>
-                        </div>
-                        <div class="cours-more-info">
-                            <div class="review">
-                                <span>3 Review</span>
-                                <ul class="cours-star">
-                                    <li class="active"><i class="fa fa-star"></i></li>
-                                    <li class="active"><i class="fa fa-star"></i></li>
-                                    <li class="active"><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
+                <div class="courses-carousel owl-carousel owl-btn-1 col-12 p-lr0">
+                    @foreach($courses as $course)
+                    <div class="item">
+
+                        <div class="cours-bx">
+                            <div class="action-box">
+                                <img src="{{ $course->picture }}" alt="{{ $course->name }}">
+                                <a href="{{ route('courses.mycourse', $course->id) }}" class="btn">Ir al Curso</a>
                             </div>
-                            <div class="price">
-                                <del>$190</del>
-                                <h5>$120</h5>
+                            <div class="info-bx text-center">
+                                <h5><a href="{{ route('courses.mycourse', $course->id) }}">{{ $course->name }}</a></h5>
+                                <span></span>
                             </div>
+                            {{-- <div class="cours-more-info">
+                                <div class="review">
+                                    <span>3 Review</span>
+                                    <ul class="cours-star">
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li class="active"><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                    </ul>
+                                </div>
+                                <div class="price">
+                                    <del>$190</del>
+                                    <h5>$120</h5>
+                                </div>
+                            </div> --}}
                         </div>
+
                     </div>
+                    @endforeach
                 </div>
-                <div class="item">
-                    <div class="cours-bx">
-                        <div class="action-box">
-                            <img src="assets/images/courses/pic2.jpg" alt="">
-                            <a href="#" class="btn">Read More</a>
-                        </div>
-                        <div class="info-bx text-center">
-                            <h5><a href="#">Piramide de automatización</a></h5>
-                            <span>Robótica</span>
-                        </div>
-                        <div class="cours-more-info">
-                            <div class="review">
-                                <span>3 Review</span>
-                                <ul class="cours-star">
-                                    <li class="active"><i class="fa fa-star"></i></li>
-                                    <li class="active"><i class="fa fa-star"></i></li>
-                                    <li class="active"><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <div class="price">
-                                <del>$190</del>
-                                <h5>$120</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="cours-bx">
-                        <div class="action-box">
-                            <img src="assets/images/courses/pic3.jpg" alt="">
-                            <a href="#" class="btn">Read More</a>
-                        </div>
-                        <div class="info-bx text-center">
-                            <h5><a href="#">Fundamentos de programación</a></h5>
-                            <span>Programación</span>
-                        </div>
-                        <div class="cours-more-info">
-                            <div class="review">
-                                <span>3 Review</span>
-                                <ul class="cours-star">
-                                    <li class="active"><i class="fa fa-star"></i></li>
-                                    <li class="active"><i class="fa fa-star"></i></li>
-                                    <li class="active"><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <div class="price">
-                                <del>$190</del>
-                                <h5>$120</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="cours-bx">
-                        <div class="action-box">
-                            <img src="assets/images/courses/pic4.jpg" alt="">
-                            <a href="#" class="btn">Read More</a>
-                        </div>
-                        <div class="info-bx text-center">
-                            <h5><a href="#">Automatización de Legos (Avanzado)</a></h5>
-                            <span>Robótica</span>
-                        </div>
-                        <div class="cours-more-info">
-                            <div class="review">
-                                <span>3 Review</span>
-                                <ul class="cours-star">
-                                    <li class="active"><i class="fa fa-star"></i></li>
-                                    <li class="active"><i class="fa fa-star"></i></li>
-                                    <li class="active"><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                            </div>
-                            <div class="price">
-                                <del>$190</del>
-                                <h5>$120</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             </div>
         </div>
     </div>
     <!-- Popular Courses END -->
 
     <!-- Form -->
-    <div class="section-area section-sp1 ovpr-dark bg-fix online-cours" style="background-image:url(assets/images/background/bg1.jpg);">
+    {{-- <div class="section-area section-sp1 ovpr-dark bg-fix online-cours" style="background-image:url(assets/images/background/bg1.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center text-white">
@@ -555,9 +475,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Form END -->
-    <div class="section-area section-sp2">
+    {{-- <div class="section-area section-sp2">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center heading-bx">
@@ -642,10 +562,10 @@
                 <a href="#" class="btn">Ver todos los eventos</a>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Testimonials -->
-    <div class="section-area section-sp2 bg-fix ovbl-dark" style="background-image:url(assets/images/background/bg1.jpg);">
+    {{-- <div class="section-area section-sp2 bg-fix ovbl-dark" style="background-image:url(assets/images/background/bg1.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-white heading-bx left">
@@ -684,11 +604,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Testimonials END -->
 
     <!-- Recent News -->
-    <div class="section-area section-sp2">
+    {{-- <div class="section-area section-sp2">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 heading-bx left">
@@ -756,7 +676,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Recent News End -->
 
 </div>

@@ -48,9 +48,9 @@
             <div class="secondary-menu">
                 <div class="secondary-inner">
                     <ul>
-                        <li><a href="javascript:;" class="btn-link"><i class="fa fa-facebook"></i></a></li>
+                        {{-- <li><a href="javascript:;" class="btn-link"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="javascript:;" class="btn-link"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="javascript:;" class="btn-link"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="javascript:;" class="btn-link"><i class="fa fa-linkedin"></i></a></li> --}}
                         <!-- Search Button ==== -->
                         <!-- <li class="search-btn"><button id="quik-search-btn" type="button" class="btn-link"><i class="fa fa-search"></i></button></li> -->
                     </ul>
@@ -70,7 +70,7 @@
                     <a href="{{ url('/') }}"><img src="assets/images/logo.png" alt=""></a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{ url('/') }}">Home <!--<i class="fa fa-chevron-down">--></i></a>
+                    <li class="{{ Request::is('/*') ? 'active' : '' }}"><a href="{{ url('/') }}">Home <!--<i class="fa fa-chevron-down">--></i></a>
                         <!-- <ul class="sub-menu">
                             <li><a href="index.html">Home 1</a></li>
                             <li><a href="index-2.html">Home 2</a></li>
@@ -108,7 +108,7 @@
                             <li><a href="error-404.html">404 Page</a></li>
                         </ul>
                     </li> -->
-                    <li class="add-mega-menu"><a href="{{ route('courses.view') }}">Mis Cursos </a>
+                    <li class="add-mega-menu {{ Request::is('view*') ? 'active' : '' }}"><a href="{{ route('courses.view') }}">Cursos </a>
                         {{-- <ul class="sub-menu add-menu">
                             <li class="add-menu-left">
                                 <h5 class="menu-adv-title">Mis Courses</h5>
@@ -125,15 +125,15 @@
                             </li>
                         </ul> --}}
                     </li>
-                    <li><a href="javascript:;">Blog <!--<i class="fa fa-chevron-down">--></i></a>
-                        <!-- <ul class="sub-menu">
+                    {{-- <li><a href="javascript:;">Blog <!--<i class="fa fa-chevron-down">--></i></a>
+                        <ul class="sub-menu">
                             <li><a href="blog-classic-grid.html">Blog Classic</a></li>
                             <li><a href="blog-classic-sidebar.html">Blog Classic Sidebar</a></li>
                             <li><a href="blog-list-sidebar.html">Blog List Sidebar</a></li>
                             <li><a href="blog-standard-sidebar.html">Blog Standard Sidebar</a></li>
                             <li><a href="blog-details.html">Blog Details</a></li>
-                        </ul> -->
-                    </li>
+                        </ul>
+                    </li> --}}
 
                     {{-- <li class="nav-dashboard"><a href="{{ url('/home') }}">Dashboard <!--<i class="fa fa-chevron-down">--></i></a> --}}
                         <!-- <ul class="sub-menu">
@@ -161,11 +161,11 @@
                     </li>
 
                 </ul>
-                <div class="nav-social-link">
+                {{-- <div class="nav-social-link">
                     <a href="javascript:;"><i class="fa fa-facebook"></i></a>
                     <a href="javascript:;"><i class="fa fa-google-plus"></i></a>
                     <a href="javascript:;"><i class="fa fa-linkedin"></i></a>
-                </div>
+                </div> --}}
             </div>
             <!-- Navigation Menu END ==== -->
         </div>

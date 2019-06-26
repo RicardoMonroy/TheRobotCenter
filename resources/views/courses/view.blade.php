@@ -26,7 +26,7 @@
 		<div class="section-area section-sp1">
             <div class="container">
 				<div class="row">
-					<div class="col-lg-3 col-md-4 col-sm-12 m-b30">
+					{{-- <div class="col-lg-3 col-md-4 col-sm-12 m-b30">
 						<div class="widget courses-search-bx placeani">
 							<div class="form-group">
 								<div class="input-group">
@@ -86,8 +86,8 @@
                                 </div>
                             </div>
                         </div>
-					</div>
-					<div class="col-lg-9 col-md-8 col-sm-12">
+					</div> --}}
+					<div class="col-lg-12 col-md-12 col-sm-12">
 						<div class="row">
                             @foreach($courses as $course)
                                 <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
@@ -98,9 +98,9 @@
                                         </div>
                                         <div class="info-bx text-center">
                                             <h5><a href="{{ route('courses.mycourse', $course->id) }}">{{ $course->name }}</a></h5>
-                                            <span>Robótica</span>
+                                            <span></span>
                                         </div>
-                                        <div class="cours-more-info">
+                                        {{-- <div class="cours-more-info">
                                             <div class="review">
                                                 <span>3 Review</span>
                                                 <ul class="cours-star">
@@ -115,12 +115,13 @@
                                                 <del></del>
                                                 <h5></h5>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             @endforeach
+                            {{ $courses->render() }}
 
-                                <div class="col-lg-12 m-b20">
+                                {{-- <div class="col-lg-12 m-b20">
                                     <div class="pagination-bx rounded-sm gray clearfix">
                                         <ul class="pagination">
                                             <li class="previous"><a href="#"><i class="ti-arrow-left"></i> Prev</a></li>
@@ -130,7 +131,7 @@
                                             <li class="next"><a href="#">Next <i class="ti-arrow-right"></i></a></li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div> --}}
 
 						</div>
 					</div>

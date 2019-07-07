@@ -14,7 +14,7 @@
 Route::get('/', 'WellcomeConroller@view')->name('welcome');
 
 Route::get('view', 'CourseController@view')->name('courses.view');
-Route::get('mycourse/{course}', 'CourseController@mycourse')->name('courses.mycourse');
+
 
 Auth::routes();
 
@@ -23,8 +23,14 @@ Route::group(['middleware' => 'Dashboard'], function () {
 
 });
 
+
+
+
+
+
 Route::middleware(['auth', 'Dashboard'])->group(function () {
-    //FrontEnd
+	//FrontEnd
+	Route::get('mycourse/{course}', 'CourseController@mycourse')->name('courses.mycourse');
     // Route::get('coursedetails', 'CourseController@coursedetails')->name('courses.coursedetails');
 
 	//Roles

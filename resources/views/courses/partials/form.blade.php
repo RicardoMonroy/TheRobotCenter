@@ -7,7 +7,7 @@
     {{ Form::textarea('description', null, ['class' => 'form-control', 'id' => 'description']) }}
 </div>
 <div class="form-group">
-    {{ Form::label('picture', 'Descripción') }}
+    {{ Form::label('picture', 'Portada') }}
     {{ Form::file('picture', null, ['class' => 'form-control', 'id' => 'picture', 'id' => 'picture']) }}
 </div>
 <div class="form-group">

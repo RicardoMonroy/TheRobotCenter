@@ -23,11 +23,6 @@ Route::group(['middleware' => 'Dashboard'], function () {
 
 });
 
-
-
-
-
-
 Route::middleware(['auth', 'Dashboard'])->group(function () {
 	//FrontEnd
 	Route::get('mycourse/{course}', 'CourseController@mycourse')->name('courses.mycourse');

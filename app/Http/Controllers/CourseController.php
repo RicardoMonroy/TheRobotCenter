@@ -66,7 +66,7 @@ class CourseController extends Controller
         $course = Course::create($request->all());
 
         if ($request->file('picture')){
-            $path = Storage::disk('public')->put('PortadasCursos', $request->file('picture'));
+            $path = Storage::disk('public')->put('uploads', $request->file('picture'));
             $course->fill(['picture' => asset($path)])->save();
         }
 

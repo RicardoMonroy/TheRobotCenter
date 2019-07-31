@@ -31,6 +31,7 @@
                             Crear
                         </div>
                         <div class="card-body">
+                            <p><strong>Código de curso: </strong>     {{ $course->code }}</p>
                             <p><strong>Nombre: </strong>     {{ $course->name }}</p>
                             <p><strong>Descripción: </strong>     {{ $course->description }}</p>
                             <p><strong>Portada:</strong>  <img src="{{ $course->picture }}" alt="{{ $course->name }}"></p>

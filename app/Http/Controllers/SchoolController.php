@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\School;
+use App\Course;
 use Illuminate\Http\Request;
 use Caffeinated\Shinobi\Models\Permission;
+use Illuminate\Support\Facades\Storage;
 
 class SchoolController extends Controller
-{
+{ 
+
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +24,7 @@ class SchoolController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating |a new resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -42,8 +45,13 @@ class SchoolController extends Controller
     {
         $school = School::create($request->all());
 
+        if ($request->file('picture')){
+            $path = Storage::disk('public')->put('logos', $request->file('picture'));
+            $course->fill(['picture' => asset($path)])->save();
+        }
+
         return redirect()->route('schools.index', $school->id)
-            ->with('info', 'Nivel guardado con éxito');
+            ->with('info', 'Escuela guardado con éxito');
     }
 
     /**

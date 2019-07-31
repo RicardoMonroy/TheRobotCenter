@@ -18,7 +18,7 @@
             <li class="nav-item {{ Request::is('schools*') ? 'active' : '' }}">
                 <a class="nav-link" href="{!! route('schools.index') !!}">
                     <i class="nav-icon icon-home"></i>
-                    <span>Escuelas</span>
+                    <span>Colegios</span>
                 </a>
             </li>
         @endcan
@@ -61,7 +61,7 @@
             <li class="nav-item {{ Request::is('courses*') ? 'active' : '' }}">
                 <a class="nav-link" href="{!! route('courses.index') !!}">
                     <i class="nav-icon icon-notebook"></i>
-                    <span>Cursos</span>
+                    <span>Clases</span>
                 </a>
             </li>
         @endcan
@@ -100,6 +100,15 @@
                 <a class="nav-link" href="{!! route('permissions.index') !!}">
                     <i class="nav-icon icon-lock"></i>
                     <span>Permisos</span>
+                </a>
+            </li>
+        @endcan
+
+        @can('homepage.index')
+            <li class="nav-item {{ Request::is('homepage*') ? 'active' : '' }}">
+                <a class="nav-link" href="{!! route('homepage.index') !!}">
+                    <i class="nav-icon icon-globe"></i>
+                    <span>Página de Inicio</span>
                 </a>
             </li>
         @endcan

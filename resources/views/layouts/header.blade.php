@@ -108,7 +108,7 @@
                             <li><a href="error-404.html">404 Page</a></li>
                         </ul>
                     </li> -->
-                    <li class="add-mega-menu {{ Request::is('view*') ? 'active' : '' }}"><a href="{{ route('courses.view') }}">Cursos </a>
+                    {{-- <li class="add-mega-menu {{ Request::is('view*') ? 'active' : '' }}"><a href="{{ route('courses.view') }}">Cursos </a> --}}
                         {{-- <ul class="sub-menu add-menu">
                             <li class="add-menu-left">
                                 <h5 class="menu-adv-title">Mis Courses</h5>
@@ -125,15 +125,15 @@
                             </li>
                         </ul> --}}
                     </li>
-                    {{-- <li><a href="javascript:;">Blog <!--<i class="fa fa-chevron-down">--></i></a>
-                        <ul class="sub-menu">
+                    <li lass="add-mega-menu {{ Request::is('viewschools*') ? 'active' : '' }}"><a href="{{ route('viewschools') }}">Colegios </a>
+                        {{-- <ul class="sub-menu">
                             <li><a href="blog-classic-grid.html">Blog Classic</a></li>
                             <li><a href="blog-classic-sidebar.html">Blog Classic Sidebar</a></li>
                             <li><a href="blog-list-sidebar.html">Blog List Sidebar</a></li>
                             <li><a href="blog-standard-sidebar.html">Blog Standard Sidebar</a></li>
                             <li><a href="blog-details.html">Blog Details</a></li>
-                        </ul>
-                    </li> --}}
+                        </ul> --}}
+                    </li>
 
                     {{-- <li class="nav-dashboard"><a href="{{ url('/home') }}">Dashboard <!--<i class="fa fa-chevron-down">--></i></a> --}}
                         <!-- <ul class="sub-menu">

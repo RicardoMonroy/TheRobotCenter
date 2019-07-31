@@ -13,30 +13,6 @@ class CourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function view()
-    {
-        $courses = Course::paginate();
-
-        return view('courses.view', compact('courses'));
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function mycourse($id)
-    {
-        $course = Course::find($id);
-
-        return view('courses.mycourse', compact('course'));
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $courses = Course::paginate();

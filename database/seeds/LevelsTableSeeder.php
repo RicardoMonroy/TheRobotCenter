@@ -23,12 +23,7 @@ class LevelsTableSeeder extends Seeder
         ]);
 
         Level::create([
-            'name'          => 'Secuandar Baja',
-            'description'   => '',
-        ]);
-
-        Level::create([
-            'name'          => 'Secundaria Alta',
+            'name'          => 'Secuandaria',
             'description'   => '',
         ]);
 

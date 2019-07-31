@@ -1,5 +1,9 @@
 <div class="form-group">
-    {{ Form::label('name', 'Nombre') }}
+    {{ Form::label('code', 'Código de la clase') }}
+    {{ Form::text('code', null, ['class' => 'form-control', 'id' => 'code']) }}
+</div>
+<div class="form-group">
+    {{ Form::label('name', 'Nombre de la clase') }}
     {{ Form::text('name', null, ['class' => 'form-control', 'id' => 'name']) }}
 </div>
 <div class="form-group">

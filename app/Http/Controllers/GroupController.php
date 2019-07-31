@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Group;
 use App\Level;
 use App\School;
+use App\Course;
 use Illuminate\Http\Request;
 use Caffeinated\Shinobi\Models\Permission;
 

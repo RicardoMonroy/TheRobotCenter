@@ -7,7 +7,7 @@
             <a href="{{ route('home') }}">Dashboard</a>
         </li>
         <li class="breadcrumb-item">
-            <a href="{{ route('schools.index') }}">Escuelas</a>
+            <a href="{{ route('schools.index') }}">Colegios</a>
         </li>
         <li class="breadcrumb-item">
             Edición
@@ -32,7 +32,7 @@
                         </div>
                         <div class="card-body">
                             {!! Form::model($school, ['route' => ['schools.update', $school->id],
-                                'method' => 'PUT']) !!}
+                                'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
                                 @include('schools.partials.form')
                             {!! Form::close() !!}
                         </div>

@@ -12,8 +12,7 @@
 */
 
 Route::get('/', 'WellcomeConroller@view')->name('welcome');
-
-Route::get('view', 'CourseController@view')->name('courses.view');
+Route::get('pages/viewschools', 'WellcomeConroller@viewschools')->name('viewschools');
 
 
 Auth::routes();
@@ -25,8 +24,29 @@ Route::group(['middleware' => 'Dashboard'], function () {
 
 Route::middleware(['auth', 'Dashboard'])->group(function () {
 	//FrontEnd
-	Route::get('mycourse/{course}', 'CourseController@mycourse')->name('courses.mycourse');
-    // Route::get('coursedetails', 'CourseController@coursedetails')->name('courses.coursedetails');
+	Route::get('pages/{id}', 'WellcomeConroller@details')->name('details');
+	
+	// HomePage
+    Route::post('homepage/store', 'PageController@store')->name('homepage.store')
+        ->middleware('permission:homepage.create');
+
+	Route::get('homepage', 'PageController@index')->name('homepage.index')
+        ->middleware('permission:homepage.index');
+
+    Route::get('homepage/create', 'PageController@create')->name('homepage.create')
+		->middleware('permission:homepage.create');
+
+	Route::put('homepage/{page}', 'PageController@update')->name('homepage.update')
+		->middleware('permission:homepage.edit');
+
+	Route::get('homepage/{page}', 'PageController@show')->name('homepage.show')
+		->middleware('permission:homepage.show');
+
+	Route::delete('homepage/{page}', 'PageController@destroy')->name('homepage.destroy')
+		->middleware('permission:homepage.destroy');
+
+	Route::get('homepage/{page}/edit', 'PageController@edit')->name('homepage.edit')
+        ->middleware('permission:homepage.edit');
 
 	//Roles
 	Route::post('roles/store', 'RoleController@store')->name('roles.store')
@@ -183,7 +203,7 @@ Route::middleware(['auth', 'Dashboard'])->group(function () {
 	Route::get('courses/{course}/edit', 'CourseController@edit')->name('courses.edit')
         ->middleware('permission:courses.edit');
 
-        //Cursos
+    //Grupos
     Route::post('groups/store', 'GroupController@store')->name('groups.store')
         ->middleware('permission:groups.create');
 
@@ -215,15 +235,15 @@ Route::middleware(['auth', 'Dashboard'])->group(function () {
     Route::get('schools/create', 'SchoolController@create')->name('schools.create')
 		->middleware('permission:schools.create');
 
-	Route::put('schools/{course}', 'SchoolController@update')->name('schools.update')
+	Route::put('schools/{school}', 'SchoolController@update')->name('schools.update')
 		->middleware('permission:schools.edit');
 
-	Route::get('schools/{course}', 'SchoolController@show')->name('schools.show')
+	Route::get('schools/{school}', 'SchoolController@show')->name('schools.show')
 		->middleware('permission:schools.show');
 
-	Route::delete('schools/{course}', 'SchoolController@destroy')->name('schools.destroy')
+	Route::delete('schools/{school}', 'SchoolController@destroy')->name('schools.destroy')
 		->middleware('permission:schools.destroy');
 
-	Route::get('schools/{course}/edit', 'SchoolController@edit')->name('schools.edit')
-        ->middleware('permission:schools.edit');
+	Route::get('schools/{school}/edit', 'SchoolController@edit')->name('schools.edit')
+		->middleware('permission:schools.edit');
 });

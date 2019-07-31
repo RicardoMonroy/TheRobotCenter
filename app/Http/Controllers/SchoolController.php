@@ -3,11 +3,38 @@
 namespace App\Http\Controllers;
 
 use App\School;
+use App\Course;
 use Illuminate\Http\Request;
 use Caffeinated\Shinobi\Models\Permission;
+use Illuminate\Support\Facades\Storage;
 
 class SchoolController extends Controller
-{
+{ 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function view()
+    {
+        $schools = School::paginate();
+
+        return view('schools.viewschools', compact('schools'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function schools($id)
+    {
+        $school = School::find($id);
+        $courses = Course::paginate();
+
+        return view('schools.schools', compact('school', 'courses'));
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -42,8 +69,13 @@ class SchoolController extends Controller
     {
         $school = School::create($request->all());
 
+        if ($request->file('picture')){
+            $path = Storage::disk('public')->put('logos', $request->file('picture'));
+            $course->fill(['picture' => asset($path)])->save();
+        }
+
         return redirect()->route('schools.index', $school->id)
-            ->with('info', 'Nivel guardado con éxito');
+            ->with('info', 'Escuela guardado con éxito');
     }
 
     /**

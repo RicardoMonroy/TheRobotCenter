@@ -77,7 +77,7 @@
                         data-paddingbottom="[10,10,10,10]"
                         data-paddingleft="[0,0,0,0]"
                         style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;">
-                            Curso de Primavera
+                        {{ $page->firstCopy }}
                     </div>
 
                     <!-- LAYER NR. 3 -->
@@ -99,7 +99,7 @@
                         data-paddingbottom="[0,0,0,0]"
                         data-paddingleft="[0,0,0,0]"
                         style="z-index: 7; white-space: nowrap; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
-                            Conoce nuestro
+                        {{ $page->firstTitle }}
                     </div>
 
                     <!-- LAYER NR. 3 -->
@@ -121,7 +121,7 @@
                         data-paddingbottom="[0,0,0,0]"
                         data-paddingleft="[0,0,0,0]"
                         style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
-                        Que mejor forma de disfrutar las vacaciones	que divirtiendo	y aprendiendo con la mejor tecnología de LEGO ® Education	en Robot Center
+                        {{ $page->firstText }}
                     </div>
                     <!-- LAYER NR. 4 -->
                     <div class="tp-caption Newspaper-Button rev-btn "
@@ -235,7 +235,7 @@
                         data-paddingbottom="[10,10,10,10]"
                         data-paddingleft="[0,0,0,0]"
                         style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;text-transform:uppercase;">
-                            Talleres Extra Escolares
+                        {{ $page->secondCopy }} 
                     </div>
 
                     <!-- LAYER NR. 3 -->
@@ -257,7 +257,7 @@
                         data-paddingbottom="[0,0,0,0]"
                         data-paddingleft="[0,0,0,0]"
                         style="z-index: 7; white-space: nowrap;text-transform:uppercase; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
-                            Ven y conoce nuestros
+                        {{ $page->secondTitle }}
                     </div>
 
                     <!-- LAYER NR. 3 -->
@@ -279,7 +279,7 @@
                         data-paddingbottom="[0,0,0,0]"
                         data-paddingleft="[0,0,0,0]"
                         style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
-                            Permite que tu hijo desarrolle nuevas capacidades y multiplique los talentos que tiene a través de nuestras clases que ayudarán en su aprendizaje.
+                        {{ $page->secondText }}
                     </div>
                     <!-- LAYER NR. 4 -->
                     <div class="tp-caption Newspaper-Button rev-btn "
@@ -343,6 +343,9 @@
                                 <i class="fa fa-bank text-primary"></i>
                             </div>
                             <h4><a href="#">Talleres Cursos</a></h4>
+                            <button type="button" class="btn radius-xl" data-toggle="modal" data-target="#first">
+                                    Más información
+                                </button>
                             <a href="#" class="btn radius-xl">Ver más</a>
                         </div>
                     </div>
@@ -677,7 +680,29 @@
             </div>
         </div>
     </div> --}}
-    <!-- Recent News End -->
+
+    
+      
+    <!-- Modal -->
+    <div class="modal fade" id="first" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Información 1</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 <!-- contact area END -->

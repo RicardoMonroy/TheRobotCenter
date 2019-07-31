@@ -15,7 +15,6 @@ class CreateCoursesTable extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('code')->unique()->nullable(); // Campo estra para el código de la materia
             $table->string('name');
             $table->string('description')->nullable();
             $table->string('picture')->nullable();

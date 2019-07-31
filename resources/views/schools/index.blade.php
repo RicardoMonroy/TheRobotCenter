@@ -7,7 +7,7 @@
         <a href="{{ route('home') }}">Dashboard</a>
     </li>
     <li class="breadcrumb-item">
-        Colegios
+        Escuelas
     </li>
     <!-- Breadcrumb Menu-->
     <li class="breadcrumb-menu d-md-down-none">
@@ -40,7 +40,6 @@
                             <thead>
                                 <tr>
                                     <th width="10px">ID</th>
-                                    <th width="150px">Logotipo</th>
                                     <th>Nombre</th>
                                     <th>Teléfono</th>
                                     <th colspan="3">&nbsp;</th>
@@ -50,7 +49,6 @@
                                 @foreach($schools as $school)
                                 <tr>
                                     <td>{{ $school->id }}</td>
-                                    <td><img src="{{ $school->picture }}" alt="{{ $school->name }}" class="img-responsive" width="150"></td>
                                     <td>{{ $school->name }}</td>
                                     <td>{{ $school->phone }}</td>
                                     @can('schools.show')

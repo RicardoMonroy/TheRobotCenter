@@ -12,19 +12,6 @@ class PermissionsTableSeeder extends Seeder
      */
     public function run()
     {
-        //Homepage
-        Permission::create([
-            'name'          => 'Ver administración del homepage',
-            'slug'          => 'homepage.index',
-            'description'   => 'Lista las opciones del homepage',
-        ]);
-
-        Permission::create([
-            'name'          => 'Editar homepage',
-            'slug'          => 'hompeage.edit',
-            'description'   => 'Editar o cambiar el contenido del homepage',
-        ]);
-
         //Users
         Permission::create([
             'name'          => 'Navegar usuarios',

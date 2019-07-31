@@ -7,10 +7,10 @@
             <a href="{{ route('home') }}">Dashboard</a>
         </li>
         <li class="breadcrumb-item">
-            <a href="{{ route('schools.index') }}">Colegios</a>
+            <a href="{{ route('schools.index') }}">Escuelas</a>
         </li>
         <li class="breadcrumb-item">
-            Ver colegio
+            Ver escuela
         </li>
         <!-- Breadcrumb Menu-->
         <li class="breadcrumb-menu d-md-down-none">
@@ -31,8 +31,7 @@
                             Crear
                         </div>
                         <div class="card-body">
-                            <p><img src="{{ $school->picture }}" alt="{{ $school->name }}" class="img-responsive" width="150"></p>
-                            {{-- <p><strong>ID: </strong>     {{ $school->id }}</p> --}}
+                            <p><strong>ID: </strong>     {{ $school->id }}</p>
                             <p><strong>Nombre: </strong>     {{ $school->name }}</p>
                             <p><strong>Dirección: </strong>  {{ $school->address }}</p>
                             <p><strong>Teléfono: </strong>  {{ $school->phone }}</p>

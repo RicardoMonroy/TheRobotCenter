@@ -5,20 +5,11 @@ namespace App\Http\Controllers;
 use App\Group;
 use App\Level;
 use App\School;
-use App\Course;
 use Illuminate\Http\Request;
 use Caffeinated\Shinobi\Models\Permission;
 
 class GroupController extends Controller
 {
-    public function schools($id)
-    {
-        dd('schools');
-        $school = School::find($id);
-        $courses = Course::paginate();
-
-        return view('groups.schools', compact('school', 'courses'));
-    }
     /**
      * Display a listing of the resource.
      *
@@ -66,7 +57,6 @@ class GroupController extends Controller
      */
     public function show($id)
     {
-        dd('hola');
         $group = Group::find($id);
 
         return view('groups.show', compact('group'));

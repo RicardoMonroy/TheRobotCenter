@@ -19,4 +19,9 @@ class Group extends Model
     {
         return $this->belongsTo('App\School');
     }
+
+    public function course()
+    {
+        return $this->belongsToMany('App\Course');
+    }
 }

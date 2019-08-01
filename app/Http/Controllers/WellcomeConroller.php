@@ -13,7 +13,7 @@ class WellcomeConroller extends Controller
     public function view()
     {
         $courses = Course::paginate();
-        $page = Page::first();
+        $page = Page::find(1);
 
         return view('welcome', compact('courses', 'page'));
     }
@@ -27,10 +27,25 @@ class WellcomeConroller extends Controller
 
     public function details($id)
     {
-        $groups = Group::All();
+        $groups = Group::where('school_id', $id)->get();
         $school = School::find($id);
 
         return view('pages/details', compact('groups', 'school'));
+    }
+
+    public function clases($id)
+    {
+        $clases = Group::find($id);
+        $clases = $clases->course;
+
+        return view('pages.group.clases', compact('clases'));
+    }
+
+    public function class($id)
+    {
+        $course = Course::find($id);
+
+        return view('pages.group.clase.class', compact('course'));
     }
     
 }

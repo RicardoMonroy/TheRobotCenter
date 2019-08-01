@@ -32,8 +32,9 @@ class GroupController extends Controller
     {
         $levels = Level::get();
         $schools = School::get();
+        $courses = Course::get();
 
-        return view('groups.create', compact('levels', 'schools'));
+        return view('groups.create', compact('levels', 'schools', 'courses'));
     }
 
     /**
@@ -45,6 +46,8 @@ class GroupController extends Controller
     public function store(Request $request)
     {
         $group = Group::create($request->all());
+
+        $group->course()->sync($request->get('courses'));
 
         return redirect()->route('groups.index', $group->id)
             ->with('info', 'Nivel guardado con éxito');
@@ -59,8 +62,9 @@ class GroupController extends Controller
     public function show($id)
     {
         $group = Group::find($id);
+        $courses = $group->course;
 
-        return view('groups.show', compact('group'));
+        return view('groups.show', compact('group', 'courses'));
     }
 
     /**
@@ -75,8 +79,9 @@ class GroupController extends Controller
 
         $levels = Level::get();
         $schools = School::get();
+        $courses = Course::get();
 
-        return view('groups.edit', compact('group', 'levels', 'schools'));
+        return view('groups.edit', compact('group', 'levels', 'schools', 'courses'));
     }
 
     /**
@@ -91,8 +96,10 @@ class GroupController extends Controller
         $group = Group::find($id);
         $group->update($request->all());
 
+        $group->course()->sync($request->get('courses'));
+
         return redirect()->route('groups.index', $group->id)
-            ->with('info', 'Nivel actualizado con éxito');
+            ->with('info', 'Grupo actualizado con éxito');
     }
 
     /**

@@ -13,7 +13,8 @@
 <div class="breadcrumb-row">
     <div class="container">
         <ul class="list-inline">
-            <li><a href="#">Home</a></li>
+            <li><a href="{{ url('/') }}">Home</a></li>
+            <li><a href="{{ route('viewschools') }}">Colegios</a></li>
             <li>Listado de grupos de {{ $school->name }}</li>
         </ul>
     </div>
@@ -37,7 +38,7 @@
                                     </div>
                                     <ul class="pricingtable-features">
                                     @foreach($groups as $group)
-                                        <li><a href="#">{{ $group->name }}</a></li>
+                                        <li><a href="{{ route('clases', $group->id) }}">{{ $group->name }}</a></li>
                                     @endforeach
                                     </ul>
                                 </div>

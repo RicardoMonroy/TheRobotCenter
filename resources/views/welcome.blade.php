@@ -398,14 +398,14 @@
                     <div class="item">
 
                         <div class="cours-bx">
-                            <div class="action-box">
+                            {{-- <div class="action-box">
                                 <img src="{{ $course->picture }}" alt="{{ $course->name }}">
-                                <a href="{{ route('courses.mycourse', $course->id) }}" class="btn">Ir al Curso</a>
+                                <a href="{{ route('pages.viewschools', $course->id) }}" class="btn">Ir al Curso</a>
                             </div>
                             <div class="info-bx text-center">
-                                <h5><a href="{{ route('courses.mycourse', $course->id) }}">{{ $course->name }}</a></h5>
+                                <h5><a href="{{ route('pages.viewschools', $course->id) }}">{{ $course->name }}</a></h5>
                                 <span></span>
-                            </div>
+                            </div> --}}
                             {{-- <div class="cours-more-info">
                                 <div class="review">
                                     <span>3 Review</span>

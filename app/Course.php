@@ -24,4 +24,9 @@ class Course extends Model
     {
         return $this->hasOne('App\Category');
     }
+
+    public function group()
+    {
+        return $this->belongsToMany('App\Group');
+    }
 }

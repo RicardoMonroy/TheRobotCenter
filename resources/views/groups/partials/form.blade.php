@@ -20,6 +20,21 @@
         @endforeach
     </select>
 </div>
+<hr>
+<h3>Selecciona las clases</h3>
+    <div class="form-group">
+        <ul class="list-unstyled">
+            @foreach($courses as $course)
+            <li>
+                <label>
+                {{ Form::checkbox('courses[]', $course->id, null) }}
+                {{ $course->code }}
+                <em>({{ $course->name }})</em>
+                </label>
+            </li>
+            @endforeach
+        </ul>
+    </div>
 <div class="form-group">
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}
 </div>

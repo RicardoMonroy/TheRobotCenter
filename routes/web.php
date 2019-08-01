@@ -25,6 +25,8 @@ Route::group(['middleware' => 'Dashboard'], function () {
 Route::middleware(['auth', 'Dashboard'])->group(function () {
 	//FrontEnd
 	Route::get('pages/{id}', 'WellcomeConroller@details')->name('details');
+	Route::get('pages/group/{id}', 'WellcomeConroller@clases')->name('clases');
+	Route::get('pages/group/clase/{id}', 'WellcomeConroller@class')->name('class');
 	
 	// HomePage
     Route::post('homepage/store', 'PageController@store')->name('homepage.store')

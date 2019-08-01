@@ -21,15 +21,21 @@ class CreateCoursesTable extends Migration
             $table->string('picture')->nullable();
             $table->text('editor')->nullable();
 
-
+            // Un curso puede tener muchos profesores
             $table->unsignedBigInteger('teacher_id')->nullable();
             $table->foreign('teacher_id')->references('id')->on('teachers');
 
+            // Un curso puede tener muchas categorías
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')->references('id')->on('categories');
 
+            // Un curso tiene un nivel
             $table->unsignedBigInteger('level_id')->nullable();
             $table->foreign('level_id')->references('id')->on('levels');
+
+            // Un curso puede tener muchos grupos
+            //$table->unsignedBigInteger('group_id')->nullable();
+            //$table->foreign('group_id')->references('id')->on('groups');
 
             $table->timestamps();
         });

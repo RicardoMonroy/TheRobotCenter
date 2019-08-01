@@ -31,10 +31,16 @@
                             Crear
                         </div>
                         <div class="card-body">
-                            <p><strong>ID: </strong>     {{ $group->id }}</p>
+                            {{-- <p><strong>ID: </strong>     {{ $group->id }}</p> --}}
                             <p><strong>Nombre: </strong>     {{ $group->name }}</p>
                             <p><strong>Escuela: </strong>     {{ $group->school->name }}</p>
                             <p><strong>Nivel: </strong>  {{ $group->level->name }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <p>Este grupo tiene las siguientes clases</p>
+                            @foreach($courses as $course)
+                                <p>{{ $course->code }} - {{ $course->name }}</p>
+                            @endforeach
                         </div>
                     </div>
                 </div>

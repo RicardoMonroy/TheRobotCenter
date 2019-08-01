@@ -31,6 +31,7 @@
                             Lista de cambios
                         </div>
                         <div class="card-body">
+                            <li>31 julio - Homepage - Se reemplazó cursos por grupos al seleccionar el colegio (se trabaja en la conexión con la base de datos) </li>
                             <li>26 julio - Homepage - Textos de sliders de página principal sincronizados con la base de datos </li>
                             <li>25 julio - BackOffice - Administración de homepage (editar textos de sliders de página principal) </li>
                             <li>25 julio - BackOffice - Se añadió campó para ID de cursos </li>

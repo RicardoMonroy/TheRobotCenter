@@ -6,7 +6,7 @@
     <div class="page-banner ovbl-dark" style="background-image:url(assets/images/banner/banner3.jpg);">
         <div class="container">
             <div class="page-banner-entry">
-                <h1 class="text-white">Colegios</h1>
+                <h1 class="text-white">Clases</h1>
 			</div>
         </div>
     </div>
@@ -15,7 +15,9 @@
 		<div class="container">
 			<ul class="list-inline">
 				<li><a href="{{ url('/') }}">Home</a></li>
-				<li>Colegios</li>
+                <li><a href="{{ route('viewschools') }}">Colegios</a></li>
+                <li>Listado de grupos</li>
+				<li>Clases</li>
 			</ul>
 		</div>
 	</div>
@@ -65,7 +67,7 @@
 												</li>
                                                 <li class="review">03 Reseñas</li>
                                             </ul>
-                                        </div>
+                                        </div>group
                                     </div>
                                 </div>
                                 <div class="widget-post clearfix">
@@ -89,15 +91,15 @@
 					</div> --}}
 					<div class="col-lg-12 col-md-12 col-sm-12">
 						<div class="row">
-                            @foreach($schools as $school)
+                            @foreach($clases as $class)
                                 <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
                                     <div class="cours-bx">
-                                        <div class="action-box">
-                                            <img src="{{ $school->picture }}" alt="{{ $school->name }}">
+                                        {{-- <div class="action-box">
+                                            <img src="{{ $class->picture }}" alt="{{ $school->name }}">
                                             <a href="{{ route('details', $school->id) }}" class="btn">Ir a la escuela</a>
-                                        </div>
+                                        </div> --}}
                                         <div class="info-bx text-center">
-                                            <h5><a href="{{ route('details', $school->id) }}">{{ $school->name }}</a></h5>
+                                            <h5><a href="{{ route('class', $class->id) }}">{{ $class->name }}</a></h5>
                                             <span></span>
                                         </div>
                                         {{-- <div class="cours-more-info">
@@ -119,7 +121,7 @@
                                     </div>
                                 </div>
                             @endforeach
-                            {{ $schools->render() }}
+                            {{-- {{ $clases->render() }} --}}
 
                                 {{-- <div class="col-lg-12 m-b20">
                                     <div class="pagination-bx rounded-sm gray clearfix">

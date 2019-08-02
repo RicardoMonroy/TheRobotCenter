@@ -7,16 +7,16 @@
             <a href="{{ route('home') }}">Dashboard</a>
         </li>
         <li class="breadcrumb-item">
-            <a href="{{ route('groups.index') }}">Grupos</a>
+            <a href="{{ route('students.index') }}">Alumno</a>
         </li>
         <li class="breadcrumb-item">
-            Ver grupo
+            Edición
         </li>
         <!-- Breadcrumb Menu-->
         <li class="breadcrumb-menu d-md-down-none">
         <div class="btn-group" role="group" aria-label="Button group">
-            @can('groups.create')
-                <a class="btn" href="{{ route('groups.create') }}">
+            @can('students.create')
+                <a class="btn" href="{{ route('students.create') }}">
                     <i class="icon-plus"></i> Crear</a>
             @endcan
         </div>
@@ -31,16 +31,10 @@
                             Crear
                         </div>
                         <div class="card-body">
-                            {{-- <p><strong>ID: </strong>     {{ $group->id }}</p> --}}
-                            <p><strong>Nombre: </strong>     {{ $group->name }}</p>
-                            <p><strong>Escuela: </strong>     {{ !empty($group->school->name) ? $group->school->name:'' }}</p>
-                            <p><strong>Nivel: </strong>  {{ !empty($group->level->name) ? $group->level->name:'' }}</p>
-                        </div>
-                        <div class="card-footer">
-                            <p>Este grupo tiene las siguientes clases</p>
-                            @foreach($courses as $course)
-                                <p>{{ $course->code }} - {{ $course->name }}</p>
-                            @endforeach
+                            {!! Form::model($student, ['route' => ['students.update', $student->id],
+                                'method' => 'PUT']) !!}
+                                @include('students.partials.form')
+                            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>

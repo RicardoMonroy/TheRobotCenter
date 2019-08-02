@@ -7,13 +7,13 @@
         <a href="{{ route('home') }}">Dashboard</a>
     </li>
     <li class="breadcrumb-item">
-        Grupos
+        Alumnos
     </li>
     <!-- Breadcrumb Menu-->
     <li class="breadcrumb-menu d-md-down-none">
     <div class="btn-group" role="group" aria-label="Button group">
-        @can('groups.create')
-            <a class="btn" href="{{ route('groups.create') }}">
+        @can('students.create')
+            <a class="btn" href="{{ route('students.create') }}">
                 <i class="icon-plus"></i> Crear</a>
         @endcan
     </div>
@@ -33,48 +33,50 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        Niveles
+                        Alumnos
                     </div>
                     <div class="card-body">
                         <table class="table table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th width="10px">ID</th>
+                                    <th width="10px">Código</th>
                                     <th>Nombre</th>
                                     <th>Escuela</th>
-                                    <th>Nivel</th>
+                                    <th>Grupo</th>
                                     <th colspan="3">&nbsp;</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($groups as $group)
+                                @foreach($students as $student)
                                 <tr>
-                                    <td>{{ $group->id }}</td>
-                                    <td>{{ $group->name }}</td>
-                                    <td>{{ !empty($group->school->name) ? $group->school->name:'' }}</td>
-                                    <td>{{ !empty($group->level->name) ? $group->school->name:'' }}</td>
-                                    @can('groups.show')
+                                    <td>{{ $student->id }}</td>
+                                    <td>{{ $student->code }}</td>
+                                    <td>{{ $student->name }}</td>
+                                    <td>{{ !empty($student->school->name) ? $student->school->name:'' }}</td>
+                                    <td>{{ !empty($student->group->name) ? $student->group->name:'' }}</td>
+                                    @can('students.show')
                                         <td width="10px">
                                             <div class="btn-group" role="group" aria-label="Button group">
-                                                <a href="{{ route('groups.show', $group->id) }}"
+                                                <a href="{{ route('students.show', $student->id) }}"
                                                     class="btn btn-sm btn-primary">
                                                     <i class="icon-eye"></i></a>
                                             </div>
                                         </td>
                                     @endcan
-                                    @can('groups.edit')
+                                    @can('students.edit')
                                         <td width="10px">
                                             <div class="btn-group" role="group" aria-label="Button group" alt="Editar">
-                                                <a href="{{ route('groups.edit', $group->id) }}"
+                                                <a href="{{ route('students.edit', $student->id) }}"
                                                     class="btn btn-sm btn-success">
                                                     <i class="icon-pencil"></i></a>
                                             </div>
                                         </td>
                                     @endcan
-                                    @can('groups.destroy')
+                                    @can('students.destroy')
                                         <td width="10px">
                                             <div class="btn-group" role="group" aria-label="Button group">
-                                                {!! Form::open(['route' => ['groups.destroy', $group->id],
+                                                {!! Form::open(['route' => ['students.destroy', $student->id],
                                                 'method' => 'DELETE']) !!}
                                                 <button class="btn btn-sm btn-danger">
                                                     <i class="icon-close"></i>
@@ -87,7 +89,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $groups->render() }}
+                        {{ $students->render() }}
                     </div>
                 </div>
             </div>

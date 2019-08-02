@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use Illuminate\Http\Request;
+use App\School;
+use App\Group;
 
 class StudentController extends Controller
 {
@@ -14,7 +16,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $students = Student::paginate();
+
+        return view('students.index', compact('students'));
     }
 
     /**
@@ -24,7 +28,10 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        $schools = School::get();
+        $groups = Group::get();
+
+        return view('students.create', compact('schools', 'groups'));
     }
 
     /**
@@ -35,7 +42,10 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $student = Student::create($request->all());
+
+        return redirect()->route('students.index', $student->id)
+            ->with('info', 'Alumno guardado con éxito');
     }
 
     /**
@@ -44,9 +54,11 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function show(Student $student)
+    public function show($id)
     {
-        //
+        $student = Student::find($id);
+
+        return view('students.show', compact('student'));
     }
 
     /**
@@ -55,9 +67,14 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
+    public function edit($id)
     {
-        //
+        $student = Student::find($id);
+        $schools = School::get();
+        $groups = Group::get();
+
+
+        return view('students.edit', compact('student', 'schools', 'groups'));
     }
 
     /**
@@ -67,9 +84,13 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, $id)
     {
-        //
+        $student = Student::find($id);
+        $student->update($request->all());
+
+        return redirect()->route('students.index', $student->id)
+            ->with('info', 'Alumno actualizado con éxito');
     }
 
     /**
@@ -78,8 +99,10 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy($id)
     {
-        //
+        $student = Student::find($id)->delete();
+
+        return back()->with('info', 'Eliminado correctamente');
     }
 }

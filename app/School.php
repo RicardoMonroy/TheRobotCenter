@@ -14,4 +14,9 @@ class School extends Model
     {
         return $this->hasMany('App\Group');
     }
+
+    public function students()
+    {
+        return $this->hasMany('App\Student');
+    }
 }

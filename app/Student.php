@@ -6,8 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
-    public function user()
+    protected $fillable = [
+        'name', 'code', 'school_id', 'group_id',
+    ];
+
+    public function school()
     {
-        return $this->belongsTo('App\User');
+         return $this->belongsTo('App\School');
     }
+
+    public function group()
+    {
+         return $this->belongsTo('App\Group');
+    }
+
+    // public function user()
+    // {
+    //     return $this->belongsTo('App\User');
+    // }
 }

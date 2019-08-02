@@ -248,4 +248,26 @@ Route::middleware(['auth', 'Dashboard'])->group(function () {
 
 	Route::get('schools/{school}/edit', 'SchoolController@edit')->name('schools.edit')
 		->middleware('permission:schools.edit');
+
+	//Alumnos
+    Route::post('students/store', 'StudentController@store')->name('students.store')
+        ->middleware('permission:students.create');
+
+	Route::get('students', 'StudentController@index')->name('students.index')
+        ->middleware('permission:students.index');
+
+    Route::get('students/create', 'StudentController@create')->name('students.create')
+		->middleware('permission:students.create');
+
+	Route::put('students/{student}', 'StudentController@update')->name('students.update')
+		->middleware('permission:students.edit');
+
+	Route::get('students/{student}', 'StudentController@show')->name('students.show')
+		->middleware('permission:students.show');
+
+	Route::delete('students/{student}', 'StudentController@destroy')->name('students.destroy')
+		->middleware('permission:students.destroy');
+
+	Route::get('students/{student}/edit', 'StudentController@edit')->name('students.edit')
+		->middleware('permission:students.edit');
 });

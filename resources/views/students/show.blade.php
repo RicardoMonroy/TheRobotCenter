@@ -7,16 +7,16 @@
             <a href="{{ route('home') }}">Dashboard</a>
         </li>
         <li class="breadcrumb-item">
-            <a href="{{ route('groups.index') }}">Grupos</a>
+            <a href="{{ route('students.index') }}">Alumno</a>
         </li>
         <li class="breadcrumb-item">
-            Ver grupo
+            Ver
         </li>
         <!-- Breadcrumb Menu-->
         <li class="breadcrumb-menu d-md-down-none">
         <div class="btn-group" role="group" aria-label="Button group">
-            @can('groups.create')
-                <a class="btn" href="{{ route('groups.create') }}">
+            @can('students.create')
+                <a class="btn" href="{{ route('students.create') }}">
                     <i class="icon-plus"></i> Crear</a>
             @endcan
         </div>
@@ -31,16 +31,11 @@
                             Crear
                         </div>
                         <div class="card-body">
-                            {{-- <p><strong>ID: </strong>     {{ $group->id }}</p> --}}
-                            <p><strong>Nombre: </strong>     {{ $group->name }}</p>
-                            <p><strong>Escuela: </strong>     {{ !empty($group->school->name) ? $group->school->name:'' }}</p>
-                            <p><strong>Nivel: </strong>  {{ !empty($group->level->name) ? $group->level->name:'' }}</p>
-                        </div>
-                        <div class="card-footer">
-                            <p>Este grupo tiene las siguientes clases</p>
-                            @foreach($courses as $course)
-                                <p>{{ $course->code }} - {{ $course->name }}</p>
-                            @endforeach
+                            {{-- <p><strong>ID: </strong>     {{ $student->id }}</p> --}}
+                            <p><strong>Nombre: </strong>     {{ $student->name }}</p>
+                            <p><strong>Código de acceso: </strong>     {{ $student->code }}</p>
+                            <p><strong>Colegio: </strong>  {{ !empty($student->school->name) ? $student->school->name:'' }}</p>
+                            <p><strong>Grupo: </strong>  {{ !empty($student->group->name) ? $student->group->name:'' }}</p>
                         </div>
                     </div>
                 </div>

@@ -65,6 +65,15 @@
                 </a>
             </li>
         @endcan
+
+        @can('students.index')
+            <li class="nav-item {{ Request::is('students*') ? 'active' : '' }}">
+                <a class="nav-link" href="{!! route('students.index') !!}">
+                    <i class="nav-icon icon-graduation"></i>
+                    <span>Alumnos</span>
+                </a>
+            </li>
+        @endcan
     </ul>
 </li>
 

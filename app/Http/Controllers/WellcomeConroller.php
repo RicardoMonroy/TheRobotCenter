@@ -27,10 +27,11 @@ class WellcomeConroller extends Controller
 
     public function details($id)
     {
-        $groups = Group::where('school_id', $id)->get();
         $school = School::find($id);
+        //$groups = Group::where('school_id', $id)->get();
+        $groups = $school->groups;
 
-        return view('pages/details', compact('groups', 'school'));
+        return view('pages.details', compact('groups', 'school'));
     }
 
     public function clases($id)

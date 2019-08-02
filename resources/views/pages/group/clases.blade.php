@@ -94,10 +94,10 @@
                             @foreach($clases as $class)
                                 <div class="col-md-6 col-lg-4 col-sm-6 m-b30">
                                     <div class="cours-bx">
-                                        {{-- <div class="action-box">
-                                            <img src="{{ $class->picture }}" alt="{{ $school->name }}">
-                                            <a href="{{ route('details', $school->id) }}" class="btn">Ir a la escuela</a>
-                                        </div> --}}
+                                        <div class="action-box">
+                                            <img src="{{ $class->picture }}" alt="{{ $class->name }}">
+                                            <a href="{{ route('class', $class->id) }}" class="btn">Ir a la escuela</a>
+                                        </div>
                                         <div class="info-bx text-center">
                                             <h5><a href="{{ route('class', $class->id) }}">{{ $class->name }}</a></h5>
                                             <span></span>

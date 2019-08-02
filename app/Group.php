@@ -24,4 +24,9 @@ class Group extends Model
     {
         return $this->belongsToMany('App\Course');
     }
+
+    public function students()
+    {
+        return $this->hasMany('App\Student');
+    }
 }

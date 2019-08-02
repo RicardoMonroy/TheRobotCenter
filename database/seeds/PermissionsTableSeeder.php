@@ -303,5 +303,36 @@ class PermissionsTableSeeder extends Seeder
             'slug'          => 'schools.destroy',
             'description'   => 'Podría eliminar cualquier escuela del sistema',
         ]);
+
+        //Alumnos
+        Permission::create([
+            'name'          => 'Navegar alumnos',
+            'slug'          => 'students.index',
+            'description'   => 'Lista y navega todos los alumnos del sistema',
+        ]);
+
+        Permission::create([
+            'name'          => 'Ver detalle de un alumno',
+            'slug'          => 'students.show',
+            'description'   => 'Ve en detalle cada alumno del sistema',
+        ]);
+
+        Permission::create([
+            'name'          => 'Creación de alumnos',
+            'slug'          => 'students.create',
+            'description'   => 'Podría crear nuevos alumnos en el sistema',
+        ]);
+
+        Permission::create([
+            'name'          => 'Edición de alumnos',
+            'slug'          => 'students.edit',
+            'description'   => 'Podría editar cualquier dato de un alumno del sistema',
+        ]);
+
+        Permission::create([
+            'name'          => 'Eliminar alumnos',
+            'slug'          => 'students.destroy',
+            'description'   => 'Podría eliminar cualquier alumno del sistema',
+        ]);
     }
 }

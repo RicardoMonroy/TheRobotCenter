@@ -31,6 +31,11 @@
                             Lista de cambios
                         </div>
                         <div class="card-body">
+                            <li>2 Agosto - BackOffice - Se añadió al menú la parte correspondiente a Alumnos (Altas, bajas, edición, eliminar</li>
+                            <li>2 Agosto - HomePage - Arreglado el problema de las imágenes</li>
+                            <li>2 Agosto - Database - Se arreglaron los registros correspondientes a las imagenes de cursos, escuelas y editor de cursos</li>
+                            <li>1 Agosto - BackOffice - Gestión de Colegios/Grupos/Cursos</li>
+                            <li>1 Agosto - Homepage - Vistas filtradas para Colegios/Grupos/Cursos</li>
                             <li>31 julio - Homepage - Se reemplazó cursos por grupos al seleccionar el colegio (se trabaja en la conexión con la base de datos) </li>
                             <li>26 julio - Homepage - Textos de sliders de página principal sincronizados con la base de datos </li>
                             <li>25 julio - BackOffice - Administración de homepage (editar textos de sliders de página principal) </li>
@@ -45,7 +50,6 @@
                             <li>Habilitar espacio para dar de alta en cursos el material que se debe utilizar. Ej: Robot EV3, Robot Wedo 1.0, Robot Wedo 2.0, Neumática. </li>
                             <li>Habilitar un buscador de clases </li>
                             <li>Altas de alumnos de forma automática por listas de excel por colegios </li>
-                            <li>Gestión de Colegios-cursos </li>
 
                         </div>
                     </div>

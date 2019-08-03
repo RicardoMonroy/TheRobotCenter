@@ -31,7 +31,8 @@
                             Lista de cambios
                         </div>
                         <div class="card-body">
-                            <li>2 Agosto - BackOffice - Se añadió al menú la parte correspondiente a Alumnos (Altas, bajas, edición, eliminar</li>
+                            <li>3 Agosto - BackOffice - Se perfeccionaron las tablas en todas las secciones, se cuenta con filtrado y busquedas</li>
+                            <li>2 Agosto - BackOffice - Se añadió al menú la parte correspondiente a Alumnos (Altas, bajas, edición, eliminar)</li>
                             <li>2 Agosto - HomePage - Arreglado el problema de las imágenes</li>
                             <li>2 Agosto - Database - Se arreglaron los registros correspondientes a las imagenes de cursos, escuelas y editor de cursos</li>
                             <li>1 Agosto - BackOffice - Gestión de Colegios/Grupos/Cursos</li>
@@ -48,7 +49,7 @@
                             <h6>Pendientes por hacer:</h6>
                             <li>Alta de alumnos en grupos </li>
                             <li>Habilitar espacio para dar de alta en cursos el material que se debe utilizar. Ej: Robot EV3, Robot Wedo 1.0, Robot Wedo 2.0, Neumática. </li>
-                            <li>Habilitar un buscador de clases </li>
+                            <li>Habilitar un buscador de clases en la página </li>
                             <li>Altas de alumnos de forma automática por listas de excel por colegios </li>
 
                         </div>

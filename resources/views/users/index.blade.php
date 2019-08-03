@@ -33,15 +33,17 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        Roles
+                        Usuarios
                     </div>
                     <div class="card-body">
-                        <table class="table table-striped table-hover">
+                        <table id="users"" class="table table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th width="10px">ID</th>
                                     <th>Nombre</th>
-                                    <th colspan="3">&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -83,7 +85,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $users->render() }}
+                        {{-- {{ $users->render() }} --}}
                     </div>
                 </div>
             </div>

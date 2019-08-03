@@ -36,14 +36,16 @@
                         Escuelas
                     </div>
                     <div class="card-body">
-                        <table class="table table-striped table-hover">
+                        <table id="schools" class="table table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th width="10px">ID</th>
                                     <th width="150px">Logotipo</th>
                                     <th>Nombre</th>
                                     <th>Teléfono</th>
-                                    <th colspan="3">&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -87,7 +89,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $schools->render() }}
+                        {{-- {{ $schools->render() }} --}}
                     </div>
                 </div>
             </div>

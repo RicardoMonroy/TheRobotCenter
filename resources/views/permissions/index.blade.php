@@ -36,13 +36,15 @@
                         Permisos
                     </div>
                     <div class="card-body">
-                        <table class="table table-striped table-hover">
+                        <table id="permissions" class="table table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th width="10px">ID</th>
                                     <th>Nombre</th>
                                     <th>Descripción</th>
-                                    <th colspan="3">&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -85,7 +87,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $permissions->render() }}
+                        {{-- {{ $permissions->render() }} --}}
                     </div>
                 </div>
             </div>

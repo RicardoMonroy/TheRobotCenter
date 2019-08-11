@@ -18,6 +18,14 @@
                     @if (Route::has('login'))
                         @auth
                             <li><a href="{{ url('/home') }}">Dashboard</a></li>
+                            <li>
+                                <a class="dropdown-item" href="{!! url('/logout') !!}" class="btn btn-default btn-flat" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
                         @else
                             <li><a href="{{ route('login') }}">Login</a></li>
 
@@ -39,15 +47,17 @@
                 <a href="{{ url('/') }}"><img src="{{ asset('assets/images/logo-white.png') }}" alt=""></a>
             </div>
             <!-- Mobile Nav Button ==== -->
-            <!-- <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler collapsed menuicon justify-content-end" type="button" data-toggle="collapse" data-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
-            </button> -->
+            </button>
             <!-- Author Nav ==== -->
             <div class="secondary-menu">
                 <div class="secondary-inner">
                     <ul>
+                        {{-- <li class="{{ Request::is('/*') ? 'active' : '' }}"><a href="{{ url('/') }}">HOME <!--<i class="fa fa-chevron-down">--></i></a></li>
+                        <li lass="add-mega-menu {{ Request::is('viewschools*') ? 'active' : '' }}"><a href="{{ route('viewschools') }}">COLEGIOS </a></li> --}}
                         {{-- <li><a href="javascript:;" class="btn-link"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="javascript:;" class="btn-link"><i class="fa fa-google-plus"></i></a></li>
                         <li><a href="javascript:;" class="btn-link"><i class="fa fa-linkedin"></i></a></li> --}}
@@ -70,12 +80,7 @@
                     <a href="{{ url('/') }}"><img src="assets/images/logo.png" alt=""></a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="{{ Request::is('/*') ? 'active' : '' }}"><a href="{{ url('/') }}">Home <!--<i class="fa fa-chevron-down">--></i></a>
-                        <!-- <ul class="sub-menu">
-                            <li><a href="index.html">Home 1</a></li>
-                            <li><a href="index-2.html">Home 2</a></li>
-                        </ul> -->
-                    </li>
+                    <li class="{{ Request::is('/*') ? 'active' : '' }}"><a href="{{ url('/') }}">Home <!--<i class="fa fa-chevron-down">--></i></a></li>
                     <!-- <li><a href="javascript:;">Pages <i class="fa fa-chevron-down"></i></a>
                         <ul class="sub-menu">
                             <li><a href="javascript:;">About<i class="fa fa-angle-right"></i></a>
@@ -108,7 +113,7 @@
                             <li><a href="error-404.html">404 Page</a></li>
                         </ul>
                     </li> -->
-                    {{-- <li class="add-mega-menu {{ Request::is('view*') ? 'active' : '' }}"><a href="{{ route('courses.view') }}">Cursos </a> --}}
+                        {{-- <li class="add-mega-menu {{ Request::is('view*') ? 'active' : '' }}"><a href="{{ route('courses.view') }}">Cursos </a> --}}
                         {{-- <ul class="sub-menu add-menu">
                             <li class="add-menu-left">
                                 <h5 class="menu-adv-title">Mis Courses</h5>
@@ -123,17 +128,10 @@
                             <li class="add-menu-right">
                                 <img src="assets/images/adv/adv.jpg" alt=""/>
                             </li>
-                        </ul> --}}
-                    </li>
-                    <li lass="add-mega-menu {{ Request::is('viewschools*') ? 'active' : '' }}"><a href="{{ route('viewschools') }}">Colegios </a>
-                        {{-- <ul class="sub-menu">
-                            <li><a href="blog-classic-grid.html">Blog Classic</a></li>
-                            <li><a href="blog-classic-sidebar.html">Blog Classic Sidebar</a></li>
-                            <li><a href="blog-list-sidebar.html">Blog List Sidebar</a></li>
-                            <li><a href="blog-standard-sidebar.html">Blog Standard Sidebar</a></li>
-                            <li><a href="blog-details.html">Blog Details</a></li>
-                        </ul> --}}
-                    </li>
+                        </ul> 
+                    </li>--}}
+                    {{-- <li lass="add-mega-menu {{ Request::is('viewschools*') ? 'active' : '' }}"><a href="{{ route('viewschools') }}">Colegios </a></li> --}}
+                    <li lass="add-mega-menu {{ Request::is('details*') ? 'active' : '' }}"><a href="{{ route('details') }}">Mis Clases </a></li>
 
                     {{-- <li class="nav-dashboard"><a href="{{ url('/home') }}">Dashboard <!--<i class="fa fa-chevron-down">--></i></a> --}}
                         <!-- <ul class="sub-menu">

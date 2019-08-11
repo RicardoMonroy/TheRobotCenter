@@ -5,7 +5,7 @@
 <div class="form-group">
     <label for="school_id">Selecciona a una escuela</label>
     <select class="form-control" id="select1" name="school_id">
-        <option disabled selected>Elige...</option>
+        {{-- <option selected value="{{ $group->school->id }}">{{ !empty($group->school->name) ? $group->school->name:'Elige una escuela' }}</option> --}}
         @foreach($schools as $school)
             <option value="{{$school->id}}">{{$school->name}}</option>
         @endforeach
@@ -14,7 +14,7 @@
 <div class="form-group">
     <label for="level_id">Selecciona un nivel</label>
     <select class="form-control" id="select1" name="level_id">
-        <option disabled selected>Elige un nivel</option>
+        <option selected value="{{ !empty($group->level->id) ? $group->level->id: '' }}">{{ !empty($group->level->name) ? $group->level->name:'Elige nivel' }}</option>
         @foreach($levels as $level)
             <option value="{{$level->id}}">{{$level->name}}</option>
         @endforeach

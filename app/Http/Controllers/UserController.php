@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Caffeinated\Shinobi\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use App\User;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\UsersImport;
 
 class UserController extends Controller
 {
@@ -107,6 +109,20 @@ class UserController extends Controller
         $user = User::find($id)->delete();
 
         return back()->with('info', 'Eliminado correctamente');
+    }
+
+    public function upload()
+    {
+        return view('users.upload');
+    }
+
+    public function importExcel(Request $request)
+    {
+        $file = $request->file('file');
+        Excel::import(new UsersImport, $file);
+
+        return redirect()->route('users.index')
+            ->with('info', 'Lista de usuarios creada con éxito');
     }
 }
 

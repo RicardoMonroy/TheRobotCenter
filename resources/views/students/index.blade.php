@@ -11,12 +11,12 @@
     </li>
     <!-- Breadcrumb Menu-->
     <li class="breadcrumb-menu d-md-down-none">
-    <div class="btn-group" role="group" aria-label="Button group">
+    {{-- <div class="btn-group" role="group" aria-label="Button group">
         @can('students.create')
             <a class="btn" href="{{ route('students.create') }}">
                 <i class="icon-plus"></i> Crear</a>
         @endcan
-    </div>
+    </div> --}}
     </li>
 </ol>
 <div class="container-fluid">
@@ -32,14 +32,20 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        Alumnos
+                    <div class="card-header">Alumnos
+                        <div class="card-header-actions">
+                            <a class="card-header-action btn-setting" href="{{ route('users.upload') }}">
+                                <i class="icon-arrow-up-circle"></i> Subir un Excel</a>
+                            @can('students.create')
+                                <a class="card-header-action btn-setting" href="{{ route('students.create') }}">
+                                    <i class="icon-plus"></i> Crear</a>
+                            @endcan
+                        </div>
                     </div>
                     <div class="card-body">
                         <table id="students" class="table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th width="10px">ID</th>
                                     <th width="10px">Código</th>
                                     <th>Nombre</th>
                                     <th>Escuela</th>
@@ -52,9 +58,8 @@
                             <tbody>
                                 @foreach($students as $student)
                                 <tr>
-                                    <td>{{ $student->id }}</td>
                                     <td>{{ $student->code }}</td>
-                                    <td>{{ $student->name }}</td>
+                                    <td>{{ !empty($student->user->name) ? $student->user->name: '' }}</td>
                                     <td>{{ !empty($student->school->name) ? $student->school->name:'' }}</td>
                                     <td>{{ !empty($student->group->name) ? $student->group->name:'' }}</td>
                                     @can('students.show')

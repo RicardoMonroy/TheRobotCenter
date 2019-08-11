@@ -7,6 +7,8 @@ use App\Course;
 use Illuminate\Http\Request;
 use Caffeinated\Shinobi\Models\Permission;
 use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\SchoolsExport;
 
 class SchoolController extends Controller
 { 
@@ -107,5 +109,10 @@ class SchoolController extends Controller
         $school = School::find($id)->delete();
 
         return back()->with('info', 'Eliminado correctamente');
+    }
+
+    public function exportExcel()
+    {
+        return Excel::download(new SchoolsExport, 'Colegios.xlsx');
     }
 }

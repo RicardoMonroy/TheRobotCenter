@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Student;
 use Illuminate\Http\Request;
+use App\User;
 use App\School;
 use App\Group;
 
@@ -30,8 +31,9 @@ class StudentController extends Controller
     {
         $schools = School::get();
         $groups = Group::get();
+        $users = User::get();
 
-        return view('students.create', compact('schools', 'groups'));
+        return view('students.create', compact('users', 'schools', 'groups'));
     }
 
     /**
@@ -72,9 +74,10 @@ class StudentController extends Controller
         $student = Student::find($id);
         $schools = School::get();
         $groups = Group::get();
+        $users = User::get();
 
 
-        return view('students.edit', compact('student', 'schools', 'groups'));
+        return view('students.edit', compact('users', 'student', 'schools', 'groups'));
     }
 
     /**

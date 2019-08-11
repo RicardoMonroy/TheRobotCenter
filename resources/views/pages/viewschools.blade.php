@@ -94,10 +94,10 @@
                                     <div class="cours-bx">
                                         <div class="action-box">
                                             <img src="{{ $school->picture }}" alt="{{ $school->name }}">
-                                            <a href="{{ route('details', $school->id) }}" class="btn">Ir a la escuela</a>
+                                            {{-- <a href="{{ route('details', $school->id) }}" class="btn">Ir a la escuela</a> --}}
                                         </div>
                                         <div class="info-bx text-center">
-                                            <h5><a href="{{ route('details', $school->id) }}">{{ $school->name }}</a></h5>
+                                            <h5><a href="#">{{ $school->name }}</a></h5>
                                             <span></span>
                                         </div>
                                         {{-- <div class="cours-more-info">

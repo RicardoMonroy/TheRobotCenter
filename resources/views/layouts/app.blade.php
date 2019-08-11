@@ -34,6 +34,11 @@
 	<script src="{{ asset('assets/js/respond.min.js') }}"></script>
 	<![endif]-->
 
+	{{-- DataTables --}}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">    
+
 	<!-- All PLUGINS CSS ============================================= -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/assets.css') }}">
 
@@ -52,6 +57,8 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/revolution/css/settings.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/revolution/css/navigation.css') }}">
 	<!-- REVOLUTION SLIDER END -->
+
+
 </head>
 <body id="bg">
 <div class="page-wraper">
@@ -103,6 +110,11 @@
 <script src="{{ asset('assets/vendors/revolution/js/extensions/revolution.extension.parallax.min.js') }}"></script>
 <script src="{{ asset('assets/vendors/revolution/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
 <script src="{{ asset('assets/vendors/revolution/js/extensions/revolution.extension.video.min.js') }}"></script>
+
+{{-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script> --}}
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
 <script>
 jQuery(document).ready(function() {
 	var ttrevapi;
@@ -190,6 +202,33 @@ jQuery(document).ready(function() {
 	}
 });
 </script>
+<script>
+		$(document).ready(function() {
+		  $('#clases').DataTable({
+			"language": {
+			  "info": "_TOTAL_ registros",
+			  "search": "Buscar",
+			  "paginate": {
+				"next": "Siguiente",
+				"previous": "Anterior"
+			  },
+			  "lengthMenu": 'Mostrar <select class="form-control">'+'<option value="10">10</option>'+
+											   '<option value="25">25</option>'+
+											   '<option value="50">50</option>'+
+											   '<option value="100">100</option>'+
+											   '<option value="-1">Todos</option>'+
+											   '</select> registros',
+			  "loadingRecords": "Cargando...",
+			  "processing": "Procesando...",
+			  "emptyTable": "No hay datos",
+			  "zeroRecords": "No hay coincidencias",
+			  "infoEmpty": "Ningún registro",
+			  "infoFiltered": "encontrados"
+  
+			}
+		  });
+		} );
+	  </script>
 </body>
 
 </html>

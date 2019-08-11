@@ -11,12 +11,12 @@
     </li>
     <!-- Breadcrumb Menu-->
     <li class="breadcrumb-menu d-md-down-none">
-    <div class="btn-group" role="group" aria-label="Button group">
+    {{-- <div class="btn-group" role="group" aria-label="Button group">
         @can('roles.create')
             <a class="btn" href="{{ route('roles.create') }}">
                 <i class="icon-plus"></i> Crear</a>
         @endcan
-    </div>
+    </div> --}}
     </li>
 </ol>
 <div class="container-fluid">
@@ -32,8 +32,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        Roles
+                    <div class="card-header">Roles
+                        <div class="card-header-actions">
+                            {{-- <a class="card-header-action btn-setting" href="{{ route('schools.excel') }}">
+                                <i class="icon-cloud-download"></i> Descargar</a> --}}
+                            @can('schools.create')
+                                <a class="card-header-action btn-setting" href="{{ route('roles.create') }}">
+                                    <i class="icon-plus"></i> Crear</a>
+                            @endcan
+                        </div>
                     </div>
                     <div class="card-body">
                         <table id="roles" class="table table-striped table-hover">

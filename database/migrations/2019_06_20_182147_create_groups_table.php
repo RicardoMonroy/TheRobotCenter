@@ -19,15 +19,15 @@ class CreateGroupsTable extends Migration
 
             // Un grupo tiene un nivel
             $table->unsignedBigInteger('level_id')->nullable();
-            $table->foreign('level_id')->references('id')->on('levels');
+            $table->foreign('level_id')->references('id')->on('levels')->onDelete('cascade');
 
             // Un grupo pertenece a una escuela
             $table->unsignedBigInteger('school_id')->nullable();
-            $table->foreign('school_id')->references('id')->on('schools');
+            $table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
             
-            // Un grupo tiene muchos cursos
-            $table->unsignedBigInteger('course_id')->nullable();
-            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            // Un grupo tiene muchos profesores
+            $table->unsignedBigInteger('teacher_id')->nullable();
+            $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('cascade');
 
             $table->timestamps();
         });

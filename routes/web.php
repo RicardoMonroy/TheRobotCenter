@@ -17,6 +17,12 @@ Route::get('pages/viewschools', 'WellcomeConroller@viewschools')->name('viewscho
 
 Auth::routes();
 
+Route::group(['middleware' => 'auth'], function () {
+	Route::get('pages/details', 'WellcomeConroller@details')->name('details');
+	Route::get('pages/group/{id}', 'WellcomeConroller@clases')->name('clases');
+	Route::get('pages/group/clase/{id}', 'WellcomeConroller@class')->name('class');
+});
+
 Route::group(['middleware' => 'Dashboard'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
 
@@ -24,9 +30,9 @@ Route::group(['middleware' => 'Dashboard'], function () {
 
 Route::middleware(['auth', 'Dashboard'])->group(function () {
 	//FrontEnd
-	Route::get('pages/{id}', 'WellcomeConroller@details')->name('details');
-	Route::get('pages/group/{id}', 'WellcomeConroller@clases')->name('clases');
-	Route::get('pages/group/clase/{id}', 'WellcomeConroller@class')->name('class');
+	// Route::get('pages/{id}', 'WellcomeConroller@details')->name('details');
+	// Route::get('pages/group/{id}', 'WellcomeConroller@clases')->name('clases');
+	// Route::get('pages/group/clase/{id}', 'WellcomeConroller@class')->name('class');
 	
 	// HomePage
     Route::post('homepage/store', 'PageController@store')->name('homepage.store')
@@ -92,7 +98,12 @@ Route::middleware(['auth', 'Dashboard'])->group(function () {
 		->middleware('permission:users.destroy');
 
 	Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit')
-        ->middleware('permission:users.edit');
+		->middleware('permission:users.edit');
+		
+	Route::get('users-upload', 'UserController@upload')->name('users.upload')
+		->middleware('permission:users.create');
+	
+	Route::post('import-list-excel', 'UserController@importExcel')->name('users.import.excel');
 
     //Permisos
     Route::post('permissions/store', 'PermissionController@store')->name('permissions.store')
@@ -248,6 +259,8 @@ Route::middleware(['auth', 'Dashboard'])->group(function () {
 
 	Route::get('schools/{school}/edit', 'SchoolController@edit')->name('schools.edit')
 		->middleware('permission:schools.edit');
+	
+	Route::get('schools-excel', 'SchoolController@exportExcel')->name('schools.excel');
 
 	//Alumnos
     Route::post('students/store', 'StudentController@store')->name('students.store')

@@ -20,7 +20,7 @@ class Group extends Model
         return $this->belongsTo('App\School');
     }
 
-    public function course()
+    public function courses()
     {
         return $this->belongsToMany('App\Course');
     }
@@ -28,5 +28,10 @@ class Group extends Model
     public function students()
     {
         return $this->hasMany('App\Student');
+    }
+
+    public function teachers()
+    {
+        return $this->belongsToMany('App\Teacher');
     }
 }

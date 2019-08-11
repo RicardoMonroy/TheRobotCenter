@@ -15,8 +15,8 @@ class Teacher extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function course()
+    public function groups()
     {
-        return $this->hasMany('App\Course');
+        return $this->belongsToMany('App\Group');
     }
 }

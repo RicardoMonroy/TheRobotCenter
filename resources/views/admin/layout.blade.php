@@ -27,7 +27,9 @@
     <link href="{{ asset('dashboard/vendors/pace-progress/css/pace.min.css') }}" rel="stylesheet">
     {{-- DataTables --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">   
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">    
+
     
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
@@ -71,6 +73,11 @@
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+
+    
     <script src="{{ asset('dashboard/vendors/ckeditor/ckeditor.js') }}"></script>
     {{-- <script>
         CKEDITOR.config.height = 400;
@@ -93,6 +100,41 @@
     </script>
 
     <script>
+      $(document).ready( function() {
+        $('#schools').DataTable( {
+          // dom: "<'row'<'col-md-6'l><'col-md-6'f>><'row'<'col-md-6'B><'col-md-6'p>><'row'<'col-md-12't>><'row'<'col-md-12'i>>",
+          dom: 'Bfrtip',
+          buttons: [{
+            extend: 'excelHtml5',
+            autoFilter: true,
+              sheetName: 'Colegios'
+          }],
+          "language": {
+            "info": "_TOTAL_ registros",
+            "search": "Buscar",
+            "paginate": {
+              "next": "Siguiente",
+              "previous": "Anterior"
+            },
+            "lengthMenu": 'Mostrar <select class="form-control">'+'<option value="10">10</option>'+
+                                             '<option value="25">25</option>'+
+                                             '<option value="50">50</option>'+
+                                             '<option value="100">100</option>'+
+                                             '<option value="-1">Todos</option>'+
+                                             '</select> registros',
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "emptyTable": "No hay datos",
+            "zeroRecords": "No hay coincidencias",
+            "infoEmpty": "Ningún registro",
+            "infoFiltered": "encontrados"
+
+          }
+        } );
+      } );
+    </script>
+
+    {{-- <script>
       $(document).ready(function() {
         $('#schools').DataTable({
           "language": {
@@ -118,7 +160,7 @@
           }
         });
       } );
-    </script>
+    </script> --}}
 
     <script>
       $(document).ready(function() {

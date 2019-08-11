@@ -16,18 +16,18 @@ class CreateCoursesTable extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('code')->unique()->nullable(); // Campo estra para el código de la materia
-            $table->string('name');
-            $table->string('description')->nullable();
+            $table->string('name')->nullable();
+            $table->text('description')->nullable();
             $table->string('picture')->nullable();
             $table->text('editor')->nullable();
 
             // Un curso puede tener muchos profesores
-            $table->unsignedBigInteger('teacher_id')->nullable();
-            $table->foreign('teacher_id')->references('id')->on('teachers');
+            // $table->unsignedBigInteger('teacher_id')->nullable();
+            // $table->foreign('teacher_id')->references('id')->on('teachers');
 
             // Un curso puede tener muchas categorías
-            $table->unsignedBigInteger('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('categories');
+            // $table->unsignedBigInteger('category_id')->nullable();
+            // $table->foreign('category_id')->references('id')->on('categories');
 
             // Un curso tiene un nivel
             $table->unsignedBigInteger('level_id')->nullable();

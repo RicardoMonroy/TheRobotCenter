@@ -11,12 +11,12 @@
     </li>
     <!-- Breadcrumb Menu-->
     <li class="breadcrumb-menu d-md-down-none">
-    <div class="btn-group" role="group" aria-label="Button group">
+    {{-- <div class="btn-group" role="group" aria-label="Button group">
         @can('users.create')
             <a class="btn" href="{{ route('users.create') }}">
                 <i class="icon-plus"></i> Crear</a>
         @endcan
-    </div>
+    </div> --}}
     </li>
 </ol>
 <div class="container-fluid">
@@ -32,8 +32,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        Usuarios
+                    <div class="card-header">Usuarios
+                        <div class="card-header-actions">
+                            @can('users.create')
+                                <a class="card-header-action btn-setting" href="{{ route('users.upload') }}">
+                                    <i class="icon-arrow-up-circle"></i> Subir un Excel</a>
+                                <a class="card-header-action btn-setting" href="{{ route('users.create') }}">
+                                    <i class="icon-plus"></i> Crear un usuario</a>
+                            @endcan
+                        </div>
                     </div>
                     <div class="card-body">
                         <table id="users"" class="table table-striped table-hover">
@@ -41,6 +48,7 @@
                                 <tr>
                                     <th width="10px">ID</th>
                                     <th>Nombre</th>
+                                    <th>Email</th>
                                     <th>&nbsp;</th>
                                     <th>&nbsp;</th>
                                     <th>&nbsp;</th>
@@ -51,6 +59,7 @@
                                     <tr>
                                         <td>{{ $user->id }}</td>
                                         <td>{{ $user->name }}</td>
+                                        <td>{{ $user->email }}</td>
                                         @can('users.show')
                                         <td width="10px">
                                             <div class="btn-group" role="group" aria-label="Button group">

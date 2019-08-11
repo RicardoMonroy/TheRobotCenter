@@ -14,12 +14,12 @@
         </li>
         <!-- Breadcrumb Menu-->
         <li class="breadcrumb-menu d-md-down-none">
-        <div class="btn-group" role="group" aria-label="Button group">
+        {{-- <div class="btn-group" role="group" aria-label="Button group">
             @can('teachers.create')
                 <a class="btn" href="{{ route('teachers.create') }}">
                     <i class="icon-plus"></i> Crear</a>
             @endcan
-        </div>
+        </div> --}}
         </li>
     </ol>
     <div class="container-fluid">

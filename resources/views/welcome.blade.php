@@ -388,24 +388,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 heading-bx left">
-                    <h2 class="title-head">Cursos <span>Populares</span></h2>
+                    <h2 class="title-head">Colegios <span>Hermanos</span></h2>
                     <p>Deja que tu hijo desarrolle sus capacidades y habilidades con nosotros, a través de nuestros cursos y talleres, tus hijos ¡crearán, construirán, programarán y se divertirán!</p>
                 </div>
             </div>
             <div class="row">
                 <div class="courses-carousel owl-carousel owl-btn-1 col-12 p-lr0">
-                    @foreach($courses as $course)
+                    @foreach($schools as $school)
                     <div class="item">
 
                         <div class="cours-bx">
-                            {{-- <div class="action-box">
-                                <img src="{{ $course->picture }}" alt="{{ $course->name }}">
-                                <a href="{{ route('pages.viewschools', $course->id) }}" class="btn">Ir al Curso</a>
+                            <div class="action-box">
+                                <img src="{{ $school->picture }}" alt="{{ $school->name }}">
+                                {{-- <a href="{{ route('pages.viewschools', $school->id) }}" class="btn">Ir al Curso</a> --}}
                             </div>
                             <div class="info-bx text-center">
-                                <h5><a href="{{ route('pages.viewschools', $course->id) }}">{{ $course->name }}</a></h5>
+                                <h5>{{ $school->name }}</h5>
                                 <span></span>
-                            </div> --}}
+                            </div>
                             {{-- <div class="cours-more-info">
                                 <div class="review">
                                     <span>3 Review</span>

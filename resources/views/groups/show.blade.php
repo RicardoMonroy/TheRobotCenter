@@ -14,21 +14,28 @@
         </li>
         <!-- Breadcrumb Menu-->
         <li class="breadcrumb-menu d-md-down-none">
-        <div class="btn-group" role="group" aria-label="Button group">
+        {{-- <div class="btn-group" role="group" aria-label="Button group">
             @can('groups.create')
                 <a class="btn" href="{{ route('groups.create') }}">
                     <i class="icon-plus"></i> Crear</a>
             @endcan
-        </div>
+        </div> --}}
         </li>
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">
-                            Crear
+                        <div class="card-header">Ver
+                            <div class="card-header-actions">
+                                <a class="card-header-action btn-setting" href="{{ route('users.upload') }}">
+                                    <i class="icon-arrow-up-circle"></i> Subir un Excel</a>
+                                @can('schools.create')
+                                    <a class="card-header-action btn-setting" href="{{ route('groups.create') }}">
+                                        <i class="icon-plus"></i> Crear</a>
+                                @endcan
+                            </div>
                         </div>
                         <div class="card-body">
                             {{-- <p><strong>ID: </strong>     {{ $group->id }}</p> --}}
@@ -37,13 +44,36 @@
                             <p><strong>Nivel: </strong>  {{ !empty($group->level->name) ? $group->level->name:'' }}</p>
                         </div>
                         <div class="card-footer">
-                            <p>Este grupo tiene las siguientes clases</p>
-                            @foreach($courses as $course)
-                                <p>{{ $course->code }} - {{ $course->name }}</p>
-                            @endforeach
+                            <div class="col-md-6 col-sm-6">
+                                <p>Este grupo tiene las siguientes clases</p>
+                                @foreach($courses as $course)
+                                    <p>{{ $course->code }} - {{ $course->name }}</p>
+                                @endforeach
+                            </div>
+                                                       
                         </div>
                     </div>
                 </div>
+                <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header">Alumnos
+                                <div class="card-header-actions">
+                                    {{-- <a class="card-header-action btn-setting" href="{{ route('users.upload') }}">
+                                        <i class="icon-arrow-up-circle"></i> Subir un Excel</a>
+                                    @can('schools.create')
+                                        <a class="card-header-action btn-setting" href="{{ route('groups.create') }}">
+                                            <i class="icon-plus"></i> Crear</a>
+                                    @endcan --}}
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p>Este grupo tiene los siguientes alumnos</p>
+                                    @foreach($students as $student)
+                                        <p>{{ $student->user->name }}</p>
+                                    @endforeach
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>

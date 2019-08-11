@@ -10,11 +10,6 @@ class Course extends Model
         'code', 'name', 'description', 'picture', 'editor', 'teacher_id', 'category_id', 'level_id',
     ];
 
-    public function teacher()
-    {
-        return $this->belongsTo('App\Teacher');
-    }
-
     public function level()
     {
         return $this->hasOne('App\Level');
@@ -25,7 +20,7 @@ class Course extends Model
         return $this->hasOne('App\Category');
     }
 
-    public function group()
+    public function groups()
     {
         return $this->belongsToMany('App\Group');
     }

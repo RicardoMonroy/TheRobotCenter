@@ -6,6 +6,7 @@ use App\Group;
 use App\Level;
 use App\School;
 use App\Course;
+use App\Student;
 use Illuminate\Http\Request;
 use Caffeinated\Shinobi\Models\Permission;
 
@@ -47,7 +48,7 @@ class GroupController extends Controller
     {
         $group = Group::create($request->all());
 
-        $group->course()->sync($request->get('courses'));
+        $group->courses()->sync($request->get('courses'));
 
         return redirect()->route('groups.index', $group->id)
             ->with('info', 'Nivel guardado con éxito');
@@ -62,9 +63,10 @@ class GroupController extends Controller
     public function show($id)
     {
         $group = Group::find($id);
-        $courses = $group->course;
+        $courses = $group->courses;
+        $students = $group->students;
 
-        return view('groups.show', compact('group', 'courses'));
+        return view('groups.show', compact('group', 'courses', 'students'));
     }
 
     /**
@@ -96,7 +98,7 @@ class GroupController extends Controller
         $group = Group::find($id);
         $group->update($request->all());
 
-        $group->course()->sync($request->get('courses'));
+        $group->courses()->sync($request->get('courses'));
 
         return redirect()->route('groups.index', $group->id)
             ->with('info', 'Grupo actualizado con éxito');

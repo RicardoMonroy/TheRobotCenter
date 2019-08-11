@@ -11,12 +11,12 @@
     </li>
     <!-- Breadcrumb Menu-->
     <li class="breadcrumb-menu d-md-down-none">
-    <div class="btn-group" role="group" aria-label="Button group">
+    {{-- <div class="btn-group" role="group" aria-label="Button group">
         @can('schools.create')
             <a class="btn" href="{{ route('schools.create') }}">
                 <i class="icon-plus"></i> Crear</a>
         @endcan
-    </div>
+    </div> --}}
     </li>
 </ol>
 <div class="container-fluid">
@@ -32,8 +32,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        Escuelas
+                    <div class="card-header">Escuelas
+                        <div class="card-header-actions">
+                            <a class="card-header-action btn-setting" href="{{ route('users.upload') }}">
+                                <i class="icon-arrow-up-circle"></i> Subir un Excel</a>
+                            @can('schools.create')
+                                <a class="card-header-action btn-setting" href="{{ route('schools.create') }}">
+                                    <i class="icon-plus"></i> Crear</a>
+                            @endcan
+                        </div>
                     </div>
                     <div class="card-body">
                         <table id="schools" class="table table-striped table-hover">
@@ -97,3 +104,25 @@
     </div>
 </div>
 @endsection
+
+
+{{-- <div class="card">
+    <div class="card-header">Card actions
+        <div class="card-header-actions">
+            <a class="card-header-action btn-setting" href="#">
+                <i class="icon-settings"></i>
+            </a>
+            <a class="card-header-action btn-minimize" href="#" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true">
+                <i class="icon-arrow-up"></i>
+            </a>
+            <a class="card-header-action btn-close" href="#">
+                <i class="icon-close"></i>
+            </a>
+        </div>
+    </div>
+    <div class="collapse show" id="collapseExample">
+    <div class="card-body">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+    </div>
+    </div>
+    </div> --}}

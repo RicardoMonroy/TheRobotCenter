@@ -704,7 +704,8 @@
 	position:relative;
 }
 .secondary-inner ul li a{
-	color:#000;
+	color:#f7b205;
+	padding: 30px 12px;
 }
 .search-btn{
 	padding-left:10px;

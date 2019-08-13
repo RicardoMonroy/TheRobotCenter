@@ -119,10 +119,10 @@
                                 </div>
                             </div> --}}
                             {{-- <div class="widget widget_archive">
-                                <h5 class="widget-title style-1">En mi grupo está:</h5>
+                                <h5 class="widget-title style-1">Mis grupos son:</h5>
                                 <ul>
-                                @foreach ($students as $student)
-                                    <li class="active">{{ $student->user->name }}</li>    
+                                @foreach ($groups as $group)
+                                    <li class="active">{{ $group->name }}</li>    
                                 @endforeach                                    
                                 </ul>
                             </div> --}}
@@ -217,7 +217,7 @@
                             @endforeach
                         </div>
                     @elseif($user->teacher)
-                        <h3>Clases/Grupos</h3>
+                        <h3>Clases</h3>
                         <div class="row">
                             <div class="col-md-12 col-lg-12 col-sm-12 m-b30">
                                 <table id="clases" class="table table-striped table-hover">
@@ -225,20 +225,22 @@
                                         <tr>
                                             <th width="20px">Código</th>
                                             <th>Nombre</th>
-                                            <th>Grupo</th>
-                                            <th>Escuela</th>
+                                            {{-- <th>Grupo</th>
+                                            <th>Escuela</th> --}}
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach($courses as $course)
-                                            @foreach($course->groups as $group)
+                                            {{-- @foreach($course->groups as $group) --}}
                                                 <tr>
-                                                    <td><a href="{{ route('class', $course->id) }}">{{ $course->code }}</a></td>
+                                                    <td><a href="">{{ $course->code }}</a></td>
+                                                    <td><a href="">{{ $course->name }}</a></td>
+                                                    {{-- <td><a href="{{ route('class', $course->id) }}">{{ $course->code }}</a></td>
                                                     <td><a href="{{ route('class', $course->id) }}">{{ $course->name }}</a></td>
                                                     <td><a href="{{ route('class', $course->id) }}">{{ $group->name }}</a></td>
-                                                    <td><a href="{{ route('class', $course->id) }}">{{ $group->school->name }}</a></td>                                                    
+                                                    <td><a href="{{ route('class', $course->id) }}">{{ $group->school->name }}</a></td>                                                     --}}
                                                 </tr>
-                                            @endforeach
+                                            {{-- @endforeach --}}
                                         @endforeach
                                     </tbody>
                                 </table>

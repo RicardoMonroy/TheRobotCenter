@@ -19,4 +19,9 @@ class Teacher extends Model
     {
         return $this->belongsToMany('App\Group');
     }
+
+    public function courses()
+    {
+        return $this->belongsToMany('App\Course');
+    }
 }

@@ -31,6 +31,8 @@
                             Lista de cambios
                         </div>
                         <div class="card-body">
+                            <li>13 Agosto - Homepage - Se aplicaron los filtros para que profesores vean solo sus clases</li>
+                            <li>13 Agosto - BackOffice - Se actualizó la parte de alta de profesores; se pueden asignar clases a cada profcesor</li>
                             <li>11 Agosto - Homepage - Se hicieron modificaciones a la lógica de navegacionen cursos. Se aplicaron filtros por profesor, estudiante y administrativo</li>
                             <li>10 Agosto - Homepage - Se arregló el problema de visualización de menú en dispositivos pequeños (se añadió un menú lateral)</li>
                             <li>8 Agosto - BackOffice - Actualización de vista en los grupos (se puede ver a detalle cada grupo con clases y alumnos)</li>

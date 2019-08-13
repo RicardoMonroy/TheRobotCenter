@@ -40,7 +40,7 @@ class WellcomeConroller extends Controller
             
         }elseif($user->teacher){
             $students = Student::all();
-            $courses = Course::all();
+            $courses = $user->teacher->courses;
             $groups = $user->teacher->groups;
             
         }elseif(!$user->student){

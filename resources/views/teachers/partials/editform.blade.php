@@ -19,6 +19,22 @@
     {{ Form::label('website_url', 'Website URL') }}
     {{ Form::text('website_url', null, ['class' => 'form-control', 'id' => 'website_url']) }}
 </div>
+<hr>
+<h3>Asignación de clases</h3>
+<div class="col-md-6">
+<div class="form-group">
+    <ul class="list-unstyled">
+        @foreach($courses as $course)
+        <li>
+            <label>
+            {{ Form::checkbox('courses[]', $course->id, null) }}
+            {{ $course->name }}
+            </label>
+        </li>
+        @endforeach
+    </ul>
+</div>
+</div>
 
 <div class="form-group">
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}

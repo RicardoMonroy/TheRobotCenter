@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Teacher;
+use App\Course;
 use Caffeinated\Shinobi\Models\Role;
 use Illuminate\Http\Request;
 use Caffeinated\Shinobi\Models\Permission;
@@ -30,7 +31,9 @@ class TeacherController extends Controller
     public function create()
     {
         $users = User::get();
-        return view('teachers.create', compact('users'));
+        $courses = Course::get();
+
+        return view('teachers.create', compact('users', 'courses'));
     }
 
     /**
@@ -42,6 +45,8 @@ class TeacherController extends Controller
     public function store(Request $request)
     {
         $teacher = Teacher::create($request->all());
+
+        $teacher->courses()->sync($request->get('courses'));
 
         return redirect()->route('teachers.index', $teacher->id)
             ->with('info', 'Nivel guardado con éxito');
@@ -70,7 +75,9 @@ class TeacherController extends Controller
     {
         $teacher = Teacher::find($id);
 
-        return view('teachers.edit', compact('teacher'));
+        $courses = Course::get();
+
+        return view('teachers.edit', compact('teacher', 'courses'));
     }
 
     /**
@@ -85,8 +92,10 @@ class TeacherController extends Controller
         $teacher = Teacher::find($id);
         $teacher->update($request->all());
 
+        $teacher->courses()->sync($request->get('courses'));
+
         return redirect()->route('teachers.index', $teacher->id)
-            ->with('info', 'Nivel actualizado con éxito');
+            ->with('info', 'Profesor actualizado con éxito');
     }
 
     /**

@@ -24,4 +24,9 @@ class Course extends Model
     {
         return $this->belongsToMany('App\Group');
     }
+
+    public function teachers()
+    {
+        return $this->belongsToMany('App\Teacher');
+    }
 }

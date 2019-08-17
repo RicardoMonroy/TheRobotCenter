@@ -233,8 +233,8 @@
                                         @foreach($courses as $course)
                                             {{-- @foreach($course->groups as $group) --}}
                                                 <tr>
-                                                    <td><a href="">{{ $course->code }}</a></td>
-                                                    <td><a href="">{{ $course->name }}</a></td>
+                                                    <td><a href="{{ route('class', $course->id) }}">{{ $course->code }}</a></td>
+                                                    <td><a href="{{ route('class', $course->id) }}">{{ $course->name }}</a></td>
                                                     {{-- <td><a href="{{ route('class', $course->id) }}">{{ $course->code }}</a></td>
                                                     <td><a href="{{ route('class', $course->id) }}">{{ $course->name }}</a></td>
                                                     <td><a href="{{ route('class', $course->id) }}">{{ $group->name }}</a></td>

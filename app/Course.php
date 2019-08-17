@@ -29,4 +29,9 @@ class Course extends Model
     {
         return $this->belongsToMany('App\Teacher');
     }
+
+    public function materials()
+    {
+        return $this->belongsToMany('App\Material');
+    }
 }

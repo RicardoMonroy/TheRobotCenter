@@ -31,6 +31,9 @@
                             Lista de cambios
                         </div>
                         <div class="card-body">
+                            <li>17 Agosto - Homepage - Se trabajó en la página del curso para visualizar la lista de materiales</li>
+                            <li>17 Agosto - BackOffice - Se realizaron las actualizaciones para relacionar cursos con materiales</li>
+                            <li>16 Agosto - BackOffice - Se creó la lógica de los materiales para las clases y se implementó en la base de datos</li>
                             <li>13 Agosto - Homepage - Se aplicaron los filtros para que profesores vean solo sus clases</li>
                             <li>13 Agosto - BackOffice - Se actualizó la parte de alta de profesores; se pueden asignar clases a cada profcesor</li>
                             <li>11 Agosto - Homepage - Se hicieron modificaciones a la lógica de navegacionen cursos. Se aplicaron filtros por profesor, estudiante y administrativo</li>
@@ -55,7 +58,8 @@
                             <li>20 julio - BackOffice - Se arregló el problema del almacenamiento de las imágenes en el editor de cursos</li>
                             <br>
                             <h6>Pendientes por hacer:</h6>
-                            <li>Habilitar espacio para dar de alta en cursos el material que se debe utilizar. Ej: Robot EV3, Robot Wedo 1.0, Robot Wedo 2.0, Neumática. </li>
+                            <li>Trabajar en la lógica para implementar ciclos escolares (cada colegio tiene sus respectivos ciclos)</li>
+                            <li>Implementar en el Dashboard una sección para recibir los requerimientos de forma directa (requerimientos al programador)</li>
 
                         </div>
                     </div>

@@ -334,5 +334,36 @@ class PermissionsTableSeeder extends Seeder
             'slug'          => 'students.destroy',
             'description'   => 'Podría eliminar cualquier alumno del sistema',
         ]);
+
+        //Materiales de cursos
+        Permission::create([
+            'name'          => 'Navegar materiales',
+            'slug'          => 'materials.index',
+            'description'   => 'Lista y navega todos los materiales del sistema',
+        ]);
+
+        Permission::create([
+            'name'          => 'Ver detalle de un material',
+            'slug'          => 'materials.show',
+            'description'   => 'Ve en detalle cada material del sistema',
+        ]);
+
+        Permission::create([
+            'name'          => 'Creación de materiales',
+            'slug'          => 'materials.create',
+            'description'   => 'Podría crear nuevos materiales en el sistema',
+        ]);
+
+        Permission::create([
+            'name'          => 'Edición de materiales',
+            'slug'          => 'materials.edit',
+            'description'   => 'Podría editar cualquier dato de un material del sistema',
+        ]);
+
+        Permission::create([
+            'name'          => 'Eliminar materiales',
+            'slug'          => 'materials.destroy',
+            'description'   => 'Podría eliminar cualquier material del sistema',
+        ]);
     }
 }

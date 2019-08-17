@@ -21,15 +21,23 @@
 {{-- <div class="form-group">
     {{ Form::label('section_two', 'Segunda sección: DISEÑAR O CONSTRUIR') }}
     {{ Form::textarea('section_two', null, ['class' => 'form-control', 'id' => 'section_two']) }}
-</div>
-<div class="form-group">
-    {{ Form::label('section_tree', 'Tercer sección: ANALIZAR') }}
-    {{ Form::textarea('section_tree', null, ['class' => 'form-control', 'id' => 'section_tree']) }}
-</div>
-<div class="form-group">
-    {{ Form::label('section_four', 'Cuarta sección: INNOVAR') }}
-    {{ Form::textarea('section_four', null, ['class' => 'form-control', 'id' => 'section_four']) }}
 </div> --}}
+<hr>
+<h3>Lista de materiales que requiere la clase</h3>
+<div class="form-group">
+    <ul class="list-unstyled">
+        @foreach($materials as $material)
+        <li>
+            <label>
+            {{ Form::checkbox('materials[]', $material->id, null) }}
+            {{ $material->name }}
+            <em>({{ !empty($material->description) ? $material->description:'Este material no tiene una descripción' }})</em>
+            </label>
+        </li>
+        @endforeach
+    </ul>
+</div>
+
 
 <div class="form-group">
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}

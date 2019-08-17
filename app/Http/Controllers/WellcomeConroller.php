@@ -62,8 +62,9 @@ class WellcomeConroller extends Controller
     public function class($id)
     {
         $course = Course::find($id);
+        $materials = $course->materials;
 
-        return view('pages.group.clase.class', compact('course'));
+        return view('pages.group.clase.class', compact('course', 'materials'));
     }
     
 }

@@ -283,4 +283,26 @@ Route::middleware(['auth', 'Dashboard'])->group(function () {
 
 	Route::get('students/{student}/edit', 'StudentController@edit')->name('students.edit')
 		->middleware('permission:students.edit');
+
+	//
+	Route::post('materials/store', 'MaterialController@store')->name('materials.store')
+        ->middleware('permission:materials.create');
+
+	Route::get('materials', 'MaterialController@index')->name('materials.index')
+        ->middleware('permission:materials.index');
+
+    Route::get('materials/create', 'MaterialController@create')->name('materials.create')
+		->middleware('permission:materials.create');
+
+	Route::put('materials/{level}', 'MaterialController@update')->name('materials.update')
+		->middleware('permission:materials.edit');
+
+	Route::get('materials/{level}', 'MaterialController@show')->name('materials.show')
+		->middleware('permission:materials.show');
+
+	Route::delete('materials/{level}', 'MaterialController@destroy')->name('materials.destroy')
+		->middleware('permission:materials.destroy');
+
+	Route::get('materials/{level}/edit', 'MaterialController@edit')->name('materials.edit')
+        ->middleware('permission:materials.edit');
 });

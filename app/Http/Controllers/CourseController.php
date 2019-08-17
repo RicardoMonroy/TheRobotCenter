@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\Material;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -28,7 +29,9 @@ class CourseController extends Controller
     public function create()
     {
         $courses = Course::get();
-        return view('courses.create', compact('courses'));
+        $materials = Material::get();
+
+        return view('courses.create', compact('courses', 'materials'));
     }
 
     /**
@@ -46,6 +49,8 @@ class CourseController extends Controller
             $course->fill(['picture' => asset($path)])->save();
         }
 
+        $course->materials()->sync($request->get('materials'));
+
         return redirect()->route('courses.index', $course->id)
             ->with('info', 'Curso guardado con éxito');
     }
@@ -59,8 +64,9 @@ class CourseController extends Controller
     public function show($id)
     {
         $course = Course::find($id);
+        $materials = $course->materials;
 
-        return view('courses.show', compact('course'));
+        return view('courses.show', compact('course', 'materials'));
     }
 
     /**
@@ -73,7 +79,9 @@ class CourseController extends Controller
     {
         $course = Course::find($id);
 
-        return view('courses.edit', compact('course'));
+        $materials = Material::get();
+
+        return view('courses.edit', compact('course', 'materials'));
     }
 
     /**
@@ -92,6 +100,8 @@ class CourseController extends Controller
             $path = Storage::disk('public')->put('PortadasCursos', $request->file('picture'));
             $course->fill(['picture' => asset($path)])->save();
         }
+
+        $course->materials()->sync($request->get('materials'));
 
         return redirect()->route('courses.index', $course->id)
             ->with('info', 'Curso actualizado con éxito');

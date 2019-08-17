@@ -31,6 +31,10 @@
                             <div class="card-header-actions">
                                 {{-- <a class="card-header-action btn-setting" href="{{ route('schools.excel') }}">
                                     <i class="icon-cloud-download"></i> Descargar</a> --}}
+                                @can('schools.edit')
+                                    <a class="card-header-action btn-setting" href="{{ route('courses.edit', $course->id) }}">
+                                        <i class="icon-pencil"></i> Editar</a>
+                                @endcan
                                 @can('schools.create')
                                     <a class="card-header-action btn-setting" href="{{ route('courses.create') }}">
                                         <i class="icon-plus"></i> Crear</a>
@@ -41,8 +45,16 @@
                             <p><strong>Código de curso: </strong>     {{ $course->code }}</p>
                             <p><strong>Nombre: </strong>     {{ $course->name }}</p>
                             <p><strong>Descripción: </strong>     {{ $course->description }}</p>
+                            <p><strong>Materiales a utilizar: </strong><br>
+                                <ul>
+                                    @foreach ($materials as $material)
+                                        <li>{{ $material->name }} - {{ !empty($material->description) ? $material->description:'Este material no tiene descrición' }}</li>    
+                                    @endforeach                                    
+                                </ul>
+                            
+                            </p>
                             <p><strong>Portada:</strong>  <img src="{{ $course->picture }}" alt="{{ $course->name }}"></p>
-                            <p><strong>PREGUNTAR:</strong>  {!! $course->editor !!}</p>
+                            <p><strong>Contenido del curso:</strong>  {!! $course->editor !!}</p>
                         </div>
                     </div>
                 </div>

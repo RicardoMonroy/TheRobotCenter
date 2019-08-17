@@ -10,6 +10,8 @@
                                  {{ Request::is('categories*') ? 'open' : '' }}
                                  {{ Request::is('teachers*') ? 'open' : '' }}
                                  {{ Request::is('curses*') ? 'open' : '' }}
+                                 {{ Request::is('students*') ? 'open' : '' }}
+                                 {{ Request::is('materials*') ? 'open' : '' }}
                                  ">
     <a class="nav-link nav-dropdown-toggle" href="">
     <i class="nav-icon icon-graduation"></i> Academico</a>
@@ -71,6 +73,15 @@
                 <a class="nav-link" href="{!! route('students.index') !!}">
                     <i class="nav-icon icon-graduation"></i>
                     <span>Alumnos</span>
+                </a>
+            </li>
+        @endcan
+
+        @can('materials.index')
+            <li class="nav-item {{ Request::is('materials*') ? 'active' : '' }}">
+                <a class="nav-link" href="{!! route('materials.index') !!}">
+                    <i class="nav-icon icon-puzzle"></i>
+                    <span>Materiales</span>
                 </a>
             </li>
         @endcan

@@ -81,19 +81,19 @@
                         {{-- <div class="ttr-post-media media-effect">
                             <a href="#"><img src="{{ $course->picture }}" alt="Photo by Jean-Philippe Delberghe on Unsplash"></a>
                         </div> --}}
-                        <div class="ttr-post-info">
+                        {{-- <div class="ttr-post-info">
                             <div class="ttr-post-title ">
                                 <h2 class="post-title">{{ $course->name }}</h2>
                             </div>
                             <div class="ttr-post-text">
                                 <p>{{ $course->description }}</p>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
-                    {{-- <div class="courese-overview" id="overview">
-                        <h4>Overview</h4>
+                    <div class="courese-overview" id="overview">
+                        {{-- <h4>Overview</h4> --}}
                         <div class="row">
-                            <div class="col-md-12 col-lg-4">
+                            {{-- <div class="col-md-12 col-lg-4">
                                 <ul class="course-features">
                                     <li><i class="ti-book"></i> <span class="label">Lecturas</span> <span class="value">4</span></li>
                                     <li><i class="ti-help-alt"></i> <span class="label">Quizzes</span> <span class="value">1</span></li>
@@ -103,28 +103,28 @@
                                     <li><i class="ti-user"></i> <span class="label">Alumnos</span> <span class="value">32</span></li>
                                     <li><i class="ti-check-box"></i> <span class="label">Valoraciones</span> <span class="value">Si</span></li>
                                 </ul>
-                            </div>
+                            </div> --}}
                             <div class="col-md-12 col-lg-8">
-                                <h5 class="m-b5">Descripción del Curso</h5>
-                                <p>DISEÑAR Y CONSTRUIR: 1</p></br>
-                                <p>Diseñaremos un modelo base, al que daremos instrucciones básicas para calcular que distancia recorre por cada rotación, y haremos algunos cálculos matemáticos que nos ayuden a establecer el inicio de un vehículo autónomo.</p>
-                                <h5 class="m-b5">Recursos</h5>
-                                <p>Descarga los recursos de apoyo en el siguiente link: <a href="#">Guia para el alumno</a></p>
-                                <h5 class="m-b5">En este curso aprenderás:</h5>
+                                {{-- <h5 class="m-b5">Descripción del Curso</h5>
+                                <p>{{ $course->name }}</p></br> --}}
+                                <h5 class="m-b5">Descripción</h5>
+                                <p>{{ $course->description }}</p>
+                                <h5 class="m-b5">En este curso necesitas los siguientes materiales:</h5>
                                 <ul class="list-checked primary">
-                                    <li>MI AUTO DEL FUTURO</li>
-                                    <li>GIROS Y VUELTAS</li>
-                                    <li>ESQUIVANDO OBSTÁCULOS </li>
-                                    <li>RECORRIDO AUTÓNOMO</li>
+                                    @foreach ($materials as $material)
+                                        <li>{{ $material->name }}</li>
+                                    @endforeach                                    
                                 </ul>
                             </div>
                         </div>
-                    </div> --}}
+                    </div><br>
+                    <hr>
+
                     <div class="m-b30" id="curriculum">
                         <h4>Contenido del curso</h4>
                         <ul class="curriculum-list">
                                 <li>
-                                    <h5>Contenido del Curso</h5>
+                                    {{-- <h5>Contenido del Curso</h5> --}}
                                     <p>{!! $course->editor !!}</p>
                                     {{-- <ul>
                                         <li>

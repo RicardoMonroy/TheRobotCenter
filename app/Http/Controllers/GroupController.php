@@ -33,7 +33,7 @@ class GroupController extends Controller
     {
         $levels = Level::get();
         $schools = School::get();
-        $courses = Course::get();
+        $courses = Course::orderBy('code', 'ASC')->get();
 
         return view('groups.create', compact('levels', 'schools', 'courses'));
     }
@@ -63,8 +63,9 @@ class GroupController extends Controller
     public function show($id)
     {
         $group = Group::find($id);
-        $courses = $group->courses;
+        $courses = $group->courses()->orderBy('code', 'ASC')->get();
         $students = $group->students;
+        // dd($courses);
 
         return view('groups.show', compact('group', 'courses', 'students'));
     }
@@ -81,7 +82,7 @@ class GroupController extends Controller
 
         $levels = Level::get();
         $schools = School::get();
-        $courses = Course::get();
+        $courses = Course::orderBy('code', 'ASC')->get();
 
         return view('groups.edit', compact('group', 'levels', 'schools', 'courses'));
     }

@@ -105,7 +105,7 @@
                                 {{-- <a href="forget-password.html" class="ml-auto">Forgot Password?</a> --}}
                                 @if (Route::has('password.request'))
                                     <a class="ml-auto" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('Olvidaste tu Password?') }}
                                     </a>
                                 @endif
 							</div>

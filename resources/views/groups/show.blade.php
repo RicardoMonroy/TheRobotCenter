@@ -44,7 +44,7 @@
                             <p><strong>Nivel: </strong>  {{ !empty($group->level->name) ? $group->level->name:'' }}</p>
                         </div>
                         <div class="card-footer">
-                            <div class="col-md-6 col-sm-6">
+                            <div class="col-md-12 col-sm-12">
                                 <p>Este grupo tiene las siguientes clases</p>
                                 @foreach($courses as $course)
                                     <p>{{ $course->code }} - {{ $course->name }}</p>

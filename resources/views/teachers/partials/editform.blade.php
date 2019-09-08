@@ -28,7 +28,7 @@
         <li>
             <label>
             {{ Form::checkbox('courses[]', $course->id, null) }}
-            {{ $course->name }}
+            {{ $course->code }} - {{ $course->name }}
             </label>
         </li>
         @endforeach

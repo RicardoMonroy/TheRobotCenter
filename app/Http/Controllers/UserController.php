@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use App\User;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\UsersImport;
+use App\Notifications\MyResetPassword;
 
 class UserController extends Controller
 {
@@ -123,6 +124,11 @@ class UserController extends Controller
 
         return redirect()->route('users.index')
             ->with('info', 'Lista de usuarios creada con éxito');
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new MyResetPassword($token));
     }
 }
 

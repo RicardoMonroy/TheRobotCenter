@@ -36,7 +36,7 @@ class WellcomeConroller extends Controller
 
         if($user->student){
             $students = $user->student->group->students;
-            $courses = $user->student->group->courses;
+            $courses = $user->student->group->courses()->orderBy('code', 'ASC')->get();
             
         }elseif($user->teacher){
             $students = Student::all();

@@ -31,6 +31,9 @@
                             Lista de cambios
                         </div>
                         <div class="card-body">
+                            <b>
+                            <li>31 Agosto - Global - Se habilitó el servidor de correo para restablecimiento de passwords</li>
+                            </b>
                             <li>17 Agosto - Homepage - Se trabajó en la página del curso para visualizar la lista de materiales</li>
                             <li>17 Agosto - BackOffice - Se realizaron las actualizaciones para relacionar cursos con materiales</li>
                             <li>16 Agosto - BackOffice - Se creó la lógica de los materiales para las clases y se implementó en la base de datos</li>

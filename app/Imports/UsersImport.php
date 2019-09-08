@@ -20,13 +20,13 @@ class UsersImport implements OnEachRow
         
         if($this->search($row[1])!=0){
             $student = Student::where('user_id', $this->search($row[1]))->first();
-            $student->code = $row[5];
+            $student->code = @$row[5];
             $student->school_id = $this->getSchoolId($row[3]);
             $student->group_id = $this->getGroupId($row[3], $row[4]);
             $student->update();
         }else{            
             $student = Student::firstOrCreate([
-                'code'      => $row[5],
+                'code'      => @$row[5],
                 'user_id'   => $this->getUserId($row[0], $row[1], $row[2]),
                 'school_id' => $this->getSchoolId($row[3]),
                 'group_id'  => $this->getGroupId($row[3], $row[4]),

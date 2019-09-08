@@ -48,7 +48,7 @@
                             <p><strong>Materiales a utilizar: </strong><br>
                                 <ul>
                                     @foreach ($materials as $material)
-                                        <li>{{ $material->name }} - {{ !empty($material->description) ? $material->description:'Este material no tiene descrición' }}</li>    
+                                        <li>{{ $material->name }} - {{ !empty($material->description) ? $material->description:'Este material no tiene descripción' }}</li>    
                                     @endforeach                                    
                                 </ul>
                             

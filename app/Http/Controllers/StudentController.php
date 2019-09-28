@@ -29,9 +29,9 @@ class StudentController extends Controller
      */
     public function create()
     {
-        $schools = School::get();
-        $groups = Group::get();
-        $users = User::get();
+        $schools = School::orderBy('name', 'ASC')->get();
+        $groups = Group::orderBy('name', 'ASC')->get();
+        $users = User::orderBy('name', 'ASC')->get();
 
         return view('students.create', compact('users', 'schools', 'groups'));
     }

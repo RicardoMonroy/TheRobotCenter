@@ -31,8 +31,8 @@ class GroupController extends Controller
      */
     public function create()
     {
-        $levels = Level::get();
-        $schools = School::get();
+        $levels = Level::orderBy('name', 'ASC')->get();
+        $schools = School::orderBy('name', 'ASC')->get();
         $courses = Course::orderBy('code', 'ASC')->get();
 
         return view('groups.create', compact('levels', 'schools', 'courses'));

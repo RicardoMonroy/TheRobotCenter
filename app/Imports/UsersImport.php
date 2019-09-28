@@ -24,6 +24,7 @@ class UsersImport implements OnEachRow
             $student->school_id = $this->getSchoolId($row[3]);
             $student->group_id = $this->getGroupId($row[3], $row[4]);
             $student->update();
+            //dd($row[0], $row[1], $row[2], $row[3], $row[4], $row[5]);
         }else{            
             $student = Student::firstOrCreate([
                 'code'      => @$row[5],

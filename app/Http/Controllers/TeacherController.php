@@ -30,7 +30,7 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        $users = User::get();
+        $users = User::orderBy('name', 'ASC')->get();
         $courses = Course::orderBy('code', 'ASC')->get();
 
         return view('teachers.create', compact('users', 'courses'));

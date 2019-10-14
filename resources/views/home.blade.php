@@ -32,9 +32,11 @@
                         </div>
                         <div class="card-body">
                             <b>
+                                <li>14 Octubre - Backend - Pruebas para los perfiles de usuarios</li>
+                                <li>14 Octubre - FrontEnd - Modificaciones en perfiles de usuarios (ver el rol de cada usuario)</li>
+                            </b>
                             <li>28 Septiembre - BackEnd - Se añadieron listas ordenadas alfabeticamente al momento de crear alumnos, grupos, profesores</li>
                             <li>25 Septiembre - BackEnd - Se revisó a fondo el algoritmo de importacion de usuarios/alumnos/grupos de Excel a la plataforma</li>
-                            </b>
                             <li>31 Agosto - Global - Se habilitó el servidor de correo para restablecimiento de passwords</li>
                             <li>17 Agosto - Homepage - Se trabajó en la página del curso para visualizar la lista de materiales</li>
                             <li>17 Agosto - BackOffice - Se realizaron las actualizaciones para relacionar cursos con materiales</li>

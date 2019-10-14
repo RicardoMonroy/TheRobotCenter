@@ -43,11 +43,16 @@
                 <strong>Settings</strong>
             </div>
             <a class="dropdown-item" href="#">
-                <i class="fa fa-user"></i> Perfil
+                <i class="fa fa-user"></i> {{ auth()->user()->name }}
             </a>
             <a class="dropdown-item" href="#">
-                <i class="fa fa-wrench"></i> Herramientas
+                {{-- @foreach ($roles as $rol)
+                    <i class="fa fa-wrench"></i> {{ $rol->name }}
+                @endforeach --}}
             </a>
+            
+                {{-- <i class="fa fa-wrench"></i> Rol: --}}
+                
             <div class="dropdown-divider"></div>
             {{-- <a class="dropdown-item" href="#">
                 <i class="fa fa-shield"></i> Lock Account

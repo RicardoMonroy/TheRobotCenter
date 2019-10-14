@@ -105,7 +105,7 @@
                 </a>
             </li>
         @endcan
-
+        {{-- @if(auth()->user()->hasPermissionTo('users.index') == 1) --}}
         @can('users.index')
             <li class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
                 <a class="nav-link" href="{!! route('users.index') !!}">
@@ -114,6 +114,7 @@
                 </a>
             </li>
         @endcan
+        {{-- @endif --}}
 
         @can('permissions.index')
             <li class="nav-item {{ Request::is('permissions*') ? 'active' : '' }}">

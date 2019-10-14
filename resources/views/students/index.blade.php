@@ -34,9 +34,10 @@
                 <div class="card">
                     <div class="card-header">Alumnos
                         <div class="card-header-actions">
+                            @can('students.create')
                             <a class="card-header-action btn-setting" href="{{ route('users.upload') }}">
                                 <i class="icon-arrow-up-circle"></i> Subir un Excel</a>
-                            @can('students.create')
+                            
                                 <a class="card-header-action btn-setting" href="{{ route('students.create') }}">
                                     <i class="icon-plus"></i> Crear</a>
                             @endcan

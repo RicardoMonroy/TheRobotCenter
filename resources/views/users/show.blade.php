@@ -34,6 +34,11 @@
                             <p><strong>Nombre</strong>     {{ $user->name }}</p>
                             <p><strong>Email</strong>  {{ $user->email }}</p>
                             <p><strong>Acceso a dashobard</strong>  {{ $user->dashboard }}</p>
+                            <p><strong>Rol: </strong>
+                            @foreach ($roles as $rol)
+                                {{ $rol->name }}
+                            @endforeach
+                            </p>
                         </div>
                     </div>
                 </div>

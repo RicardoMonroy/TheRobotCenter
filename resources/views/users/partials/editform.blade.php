@@ -6,10 +6,10 @@
     {{ Form::label('email', 'Correo Electrónico') }}
     {{ Form::text('email', null, ['class' => 'form-control', 'id' => 'email']) }}
 </div>
-{{-- <div class="form-group">
-    {{ Form::label('password', 'Password') }}
-    {{ Form::password('password', ['class' => 'form-control', 'required']) }}
-</div> --}}
+<div class="form-group">
+    {{ Form::label('password', 'Password (dejar en blanco para no cambiar)') }}
+    {{ Form::password('password', ['class' => 'form-control']) }}
+</div>
 <div class="form-group">
     {{ Form::label('dashboard', 'Dashboard') }}
     {{Form::select('dashboard',['1' => 'Con acceso', '0' => 'Sin acceso'], null, ['class' => 'form-control', 'id' => 'dashboard'])}}

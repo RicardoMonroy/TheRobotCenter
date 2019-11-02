@@ -49,6 +49,7 @@
                                     <th width="10px">ID</th>
                                     <th>Nombre</th>
                                     <th>Email</th>
+                                    {{-- <th>Password</th> --}}
                                     <th>&nbsp;</th>
                                     <th>&nbsp;</th>
                                     <th>&nbsp;</th>
@@ -60,6 +61,7 @@
                                         <td>{{ $user->id }}</td>
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
+                                        {{-- <td>{{ $user->password }}</td> --}}
                                         @can('users.show')
                                         <td width="10px">
                                             <div class="btn-group" role="group" aria-label="Button group">

@@ -32,9 +32,10 @@
                         </div>
                         <div class="card-body">
                             <b>
-                                <li>14 Octubre - Backend - Pruebas para los perfiles de usuarios</li>
-                                <li>14 Octubre - FrontEnd - Modificaciones en perfiles de usuarios (ver el rol de cada usuario)</li>
+                                <li>2 Nov - Backend - Se habilitó el cambio de password para usuarios</li>
                             </b>
+                            <li>14 Octubre - Backend - Pruebas para los perfiles de usuarios</li>
+                            <li>14 Octubre - FrontEnd - Modificaciones en perfiles de usuarios (ver el rol de cada usuario)</li>
                             <li>28 Septiembre - BackEnd - Se añadieron listas ordenadas alfabeticamente al momento de crear alumnos, grupos, profesores</li>
                             <li>25 Septiembre - BackEnd - Se revisó a fondo el algoritmo de importacion de usuarios/alumnos/grupos de Excel a la plataforma</li>
                             <li>31 Agosto - Global - Se habilitó el servidor de correo para restablecimiento de passwords</li>

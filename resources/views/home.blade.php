@@ -23,8 +23,86 @@
 </ol>
 <div class="container-fluid">
         <div class="animated fadeIn">
-             <div class="row">..
+             <div class="row">
                 {{-- <iframe src="/laravel-filemanager" style="width: 100%; height: 500px; overflow: hidden; border: none;"></iframe> --}}
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            Preguntas Frecuentes
+                        </div>
+                        <div class="card-body">
+                            <div class="accordion" id="accordionExample">
+                                {{-- <div class="card" style="margin-bottom: 0rem;">
+                                  <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0">
+                                      <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Cambiar Passwords o datos de usuario
+                                      </button>
+                                    </h2>
+                                  </div>
+                              
+                                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                      Para cambiar información relacionada con los usuarios debe ir al menú <b>Herramientas</b> -> <b> Usuarios</b> y buscar al usuario que quiere editar. 
+                                      Busque el ícono editar <button class="btn btn-sm btn-success"><i class="icon-pencil"></i></button> y a continuación dar click. Rellenar la información y dar click en <b>Guardar</b>
+                                      <br>
+                                      Importante: <b>Dejar el campo de password en blando si NO se desea cambiar la contraseña.</b>
+                                    </div>
+                                  </div>
+                                </div> --}}
+                                <div class="card" style="margin-bottom: 0rem;">
+                                  <div class="card-header" id="headingTwo">
+                                    <h2 class="mb-0">
+                                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Crear un usuario
+                                      </button>
+                                    </h2>
+                                  </div>
+                                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                Para crear un usuario existen 3 formas: <br><br>
+                                                <b>1.- El usuario se registra por si mismo:</b> En la página principal existen las opciones de "Logín" y "Registro". Al acceder al Registro el usuario introduce sus datos. Por default
+                                                el usuario creado no cuenta con acceso al dashboard administrativo, previo a su registro un administrador debe otorgarle permisos. <br><br>
+                                                <b>2.- Un administrador da de alta a un usuario: </b> Para que un administrador pueda crear un usuario, debe ir al menú <b>Herramientas</b> -> <b> Usuarios</b> y buscar
+                                                el botón <button class="card-header-action btn-setting"><i class="icon-plus"></i> Crear un usuario</button> y al dar click se deben llenar los datos que pide el formulario,
+                                                a continuación dar click en <b>guardar</b>. <br><br>
+                                                <b>3.- Importar una colección de usuarios mediante Excel: </b> Para importar una lista de usuarios desde Excel, debe ir al menú <b>Herramientas</b> -> <b> Usuarios</b> y buscar
+                                                el botón <button class="card-header-action btn-setting"><i class="icon-arrow-up-circle"></i> Subir un Excel</button> y al dar click se deben seguir las instrucciones; se debe tener el
+                                                archivo de excel con su respectivo formato, y finalmente dar click en <b>Subir</b>. Esta última opción crea los usuarios, da de alta a los usuarios como alumnos, y los
+                                                distribuye a sus grupos y colegios correspondientes.
+                                            </div>
+                                            <div class="col-md-4">
+                                                <img src="{{ asset('help/Menu-Herramientas-Usuarios.gif') }} " alt="" width="100%">
+                                            </div>   
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card" style="margin-bottom: 0rem;">
+                                  <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0">
+                                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Cambiar Passwords o datos de usuario
+                                      </button>
+                                    </h2>
+                                  </div>
+                                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                      Para cambiar información relacionada con los usuarios debe ir al menú <b>Herramientas</b> -> <b> Usuarios</b> y buscar al usuario que quiere editar. 
+                                      Busque el ícono editar <button class="btn btn-sm btn-success"><i class="icon-pencil"></i></button> y a continuación dar click. Rellenar la información y dar click en <b>Guardar</b>
+                                      <br>
+                                      Importante: <b>Dejar el campo de password en blando si NO se desea cambiar la contraseña.</b> <br><br>
+                                      <img src="{{ asset('help/ActualizarPassword.gif') }} " width="100%">
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                        </div>
+                    </div>
+                </div>
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
@@ -33,6 +111,7 @@
                         <div class="card-body">
                             <b>
                                 <li>2 Nov - Backend - Se habilitó el cambio de password para usuarios</li>
+                                <li>2 nov - Backend - Se añadió una sección de preguntas frecuentes con pequeños tutoriales</li>
                             </b>
                             <li>14 Octubre - Backend - Pruebas para los perfiles de usuarios</li>
                             <li>14 Octubre - FrontEnd - Modificaciones en perfiles de usuarios (ver el rol de cada usuario)</li>
@@ -72,7 +151,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

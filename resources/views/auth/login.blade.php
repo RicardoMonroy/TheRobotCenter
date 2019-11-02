@@ -61,7 +61,7 @@
 				<div class="heading-bx left">
 					<h2 class="title-head">Login con tu <span>Cuenta</span></h2>
 					<p>No tienes cuenta? <a href="{{ route('register') }}">Crea una aquí</a></p>
-					<p>Tienes un código? <a href="#">Ingresalo aquí</a></p>
+					{{-- <p>Tienes un código? <a href="#">Ingresalo aquí</a></p> --}}
 				</div>
                 <form class="contact-bx" method="POST" action="{{ route('login') }}">
                 @csrf

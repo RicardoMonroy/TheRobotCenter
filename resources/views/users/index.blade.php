@@ -49,10 +49,16 @@
                                     <th width="10px">ID</th>
                                     <th>Nombre</th>
                                     <th>Email</th>
-                                    {{-- <th>Password</th> --}}
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
+                                    {{-- <th>Rol</th> --}}
+                                    @can('users.show')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('users.edit')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('users.destroy')
+                                        <th>&nbsp;</th>
+                                    @endcan
                                 </tr>
                             </thead>
                             <tbody>
@@ -61,7 +67,8 @@
                                         <td>{{ $user->id }}</td>
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
-                                        {{-- <td>{{ $user->password }}</td> --}}
+                                        {{-- <td>{{  }} --}}
+                                        </td>
                                         @can('users.show')
                                         <td width="10px">
                                             <div class="btn-group" role="group" aria-label="Button group">

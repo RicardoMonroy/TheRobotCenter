@@ -50,9 +50,15 @@
                                     <th width="10px">Código</th>
                                     <th width="150px">Portada</th>
                                     <th>Nombre</th>
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
+                                    @can('courses.show')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('courses.edit')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('courses.destroy')
+                                        <th>&nbsp;</th>
+                                    @endcan
                                 </tr>
                             </thead>
                             <tbody>

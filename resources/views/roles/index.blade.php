@@ -48,9 +48,15 @@
                                 <tr>
                                     <th width="10px">ID</th>
                                     <th>Nombre</th>
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
+                                    @can('roles.show')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('roles.edit')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('roles.destroy')
+                                        <th>&nbsp;</th>
+                                    @endcan
                                 </tr>
                             </thead>
                             <tbody>

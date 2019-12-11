@@ -51,9 +51,15 @@
                                     <th>Nombre</th>
                                     <th>Escuela</th>
                                     <th>Grupo</th>
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
+                                    @can('students.show')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('students.edit')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('students.destroy')
+                                        <th>&nbsp;</th>
+                                    @endcan
                                 </tr>
                             </thead>
                             <tbody>

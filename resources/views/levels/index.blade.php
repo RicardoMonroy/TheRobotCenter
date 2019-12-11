@@ -48,9 +48,15 @@
                                 <tr>
                                     {{-- <th width="10px">ID</th> --}}
                                     <th>Nombre</th>
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
+                                    @can('levels.show')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('levels.edit')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('levels.destroy')
+                                        <th>&nbsp;</th>
+                                    @endcan
                                 </tr>
                             </thead>
                             <tbody>

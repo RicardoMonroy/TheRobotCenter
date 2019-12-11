@@ -50,9 +50,15 @@
                                     <th width="150px">Logotipo</th>
                                     <th>Nombre</th>
                                     <th>Teléfono</th>
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
+                                    @can('schools.show')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('schools.edit')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('schools.destroy')
+                                        <th>&nbsp;</th>
+                                    @endcan
                                 </tr>
                             </thead>
                             <tbody>

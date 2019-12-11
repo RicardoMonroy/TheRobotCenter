@@ -49,9 +49,15 @@
                                     <th width="10px">ID</th>
                                     <th>Nombre</th>
                                     <th>Descripción</th>
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
+                                    @can('permissions.show')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('permissions.edit')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('permissions.destroy')
+                                        <th>&nbsp;</th>
+                                    @endcan
                                 </tr>
                             </thead>
                             <tbody>

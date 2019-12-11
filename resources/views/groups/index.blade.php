@@ -50,9 +50,15 @@
                                     <th>Nombre</th>
                                     <th>Escuela</th>
                                     <th>Nivel</th>
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
+                                    @can('groups.show')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('groups.edit')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('groups.destroy')
+                                        <th>&nbsp;</th>
+                                    @endcan
                                 </tr>
                             </thead>
                             <tbody>

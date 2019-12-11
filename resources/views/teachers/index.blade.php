@@ -49,9 +49,15 @@
                                     <th width="10px">ID</th>
                                     <th width="10px">Título</th>
                                     <th>Nombre</th>
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
+                                    @can('teachers.show')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('teachers.edit')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('teachers.destroy')
+                                        <th>&nbsp;</th>
+                                    @endcan
                                 </tr>
                             </thead>
                             <tbody>

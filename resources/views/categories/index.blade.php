@@ -48,9 +48,15 @@
                                 <tr>
                                     <th width="10px">ID</th>
                                     <th>Nombre</th>
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
-                                    <th>&nbsp;</th>
+                                    @can('categories.show')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('categories.edit')
+                                        <th>&nbsp;</th>
+                                    @endcan
+                                    @can('categories.destroy')
+                                        <th>&nbsp;</th>
+                                    @endcan
                                 </tr>
                             </thead>
                             <tbody>

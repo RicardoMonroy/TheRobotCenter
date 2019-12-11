@@ -51,6 +51,31 @@
                                   </div>
                                 </div> --}}
                                 <div class="card" style="margin-bottom: 0rem;">
+                                    <div class="card-header" id="headingOne">
+                                      <h2 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                          Asignar un rol a un usuario
+                                        </button>
+                                      </h2>
+                                    </div>
+                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                      <div class="card-body">
+                                          <div class="row">
+                                              <div class="col-md-12">
+                                                  Pasos para asignar un rol a un usuario: <br><br>
+                                                  <b>1.- Elige al usuario a quine se le asignara un rol:</b> Esto en la sección de <b>Herramientas / Usuarios</b> <br><br>
+                                                  <b>2.- (Opcional) Ver el rol que tiene el usuario: </b> Una vez encontrado el usuario dar click en el botón de vista <button class="btn btn-sm btn-primary"><i class="icon-eye"></i></button> y al dar click se 
+                                                  mostrará la información del usuario <br><br>
+                                                  <b>3.- Asignar un rol: </b> Presionar el botón de edición <button class="btn btn-sm btn-success"><i class="icon-pencil"></i></button> y llenar en la parte de <b>Lista de roles</b> el rol que le 
+                                                  corresponda. Cada rol tiene una descripción. Luego de ello dar click en <b>Guardar</b><br><br>
+                                                  <img src="{{ asset('help/Rol-Usuarios.gif') }} " width="100%">
+                                              </div>
+                                               
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                <div class="card" style="margin-bottom: 0rem;">
                                   <div class="card-header" id="headingTwo">
                                     <h2 class="mb-0">
                                       <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -110,9 +135,11 @@
                         </div>
                         <div class="card-body">
                             <b>
-                                <li>2 Nov - Backend - Se habilitó el cambio de password para usuarios</li>
-                                <li>2 nov - Backend - Se añadió una sección de preguntas frecuentes con pequeños tutoriales</li>
+                              <li>11 Dic - Backend - Se restringieron permisos a usuarios profesores para impedir eliminar</li>
+                              <li>10 Dic - FrontEnd - Se añadió un baner y se elimino el baner de curso de verano</li>
                             </b>
+                            <li>2 Nov - Backend - Se habilitó el cambio de password para usuarios</li>
+                            <li>2 nov - Backend - Se añadió una sección de preguntas frecuentes con pequeños tutoriales</li>
                             <li>14 Octubre - Backend - Pruebas para los perfiles de usuarios</li>
                             <li>14 Octubre - FrontEnd - Modificaciones en perfiles de usuarios (ver el rol de cada usuario)</li>
                             <li>28 Septiembre - BackEnd - Se añadieron listas ordenadas alfabeticamente al momento de crear alumnos, grupos, profesores</li>

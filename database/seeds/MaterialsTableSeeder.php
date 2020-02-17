@@ -1,31 +1,51 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Material;
 
 class MaterialsTableSeeder extends Seeder
 {
+
     /**
-     * Run the database seeds.
+     * Auto generated seed file
      *
      * @return void
      */
     public function run()
     {
-        Material::create([
-            'name'          => 'Robot EV3',
-            'description'   => NULL,
-            'picture'       => NULL,
-        ]);
-        Material::create([
-            'name'          => 'Robot Wedo 1.0',
-            'description'   => NULL,
-            'picture'       => NULL,
-        ]);
-        Material::create([
-            'name'          => 'Robot Wedo 2.0',
-            'description'   => NULL,
-            'picture'       => NULL,
-        ]);
+        
+
+        \DB::table('materials')->delete();
+        
+        \DB::table('materials')->insert(array (
+            0 => 
+            array (
+                'id' => 1,
+                'name' => 'Robot EV3',
+                'description' => NULL,
+                'picture' => NULL,
+                'created_at' => '2019-08-17 18:52:05',
+                'updated_at' => '2019-08-17 18:52:05',
+            ),
+            1 => 
+            array (
+                'id' => 2,
+                'name' => 'Robot Wedo 1.0',
+                'description' => NULL,
+                'picture' => NULL,
+                'created_at' => '2019-08-17 18:52:05',
+                'updated_at' => '2019-08-17 18:52:05',
+            ),
+            2 => 
+            array (
+                'id' => 3,
+                'name' => 'Robot Wedo 2.0',
+                'description' => NULL,
+                'picture' => NULL,
+                'created_at' => '2019-08-17 18:52:05',
+                'updated_at' => '2019-08-17 18:52:05',
+            ),
+        ));
+        
+        
     }
 }

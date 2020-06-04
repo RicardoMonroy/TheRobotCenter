@@ -133,7 +133,14 @@
                 </a>
             </li>
         @endcan
+        
     </ul>
+    <li class="nav-item">
+      <a class="nav-link" href="https://www.paypal.me/therobotcenter" target="_blank">
+          <i class="nav-icon icon-paypal"></i>
+          <span>Pagar Online</span>
+      </a>
+    </li>
 </li>
 
 

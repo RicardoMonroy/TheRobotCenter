@@ -204,9 +204,12 @@
                         </div>
                         <div class="card-body">
                             <b>
-                              <li>11 Dic - Backend - Se restringieron permisos a usuarios profesores para impedir eliminar</li>
-                              <li>10 Dic - FrontEnd - Se añadió un baner y se elimino el baner de curso de verano</li>
+                              <li>25 Junio - FrontEnd - Se creó la documentacion para seguir lo pasos para añadir correctamente videos desde Google Drive</li>
+                              <li>25 Junio - BackEnd - Se añadió un plugin para preparar la inserción de videos desde Google Drive</li>
+                              <li>1 Junio - FrontEnd - Se añadió la opción de pago mediante PayPal en el menú lateral</li>
                             </b>
+                            <li>11 Dic - Backend - Se restringieron permisos a usuarios profesores para impedir eliminar</li>
+                            <li>10 Dic - FrontEnd - Se añadió un baner y se elimino el baner de curso de verano</li>
                             <li>2 Nov - Backend - Se habilitó el cambio de password para usuarios</li>
                             <li>2 nov - Backend - Se añadió una sección de preguntas frecuentes con pequeños tutoriales</li>
                             <li>14 Octubre - Backend - Pruebas para los perfiles de usuarios</li>

@@ -51,6 +51,75 @@
                                   </div>
                                 </div> --}}
                                 <div class="card" style="margin-bottom: 0rem;">
+                                  <div class="card-header" id="headingZero">
+                                    <h2 class="mb-0">
+                                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseZero" aria-expanded="false" aria-controls="collapseZero">
+                                        Crear una clase con video en Google Drive
+                                      </button>
+                                    </h2>
+                                  </div>
+                                  <div id="collapseZero" class="collapse" aria-labelledby="headingZero" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                Pasos para crear y embeber un video almacenado en Google Drive: <br><br>
+                                                <b>1.- Crear un nuevo curso:</b> Esto en la sección de <b>Herramientas / Usuarios</b> <br><br>
+                                                <img src="{{ asset('help/drive/1.Crear.gif') }} " width="100%"><br><br>
+                                                <b>2.- Llenar los datos básocos: </b>  Tales como el código de la clase, el nombre de la clase y la descripción <br><br>
+                                                <img src="{{ asset('help/drive/2.Basicos.gif') }} " width="100%"><br><br>
+                                                <b>3.- Elección de una protada: </b> Es importante, ya que le da al curso una imágen más profesional <br><br>
+                                                <img src="{{ asset('help/drive/3.Portada.gif') }} " width="100%"><br><br>
+                                                <b>4.- Preparar nuestro editor: </b> Aquí va el contenido del curso con contenidos visuales y texto formateado <br><br>
+                                                <img src="{{ asset('help/drive/4.Editor.gif') }} " width="100%"><br><br>
+                                                <b>5.- Preparar enlace en Drive: </b> Aquí va el contenido del curso con contenidos visuales y texto formateado: Se debe: <br>
+                                                  <ul>
+                                                    <li>Elegir el archivo a compartir</li>
+                                                    <li>Dar click secundario en el video y seleccionar  <b>+ Obtener enlace para compartir</b> </li>
+                                                    <li>En el cuadro de diálogo, en la sección de obtener enlace, cambiar el permispo actual por: <b>Cualquier persona con el enlace</b> *Es importante <b>no copiar </b> el enlace de ese cuadro de diálogo, eso se hará más adelante. Dar click en <b>Aceptar</b></li>
+                                                  </ul> <br>
+                                                <img src="{{ asset('help/drive/5.Enlace.gif') }} " width="100%"><br><br>
+                                                <b>6.- Obtener el código de inserción de video: </b> Este código es el que utilizaremos para añadirlo a nuestra clase, para ello ya que preparamos los permisos en el enlace de nuestro video: <br>
+                                                  <ul>
+                                                    <li>Damos doble click al archivo de video (para previsualizarlo)</li>
+                                                    <li>En la primer vista previa del video buscamos el menú punteado en la esquina superior derecha y al seleccionarlo buscamos la opción de <b>Abrir en una nueva ventana</b> </li>
+                                                    <li>Al obtener la segunda vista previa del video, buscamos nuevamente el menú punteado en la esquina superior derecha (a un lado de nuesto avatar), y seleccionamos la opción de <b>Insertar elemento</b> </li>
+                                                    <li>Copiamos el código que se encuentra dentro del cuadro de diálogo</li>
+                                                    <li>Listo, tenemos todo listo para incrustarlo en nuestro editor de cursos</li>
+                                                  </ul><br>
+                                                <img src="{{ asset('help/drive/6.iframe.gif') }} " width="100%"><br><br>
+                                                <b>7.- Insertar el código: </b> Ya que tenemos el código de inserción, vamos a nuestro editor en la plataforma de TheRobotCenter, debemos: <br>
+                                                  <ul>
+                                                    <li>Tener claro en que parte del curso queremos instertar el video</li>
+                                                    <li>Cambiar de tipo de editor de texto enriquecido a HTML, esto se hace en el botón <b>Fuente HTML</b> que se encuentra en la esquina superior derecha de nuestro editor </li>
+                                                    <li>Al tener nuestro curso en version de etiquetas en HTML, simplemente pegamos el código que obtuvimos en Drive de Google</li>
+                                                    <li>Podemos regresar a la vista normal presionando nuevamente el botón de <b>Fuente HTML</b></li>
+                                                  </ul><br>
+                                                <img src="{{ asset('help/drive/7.Insertar.gif') }} " width="100%"><br><br>
+                                                <b>8.- Guardamos nuestro curso: </b> Recuerda que si el curso lo requiere, se debe seleccionar algún elemento de la lista de materiales <br><br>
+                                                <img src="{{ asset('help/drive/8.Guardar.gif') }} " width="100%"><br><br>
+                                                <b>9.- (Opcional) Ver y asignar la nueva clase: </b> Podemos verificar que la clase esté verdaderamente listo mediante el Dashboard Administrativo, o directamente desde la página principal ya que fué añadido a un grupo o a un profesor, esta tarea se hace de la siguiente forma: <br>
+                                                  <ul>
+                                                    <li><b>Por el Dashboard Administrativo:</b> Simplemente en la página de listado de clases, presionar en el botón de <b>ver</b></li>
+                                                    <img src="{{ asset('help/drive/9.VerDashboard.gif') }} " width="100%"><br><br>
+                                                    <li><b>Por La página principal:</b> En la página principal ir a la sección de <b>Mis Clases</b> y seleccionar de la lista el curso</li>
+                                                    <img src="{{ asset('help/drive/11.VerPlataforma.gif') }} " width="100%"><br><br>
+                                                    <li><b>Si se desea asignar la clase a un profesor:</b> Debemos hacer lo siguiente: <br>
+                                                      <ul>
+                                                        <li>Ir a la sección de <b>Académico/Profesores</b></li>
+                                                        <li><b>Asignar</b> un nuevo profesor o <b>editar</b> un profesor existente</li>
+                                                        <li>En la lista de clases existentes, buscar la clase que se desea asignar al profesor para su visualización en la página principal</li>
+                                                        <li>Guardar</li>
+                                                      </ul> 
+                                                    </li>
+                                                    <img src="{{ asset('help/drive/10.Profesor.gif') }} " width="100%"><br><br>
+                                                  </ul> <br><br>
+                                            </div>
+                                             
+                                        </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="card" style="margin-bottom: 0rem;">
                                     <div class="card-header" id="headingOne">
                                       <h2 class="mb-0">
                                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">

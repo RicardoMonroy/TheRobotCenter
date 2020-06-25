@@ -99,7 +99,7 @@
                                                 <img src="{{ asset('help/drive/8.Guardar.gif') }} " width="100%"><br><br>
                                                 <b>9.- (Opcional) Ver y asignar la nueva clase: </b> Podemos verificar que la clase esté verdaderamente listo mediante el Dashboard Administrativo, o directamente desde la página principal ya que fué añadido a un grupo o a un profesor, esta tarea se hace de la siguiente forma: <br>
                                                   <ul>
-                                                    <li><b>Por el Dashboard Administrativo:</b> Simplemente en la página de listado de clases, presionar en el botón de <b>ver</b></li>
+                                                    <li><b>Por el Dashboard Administrativo:</b> En la página de listado de clases, presionar en el botón de <b>ver</b></li>
                                                     <img src="{{ asset('help/drive/9.VerDashboard.gif') }} " width="100%"><br><br>
                                                     <li><b>Por La página principal:</b> En la página principal ir a la sección de <b>Mis Clases</b> y seleccionar de la lista el curso</li>
                                                     <img src="{{ asset('help/drive/11.VerPlataforma.gif') }} " width="100%"><br><br>

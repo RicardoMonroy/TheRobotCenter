@@ -49,11 +49,11 @@ class SchoolController extends Controller
 
         if ($request->file('picture')){
             $path = Storage::disk('public')->put('logos', $request->file('picture'));
-            $course->fill(['picture' => asset($path)])->save();
+            $school->fill(['picture' => asset($path)])->save();
         }
 
         return redirect()->route('schools.index', $school->id)
-            ->with('info', 'Escuela guardado con éxito');
+            ->with('info', 'Colegio guardado con éxito');
     }
 
     /**
@@ -94,8 +94,13 @@ class SchoolController extends Controller
         $school = School::find($id);
         $school->update($request->all());
 
+        if ($request->file('picture')){
+            $path = Storage::disk('public')->put('logos', $request->file('picture'));
+            $school->fill(['picture' => asset($path)])->save();
+        }
+
         return redirect()->route('schools.index', $school->id)
-            ->with('info', 'Nivel actualizado con éxito');
+            ->with('info', 'Colegio actualizado con éxito');
     }
 
     /**

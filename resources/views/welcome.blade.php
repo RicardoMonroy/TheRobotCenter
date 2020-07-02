@@ -29,7 +29,7 @@
                 data-param9="" data-param10=""
                 data-description="Science says that Women are generally happier">
                     <!-- MAIN IMAGE -->
-                    <img src="assets/images/slider/slide3.jpg" alt=""
+                    <img src="assets/images/slider/slide4.jpg" alt=""
                         data-bgposition="center center"
                         data-bgfit="cover"
                         data-bgrepeat="no-repeat"
@@ -80,7 +80,7 @@
                         data-paddingleft="[0,0,0,0]"
                         style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;text-transform:uppercase;">
                         {{-- {{ $page->secondCopy }}  --}}
-                        "Mentes Brillantes 2020"
+                        ONLINE 2020
                     </div>
 
                     <!-- LAYER NR. 3 -->
@@ -103,7 +103,7 @@
                         data-paddingleft="[0,0,0,0]"
                         style="z-index: 7; white-space: nowrap;text-transform:uppercase; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
                         {{-- {{ $page->secondTitle }} --}}
-                        3er. Encuentro de Robótica
+                        Verano
                     </div>
 
                     <!-- LAYER NR. 3 -->
@@ -126,7 +126,7 @@
                         data-paddingleft="[0,0,0,0]"
                         style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
                         {{-- {{ $page->secondText }} --}}
-                        Mayores informes: <a href="http://www.therobotcenter.com/encuentro-mentes-brillantes" target="_blank" style="color:#ffffff">Click Aquí</a>
+                        {{-- Mayores informes: <a href="http://www.therobotcenter.com/encuentro-mentes-brillantes" target="_blank" style="color:#ffffff">Click Aquí</a> --}}
                     </div>
                     <!-- LAYER NR. 4 -->
                     <div class="tp-caption Newspaper-Button rev-btn "

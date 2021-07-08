@@ -96,24 +96,24 @@
                                  ">
     <a class="nav-link nav-dropdown-toggle" href="">
     <i class="nav-icon icon-settings"></i> Herramientas</a>
-    {{-- <ul class="nav-dropdown-items"> --}}
-        @can('roles.index')
+    <ul class="nav-dropdown-items">
+        {{-- @can('roles.index') --}}
             <li class="nav-item {{ Request::is('roles*') ? 'active' : '' }}">
                 <a class="nav-link" href="{!! route('roles.index') !!}">
                     <i class="nav-icon icon-mustache"></i>
                     <span>Roles</span>
                 </a>
             </li>
-        @endcan
+        {{-- @endcan --}}
         {{-- @if(auth()->user()->hasPermissionTo('users.index') == 1) --}}
-        @can('users.index')
+        {{-- @can('users.index') --}}
             <li class="nav-item {{ Request::is('users*') ? 'active' : '' }}">
                 <a class="nav-link" href="{!! route('users.index') !!}">
                     <i class="nav-icon icon-people"></i>
                     <span>Usuarios</span>
                 </a>
             </li>
-        @endcan
+        {{-- @endcan --}}
         {{-- @endif --}}
 
         @can('permissions.index')
@@ -125,16 +125,16 @@
             </li>
         @endcan
 
-        {{-- @can('homepage.index') --}}
+        @can('homepage.index')
             <li class="nav-item {{ Request::is('homepage*') ? 'active' : '' }}">
                 <a class="nav-link" href="{!! route('homepage.index') !!}">
                     <i class="nav-icon icon-globe"></i>
                     <span>Página de Inicio</span>
                 </a>
             </li>
-        {{-- @endcan --}}
+        @endcan
 
-    {{-- </ul> --}}
+    </ul>
     <li class="nav-item">
       <a class="nav-link" href="https://www.paypal.me/therobotcenter" target="_blank">
           <i class="nav-icon icon-paypal"></i>

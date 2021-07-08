@@ -96,7 +96,7 @@
                                  ">
     <a class="nav-link nav-dropdown-toggle" href="">
     <i class="nav-icon icon-settings"></i> Herramientas</a>
-    <ul class="nav-dropdown-items">
+    {{-- <ul class="nav-dropdown-items"> --}}
         @can('roles.index')
             <li class="nav-item {{ Request::is('roles*') ? 'active' : '' }}">
                 <a class="nav-link" href="{!! route('roles.index') !!}">
@@ -133,8 +133,8 @@
                 </a>
             </li>
         @endcan
-        
-    </ul>
+
+    {{-- </ul> --}}
     <li class="nav-item">
       <a class="nav-link" href="https://www.paypal.me/therobotcenter" target="_blank">
           <i class="nav-icon icon-paypal"></i>

@@ -15,10 +15,10 @@
         <!-- Breadcrumb Menu-->
         <li class="breadcrumb-menu d-md-down-none">
         <div class="btn-group" role="group" aria-label="Button group">
-            @can('schools.create')
+            {{-- @can('schools.create') --}}
                 <a class="btn" href="{{ route('schools.create') }}">
                     <i class="icon-plus"></i> Crear</a>
-            @endcan
+            {{-- @endcan --}}
         </div>
         </li>
     </ol>

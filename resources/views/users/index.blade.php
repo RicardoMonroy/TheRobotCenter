@@ -34,12 +34,12 @@
                 <div class="card">
                     <div class="card-header">Usuarios
                         <div class="card-header-actions">
-                            @can('users.create')
+                            {{-- @can('users.create') --}}
                                 <a class="card-header-action btn-setting" href="{{ route('users.upload') }}">
                                     <i class="icon-arrow-up-circle"></i> Subir un Excel</a>
                                 <a class="card-header-action btn-setting" href="{{ route('users.create') }}">
                                     <i class="icon-plus"></i> Crear un usuario</a>
-                            @endcan
+                            {{-- @endcan --}}
                         </div>
                     </div>
                     <div class="card-body">
@@ -50,15 +50,15 @@
                                     <th>Nombre</th>
                                     <th>Email</th>
                                     {{-- <th>Rol</th> --}}
-                                    @can('users.show')
+                                    {{-- @can('users.show') --}}
                                         <th>&nbsp;</th>
-                                    @endcan
-                                    @can('users.edit')
+                                    {{-- @endcan --}}
+                                    {{-- @can('users.edit') --}}
                                         <th>&nbsp;</th>
-                                    @endcan
-                                    @can('users.destroy')
+                                    {{-- @endcan --}}
+                                    {{-- @can('users.destroy') --}}
                                         <th>&nbsp;</th>
-                                    @endcan
+                                    {{-- @endcan --}}
                                 </tr>
                             </thead>
                             <tbody>
@@ -69,7 +69,7 @@
                                         <td>{{ $user->email }}</td>
                                         {{-- <td>{{  }} --}}
                                         </td>
-                                        @can('users.show')
+                                        {{-- @can('users.show') --}}
                                         <td width="10px">
                                             <div class="btn-group" role="group" aria-label="Button group">
                                                 <a href="{{ route('users.show', $user->id) }}"
@@ -77,8 +77,8 @@
                                                     <i class="icon-eye"></i></a>
                                             </div>
                                         </td>
-                                        @endcan
-                                        @can('users.edit')
+                                        {{-- @endcan --}}
+                                        {{-- @can('users.edit') --}}
                                             <td width="10px">
                                                 <div class="btn-group" role="group" aria-label="Button group" alt="Editar">
                                                     <a href="{{ route('users.edit', $user->id) }}"
@@ -86,8 +86,8 @@
                                                     <i class="icon-pencil"></i></a>
                                                 </div>
                                             </td>
-                                        @endcan
-                                        @can('users.destroy')
+                                        {{-- @endcan --}}
+                                        {{-- @can('users.destroy') --}}
                                             <td width="10px">
                                                 <div class="btn-group" role="group" aria-label="Button group">
                                                     {!! Form::open(['route' => ['users.destroy', $user->id],
@@ -98,7 +98,7 @@
                                                     {!! Form::close() !!}
                                                 </div>
                                             </td>
-                                            @endcan
+                                        {{-- @endcan --}}
                                     </tr>
                                 @endforeach
                             </tbody>

@@ -31,14 +31,14 @@
                             <div class="card-header-actions">
                                 {{-- <a class="card-header-action btn-setting" href="{{ route('schools.excel') }}">
                                     <i class="icon-cloud-download"></i> Descargar</a> --}}
-                                @can('schools.edit')
+                                {{-- @can('schools.edit') --}}
                                     <a class="card-header-action btn-setting" href="{{ route('courses.edit', $course->id) }}">
                                         <i class="icon-pencil"></i> Editar</a>
-                                @endcan
-                                @can('schools.create')
+                                {{-- @endcan --}}
+                                {{-- @can('schools.create') --}}
                                     <a class="card-header-action btn-setting" href="{{ route('courses.create') }}">
                                         <i class="icon-plus"></i> Crear</a>
-                                @endcan
+                                {{-- @endcan --}}
                             </div>
                         </div>
                         <div class="card-body">
@@ -48,10 +48,10 @@
                             <p><strong>Materiales a utilizar: </strong><br>
                                 <ul>
                                     @foreach ($materials as $material)
-                                        <li>{{ $material->name }} - {{ !empty($material->description) ? $material->description:'Este material no tiene descripción' }}</li>    
-                                    @endforeach                                    
+                                        <li>{{ $material->name }} - {{ !empty($material->description) ? $material->description:'Este material no tiene descripción' }}</li>
+                                    @endforeach
                                 </ul>
-                            
+
                             </p>
                             <p><strong>Portada:</strong>  <img src="{{ $course->picture }}" alt="{{ $course->name }}"></p>
                             <p><strong>Contenido del curso:</strong>  {!! $course->editor !!}</p>

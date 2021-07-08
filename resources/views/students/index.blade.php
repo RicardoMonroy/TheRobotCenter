@@ -34,13 +34,13 @@
                 <div class="card">
                     <div class="card-header">Alumnos
                         <div class="card-header-actions">
-                            @can('students.create')
+                            {{-- @can('students.create') --}}
                             <a class="card-header-action btn-setting" href="{{ route('users.upload') }}">
                                 <i class="icon-arrow-up-circle"></i> Subir un Excel</a>
-                            
+
                                 <a class="card-header-action btn-setting" href="{{ route('students.create') }}">
                                     <i class="icon-plus"></i> Crear</a>
-                            @endcan
+                            {{-- @endcan --}}
                         </div>
                     </div>
                     <div class="card-body">
@@ -51,15 +51,15 @@
                                     <th>Nombre</th>
                                     <th>Escuela</th>
                                     <th>Grupo</th>
-                                    @can('students.show')
+                                    {{-- @can('students.show') --}}
                                         <th>&nbsp;</th>
-                                    @endcan
-                                    @can('students.edit')
+                                    {{-- @endcan --}}
+                                    {{-- @can('students.edit') --}}
                                         <th>&nbsp;</th>
-                                    @endcan
-                                    @can('students.destroy')
+                                    {{-- @endcan --}}
+                                    {{-- @can('students.destroy') --}}
                                         <th>&nbsp;</th>
-                                    @endcan
+                                    {{-- @endcan --}}
                                 </tr>
                             </thead>
                             <tbody>
@@ -69,7 +69,7 @@
                                     <td>{{ !empty($student->user->name) ? $student->user->name: '' }}</td>
                                     <td>{{ !empty($student->school->name) ? $student->school->name:'' }}</td>
                                     <td>{{ !empty($student->group->name) ? $student->group->name:'' }}</td>
-                                    @can('students.show')
+                                    {{-- @can('students.show') --}}
                                         <td width="10px">
                                             <div class="btn-group" role="group" aria-label="Button group">
                                                 <a href="{{ route('students.show', $student->id) }}"
@@ -77,8 +77,8 @@
                                                     <i class="icon-eye"></i></a>
                                             </div>
                                         </td>
-                                    @endcan
-                                    @can('students.edit')
+                                    {{-- @endcan --}}
+                                    {{-- @can('students.edit') --}}
                                         <td width="10px">
                                             <div class="btn-group" role="group" aria-label="Button group" alt="Editar">
                                                 <a href="{{ route('students.edit', $student->id) }}"
@@ -86,8 +86,8 @@
                                                     <i class="icon-pencil"></i></a>
                                             </div>
                                         </td>
-                                    @endcan
-                                    @can('students.destroy')
+                                    {{-- @endcan --}}
+                                    {{-- @can('students.destroy') --}}
                                         <td width="10px">
                                             <div class="btn-group" role="group" aria-label="Button group">
                                                 {!! Form::open(['route' => ['students.destroy', $student->id],
@@ -98,7 +98,7 @@
                                                 {!! Form::close() !!}
                                             </div>
                                         </td>
-                                    @endcan
+                                    {{-- @endcan --}}
                                 </tr>
                                 @endforeach
                             </tbody>

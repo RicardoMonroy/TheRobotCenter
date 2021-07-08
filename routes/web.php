@@ -33,7 +33,7 @@ Route::middleware(['auth', 'Dashboard'])->group(function () {
 	// Route::get('pages/{id}', 'WellcomeConroller@details')->name('details');
 	// Route::get('pages/group/{id}', 'WellcomeConroller@clases')->name('clases');
 	// Route::get('pages/group/clase/{id}', 'WellcomeConroller@class')->name('class');
-	
+
 	// HomePage
     Route::post('homepage/store', 'PageController@store')->name('homepage.store')
         ->middleware('permission:homepage.create');
@@ -82,8 +82,7 @@ Route::middleware(['auth', 'Dashboard'])->group(function () {
     Route::post('users/store', 'UserController@store')->name('users.store')
         ->middleware('permission:users.create');
 
-	Route::get('users', 'UserController@index')->name('users.index')
-        ->middleware('permission:users.index');
+	Route::get('users', 'UserController@index')->name('users.index');
 
     Route::get('users/create', 'UserController@create')->name('users.create')
 		->middleware('permission:users.create');
@@ -99,10 +98,10 @@ Route::middleware(['auth', 'Dashboard'])->group(function () {
 
 	Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit')
 		->middleware('permission:users.edit');
-		
+
 	Route::get('users-upload', 'UserController@upload')->name('users.upload')
 		->middleware('permission:users.create');
-	
+
 	Route::post('import-list-excel', 'UserController@importExcel')->name('users.import.excel');
 
     //Permisos
@@ -259,7 +258,7 @@ Route::middleware(['auth', 'Dashboard'])->group(function () {
 
 	Route::get('schools/{school}/edit', 'SchoolController@edit')->name('schools.edit')
 		->middleware('permission:schools.edit');
-	
+
 	Route::get('schools-excel', 'SchoolController@exportExcel')->name('schools.excel');
 
 	//Alumnos

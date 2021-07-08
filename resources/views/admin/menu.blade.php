@@ -16,75 +16,75 @@
     <a class="nav-link nav-dropdown-toggle" href="">
     <i class="nav-icon icon-graduation"></i> Academico</a>
     <ul class="nav-dropdown-items">
-        @can('schools.index')
+        {{-- @can('schools.index') --}}
             <li class="nav-item {{ Request::is('schools*') ? 'active' : '' }}">
                 <a class="nav-link" href="{!! route('schools.index') !!}">
                     <i class="nav-icon icon-home"></i>
                     <span>Colegios</span>
                 </a>
             </li>
-        @endcan
-        @can('groups.index')
+        {{-- @endcan --}}
+        {{-- @can('groups.index') --}}
             <li class="nav-item {{ Request::is('groups*') ? 'active' : '' }}">
                 <a class="nav-link" href="{!! route('groups.index') !!}">
                     <i class="nav-icon icon-list"></i>
                     <span>Grupos</span>
                 </a>
             </li>
-        @endcan
-        @can('levels.index')
+        {{-- @endcan --}}
+        {{-- @can('levels.index') --}}
             <li class="nav-item {{ Request::is('levels*') ? 'active' : '' }}">
                 <a class="nav-link" href="{!! route('levels.index') !!}">
                     <i class="nav-icon icon-layers"></i>
                     <span>Niveles</span>
                 </a>
             </li>
-        @endcan
+        {{-- @endcan --}}
 
-        @can('categories.index')
+        {{-- @can('categories.index') --}}
             <li class="nav-item {{ Request::is('categories*') ? 'active' : '' }}">
                 <a class="nav-link" href="{!! route('categories.index') !!}">
                     <i class="nav-icon icon-book-open"></i>
                     <span>Categorías</span>
                 </a>
             </li>
-        @endcan
+        {{-- @endcan --}}
 
-        @can('teachers.index')
+        {{-- @can('teachers.index') --}}
             <li class="nav-item {{ Request::is('teachers*') ? 'active' : '' }}">
                 <a class="nav-link" href="{!! route('teachers.index') !!}">
                     <i class="nav-icon icon-eyeglass"></i>
                     <span>Profesores</span>
                 </a>
             </li>
-        @endcan
+        {{-- @endcan --}}
 
-        @can('courses.index')
+        {{-- @can('courses.index') --}}
             <li class="nav-item {{ Request::is('courses*') ? 'active' : '' }}">
                 <a class="nav-link" href="{!! route('courses.index') !!}">
                     <i class="nav-icon icon-notebook"></i>
                     <span>Clases</span>
                 </a>
             </li>
-        @endcan
+        {{-- @endcan --}}
 
-        @can('students.index')
+        {{-- @can('students.index') --}}
             <li class="nav-item {{ Request::is('students*') ? 'active' : '' }}">
                 <a class="nav-link" href="{!! route('students.index') !!}">
                     <i class="nav-icon icon-graduation"></i>
                     <span>Alumnos</span>
                 </a>
             </li>
-        @endcan
+        {{-- @endcan --}}
 
-        @can('materials.index')
+        {{-- @can('materials.index') --}}
             <li class="nav-item {{ Request::is('materials*') ? 'active' : '' }}">
                 <a class="nav-link" href="{!! route('materials.index') !!}">
                     <i class="nav-icon icon-puzzle"></i>
                     <span>Materiales</span>
                 </a>
             </li>
-        @endcan
+        {{-- @endcan --}}
     </ul>
 </li>
 
@@ -125,14 +125,14 @@
             </li>
         @endcan
 
-        @can('homepage.index')
+        {{-- @can('homepage.index') --}}
             <li class="nav-item {{ Request::is('homepage*') ? 'active' : '' }}">
                 <a class="nav-link" href="{!! route('homepage.index') !!}">
                     <i class="nav-icon icon-globe"></i>
                     <span>Página de Inicio</span>
                 </a>
             </li>
-        @endcan
+        {{-- @endcan --}}
 
     </ul>
     <li class="nav-item">

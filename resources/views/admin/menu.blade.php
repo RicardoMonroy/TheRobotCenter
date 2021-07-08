@@ -125,14 +125,14 @@
             </li>
         @endcan
 
-        @can('homepage.index')
+        {{-- @can('homepage.index') --}}
             <li class="nav-item {{ Request::is('homepage*') ? 'active' : '' }}">
                 <a class="nav-link" href="{!! route('homepage.index') !!}">
                     <i class="nav-icon icon-globe"></i>
                     <span>Página de Inicio</span>
                 </a>
             </li>
-        @endcan
+        {{-- @endcan --}}
 
     {{-- </ul> --}}
     <li class="nav-item">

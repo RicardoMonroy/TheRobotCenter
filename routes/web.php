@@ -79,28 +79,29 @@ Route::middleware(['auth', 'Dashboard'])->group(function () {
         ->middleware('permission:roles.edit');
 
     //Users
-    Route::post('users/store', 'UserController@store')->name('users.store')
-        ->middleware('permission:users.create');
+    Route::post('users/store', 'UserController@store')->name('users.store');
+        // ->middleware('permission:users.create');
 
 	Route::get('users', 'UserController@index')->name('users.index');
+        // ->middleware('permission:users.index');
 
-    Route::get('users/create', 'UserController@create')->name('users.create')
-		->middleware('permission:users.create');
+    Route::get('users/create', 'UserController@create')->name('users.create');
+		// ->middleware('permission:users.create');
 
-	Route::put('users/{user}', 'UserController@update')->name('users.update')
-		->middleware('permission:users.edit');
+	Route::put('users/{user}', 'UserController@update')->name('users.update');
+		// ->middleware('permission:users.edit');
 
-	Route::get('users/{user}', 'UserController@show')->name('users.show')
-		->middleware('permission:users.show');
+	Route::get('users/{user}', 'UserController@show')->name('users.show');
+		// ->middleware('permission:users.show');
 
-	Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy')
-		->middleware('permission:users.destroy');
+	Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');
+		// ->middleware('permission:users.destroy');
 
-	Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit')
-		->middleware('permission:users.edit');
+	Route::get('users/{user}/edit', 'UserController@edit')->name('users.edit');
+		// ->middleware('permission:users.edit');
 
-	Route::get('users-upload', 'UserController@upload')->name('users.upload')
-		->middleware('permission:users.create');
+	Route::get('users-upload', 'UserController@upload')->name('users.upload');
+		// ->middleware('permission:users.create');
 
 	Route::post('import-list-excel', 'UserController@importExcel')->name('users.import.excel');
 
@@ -128,180 +129,180 @@ Route::middleware(['auth', 'Dashboard'])->group(function () {
 
 
     //Niveles
-    Route::post('levels/store', 'LevelController@store')->name('levels.store')
-        ->middleware('permission:levels.create');
+    Route::post('levels/store', 'LevelController@store')->name('levels.store');
+        // ->middleware('permission:levels.create');
 
-	Route::get('levels', 'LevelController@index')->name('levels.index')
-        ->middleware('permission:levels.index');
+	Route::get('levels', 'LevelController@index')->name('levels.index');
+        // ->middleware('permission:levels.index');
 
-    Route::get('levels/create', 'LevelController@create')->name('levels.create')
-		->middleware('permission:levels.create');
+    Route::get('levels/create', 'LevelController@create')->name('levels.create');
+		// ->middleware('permission:levels.create');
 
-	Route::put('levels/{level}', 'LevelController@update')->name('levels.update')
-		->middleware('permission:levels.edit');
+	Route::put('levels/{level}', 'LevelController@update')->name('levels.update');
+		// ->middleware('permission:levels.edit');
 
-	Route::get('levels/{level}', 'LevelController@show')->name('levels.show')
-		->middleware('permission:levels.show');
+	Route::get('levels/{level}', 'LevelController@show')->name('levels.show');
+		// ->middleware('permission:levels.show');
 
-	Route::delete('levels/{level}', 'LevelController@destroy')->name('levels.destroy')
-		->middleware('permission:levels.destroy');
+	Route::delete('levels/{level}', 'LevelController@destroy')->name('levels.destroy');
+		// ->middleware('permission:levels.destroy');
 
-	Route::get('levels/{level}/edit', 'LevelController@edit')->name('levels.edit')
-        ->middleware('permission:levels.edit');
+	Route::get('levels/{level}/edit', 'LevelController@edit')->name('levels.edit');
+        // ->middleware('permission:levels.edit');
 
     //Categorías
-    Route::post('categories/store', 'CategoryController@store')->name('categories.store')
-        ->middleware('permission:categories.create');
+    Route::post('categories/store', 'CategoryController@store')->name('categories.store');
+        // ->middleware('permission:categories.create');
 
-	Route::get('categories', 'CategoryController@index')->name('categories.index')
-        ->middleware('permission:categories.index');
+	Route::get('categories', 'CategoryController@index')->name('categories.index');
+        // ->middleware('permission:categories.index');
 
-    Route::get('categories/create', 'CategoryController@create')->name('categories.create')
-		->middleware('permission:categories.create');
+    Route::get('categories/create', 'CategoryController@create')->name('categories.create');
+		// ->middleware('permission:categories.create');
 
-	Route::put('categories/{category}', 'CategoryController@update')->name('categories.update')
-		->middleware('permission:categories.edit');
+	Route::put('categories/{category}', 'CategoryController@update')->name('categories.update');
+		// ->middleware('permission:categories.edit');
 
-	Route::get('categories/{category}', 'CategoryController@show')->name('categories.show')
-		->middleware('permission:categories.show');
+	Route::get('categories/{category}', 'CategoryController@show')->name('categories.show');
+		// ->middleware('permission:categories.show');
 
-	Route::delete('categories/{category}', 'CategoryController@destroy')->name('categories.destroy')
-		->middleware('permission:categories.destroy');
+	Route::delete('categories/{category}', 'CategoryController@destroy')->name('categories.destroy');
+		// ->middleware('permission:categories.destroy');
 
-	Route::get('categories/{category}/edit', 'CategoryController@edit')->name('categories.edit')
-        ->middleware('permission:categories.edit');
+	Route::get('categories/{category}/edit', 'CategoryController@edit')->name('categories.edit');
+        // ->middleware('permission:categories.edit');
 
     //Profesores
-    Route::post('teachers/store', 'TeacherController@store')->name('teachers.store')
-        ->middleware('permission:teachers.create');
+    Route::post('teachers/store', 'TeacherController@store')->name('teachers.store');
+        // ->middleware('permission:teachers.create');
 
-	Route::get('teachers', 'TeacherController@index')->name('teachers.index')
-        ->middleware('permission:teachers.index');
+	Route::get('teachers', 'TeacherController@index')->name('teachers.index');
+        // ->middleware('permission:teachers.index');
 
-    Route::get('teachers/create', 'TeacherController@create')->name('teachers.create')
-		->middleware('permission:teachers.create');
+    Route::get('teachers/create', 'TeacherController@create')->name('teachers.create');
+		// ->middleware('permission:teachers.create');
 
-	Route::put('teachers/{teacher}', 'TeacherController@update')->name('teachers.update')
-		->middleware('permission:teachers.edit');
+	Route::put('teachers/{teacher}', 'TeacherController@update')->name('teachers.update');
+		// ->middleware('permission:teachers.edit');
 
-	Route::get('teachers/{teacher}', 'TeacherController@show')->name('teachers.show')
-		->middleware('permission:teachers.show');
+	Route::get('teachers/{teacher}', 'TeacherController@show')->name('teachers.show');
+		// ->middleware('permission:teachers.show');
 
-	Route::delete('teachers/{teacher}', 'TeacherController@destroy')->name('teachers.destroy')
-		->middleware('permission:teachers.destroy');
+	Route::delete('teachers/{teacher}', 'TeacherController@destroy')->name('teachers.destroy');
+		// ->middleware('permission:teachers.destroy');
 
-	Route::get('teachers/{teacher}/edit', 'TeacherController@edit')->name('teachers.edit')
-        ->middleware('permission:teachers.edit');
+	Route::get('teachers/{teacher}/edit', 'TeacherController@edit')->name('teachers.edit');
+        // ->middleware('permission:teachers.edit');
 
     //Cursos
-    Route::post('courses/store', 'CourseController@store')->name('courses.store')
-        ->middleware('permission:courses.create');
+    Route::post('courses/store', 'CourseController@store')->name('courses.store');
+        // ->middleware('permission:courses.create');
 
-	Route::get('courses', 'CourseController@index')->name('courses.index')
-        ->middleware('permission:courses.index');
+	Route::get('courses', 'CourseController@index')->name('courses.index');
+        // ->middleware('permission:courses.index');
 
-    Route::get('courses/create', 'CourseController@create')->name('courses.create')
-		->middleware('permission:courses.create');
+    Route::get('courses/create', 'CourseController@create')->name('courses.create');
+		// ->middleware('permission:courses.create');
 
-	Route::put('courses/{course}', 'CourseController@update')->name('courses.update')
-		->middleware('permission:courses.edit');
+	Route::put('courses/{course}', 'CourseController@update')->name('courses.update');
+		// ->middleware('permission:courses.edit');
 
-	Route::get('courses/{course}', 'CourseController@show')->name('courses.show')
-		->middleware('permission:courses.show');
+	Route::get('courses/{course}', 'CourseController@show')->name('courses.show');
+		// ->middleware('permission:courses.show');
 
-	Route::delete('courses/{course}', 'CourseController@destroy')->name('courses.destroy')
-		->middleware('permission:courses.destroy');
+	Route::delete('courses/{course}', 'CourseController@destroy')->name('courses.destroy');
+		// ->middleware('permission:courses.destroy');
 
-	Route::get('courses/{course}/edit', 'CourseController@edit')->name('courses.edit')
-        ->middleware('permission:courses.edit');
+	Route::get('courses/{course}/edit', 'CourseController@edit')->name('courses.edit');
+        // ->middleware('permission:courses.edit');
 
     //Grupos
-    Route::post('groups/store', 'GroupController@store')->name('groups.store')
-        ->middleware('permission:groups.create');
+    Route::post('groups/store', 'GroupController@store')->name('groups.store');
+        // ->middleware('permission:groups.create');
 
-    Route::get('groups', 'GroupController@index')->name('groups.index')
-        ->middleware('permission:groups.index');
+    Route::get('groups', 'GroupController@index')->name('groups.index');
+        // ->middleware('permission:groups.index');
 
-    Route::get('groups/create', 'GroupController@create')->name('groups.create')
-        ->middleware('permission:groups.create');
+    Route::get('groups/create', 'GroupController@create')->name('groups.create');
+        // ->middleware('permission:groups.create');
 
-    Route::put('groups/{course}', 'GroupController@update')->name('groups.update')
-        ->middleware('permission:groups.edit');
+    Route::put('groups/{course}', 'GroupController@update')->name('groups.update');
+        // ->middleware('permission:groups.edit');
 
-    Route::get('groups/{course}', 'GroupController@show')->name('groups.show')
-        ->middleware('permission:groups.show');
+    Route::get('groups/{course}', 'GroupController@show')->name('groups.show');
+        // ->middleware('permission:groups.show');
 
-    Route::delete('groups/{course}', 'GroupController@destroy')->name('groups.destroy')
-        ->middleware('permission:groups.destroy');
+    Route::delete('groups/{course}', 'GroupController@destroy')->name('groups.destroy');
+        // ->middleware('permission:groups.destroy');
 
-    Route::get('groups/{course}/edit', 'GroupController@edit')->name('groups.edit')
-        ->middleware('permission:groups.edit');
+    Route::get('groups/{course}/edit', 'GroupController@edit')->name('groups.edit');
+        // ->middleware('permission:groups.edit');
 
     //Escuelas
-    Route::post('schools/store', 'SchoolController@store')->name('schools.store')
-        ->middleware('permission:schools.create');
+    Route::post('schools/store', 'SchoolController@store')->name('schools.store');
+        // ->middleware('permission:schools.create');
 
-	Route::get('schools', 'SchoolController@index')->name('schools.index')
-        ->middleware('permission:schools.index');
+	Route::get('schools', 'SchoolController@index')->name('schools.index');
+        // ->middleware('permission:schools.index');
 
-    Route::get('schools/create', 'SchoolController@create')->name('schools.create')
-		->middleware('permission:schools.create');
+    Route::get('schools/create', 'SchoolController@create')->name('schools.create');
+		// ->middleware('permission:schools.create');
 
-	Route::put('schools/{school}', 'SchoolController@update')->name('schools.update')
-		->middleware('permission:schools.edit');
+	Route::put('schools/{school}', 'SchoolController@update')->name('schools.update');
+		// ->middleware('permission:schools.edit');
 
-	Route::get('schools/{school}', 'SchoolController@show')->name('schools.show')
-		->middleware('permission:schools.show');
+	Route::get('schools/{school}', 'SchoolController@show')->name('schools.show');
+		// ->middleware('permission:schools.show');
 
-	Route::delete('schools/{school}', 'SchoolController@destroy')->name('schools.destroy')
-		->middleware('permission:schools.destroy');
+	Route::delete('schools/{school}', 'SchoolController@destroy')->name('schools.destroy');
+		// ->middleware('permission:schools.destroy');
 
-	Route::get('schools/{school}/edit', 'SchoolController@edit')->name('schools.edit')
-		->middleware('permission:schools.edit');
+	Route::get('schools/{school}/edit', 'SchoolController@edit')->name('schools.edit');
+		// ->middleware('permission:schools.edit');
 
 	Route::get('schools-excel', 'SchoolController@exportExcel')->name('schools.excel');
 
 	//Alumnos
-    Route::post('students/store', 'StudentController@store')->name('students.store')
-        ->middleware('permission:students.create');
+    Route::post('students/store', 'StudentController@store')->name('students.store');
+        // ->middleware('permission:students.create');
 
-	Route::get('students', 'StudentController@index')->name('students.index')
-        ->middleware('permission:students.index');
+	Route::get('students', 'StudentController@index')->name('students.index');
+        // ->middleware('permission:students.index');
 
-    Route::get('students/create', 'StudentController@create')->name('students.create')
-		->middleware('permission:students.create');
+    Route::get('students/create', 'StudentController@create')->name('students.create');
+		// ->middleware('permission:students.create');
 
-	Route::put('students/{student}', 'StudentController@update')->name('students.update')
-		->middleware('permission:students.edit');
+	Route::put('students/{student}', 'StudentController@update')->name('students.update');
+		// ->middleware('permission:students.edit');
 
-	Route::get('students/{student}', 'StudentController@show')->name('students.show')
-		->middleware('permission:students.show');
+	Route::get('students/{student}', 'StudentController@show')->name('students.show');
+		// ->middleware('permission:students.show');
 
-	Route::delete('students/{student}', 'StudentController@destroy')->name('students.destroy')
-		->middleware('permission:students.destroy');
+	Route::delete('students/{student}', 'StudentController@destroy')->name('students.destroy');
+		// ->middleware('permission:students.destroy');
 
-	Route::get('students/{student}/edit', 'StudentController@edit')->name('students.edit')
-		->middleware('permission:students.edit');
+	Route::get('students/{student}/edit', 'StudentController@edit')->name('students.edit');
+		// ->middleware('permission:students.edit');
 
 	//
-	Route::post('materials/store', 'MaterialController@store')->name('materials.store')
-        ->middleware('permission:materials.create');
+	Route::post('materials/store', 'MaterialController@store')->name('materials.store');
+        // ->middleware('permission:materials.create');
 
-	Route::get('materials', 'MaterialController@index')->name('materials.index')
-        ->middleware('permission:materials.index');
+	Route::get('materials', 'MaterialController@index')->name('materials.index');
+        // ->middleware('permission:materials.index');
 
-    Route::get('materials/create', 'MaterialController@create')->name('materials.create')
-		->middleware('permission:materials.create');
+    Route::get('materials/create', 'MaterialController@create')->name('materials.create');
+		// ->middleware('permission:materials.create');
 
-	Route::put('materials/{level}', 'MaterialController@update')->name('materials.update')
-		->middleware('permission:materials.edit');
+	Route::put('materials/{level}', 'MaterialController@update')->name('materials.update');
+		// ->middleware('permission:materials.edit');
 
-	Route::get('materials/{level}', 'MaterialController@show')->name('materials.show')
-		->middleware('permission:materials.show');
+	Route::get('materials/{level}', 'MaterialController@show')->name('materials.show');
+		// ->middleware('permission:materials.show');
 
 	Route::delete('materials/{level}', 'MaterialController@destroy')->name('materials.destroy')
 		->middleware('permission:materials.destroy');
 
-	Route::get('materials/{level}/edit', 'MaterialController@edit')->name('materials.edit')
-        ->middleware('permission:materials.edit');
+	Route::get('materials/{level}/edit', 'MaterialController@edit')->name('materials.edit');
+        // ->middleware('permission:materials.edit');
 });

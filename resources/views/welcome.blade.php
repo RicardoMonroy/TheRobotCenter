@@ -29,7 +29,7 @@
                 data-param9="" data-param10=""
                 data-description="Science says that Women are generally happier">
                     <!-- MAIN IMAGE -->
-                    <img src="assets/images/slider/slide4.jpg" alt=""
+                    <img src="assets/images/slider/slide5.jpeg" alt=""
                         data-bgposition="center center"
                         data-bgfit="cover"
                         data-bgrepeat="no-repeat"
@@ -240,7 +240,7 @@
                         data-paddingbottom="[10,10,10,10]"
                         data-paddingleft="[0,0,0,0]"
                         style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;text-transform:uppercase;">
-                        {{ $page->secondCopy }} 
+                        {{ $page->secondCopy }}
                     </div>
 
                     <!-- LAYER NR. 3 -->
@@ -686,8 +686,8 @@
         </div>
     </div> --}}
 
-    
-      
+
+
     <!-- Modal -->
     <div class="modal fade" id="first" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

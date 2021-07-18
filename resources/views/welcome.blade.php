@@ -79,8 +79,8 @@
                         data-paddingbottom="[10,10,10,10]"
                         data-paddingleft="[0,0,0,0]"
                         style="z-index: 6; font-family:rubik; font-weight:700; text-align:center; white-space: normal;text-transform:uppercase;">
-                        {{-- {{ $page->secondCopy }}  --}}
-                        ONLINE 2020
+                        {{ $page->firstCopy }}
+                        {{-- ONLINE 2020 --}}
                     </div>
 
                     <!-- LAYER NR. 3 -->
@@ -102,8 +102,8 @@
                         data-paddingbottom="[0,0,0,0]"
                         data-paddingleft="[0,0,0,0]"
                         style="z-index: 7; white-space: nowrap;text-transform:uppercase; color:#fff; font-family:rubik; font-size:18px; font-weight:400;">
-                        {{-- {{ $page->secondTitle }} --}}
-                        Verano
+                        {{ $page->firstTitle }}
+                        {{-- Verano --}}
                     </div>
 
                     <!-- LAYER NR. 3 -->
@@ -125,7 +125,7 @@
                         data-paddingbottom="[0,0,0,0]"
                         data-paddingleft="[0,0,0,0]"
                         style="z-index: 7; text-transform:capitalize; white-space: unset; color:#fff; font-family:rubik; font-size:18px; line-height:28px; font-weight:400;">
-                        {{-- {{ $page->secondText }} --}}
+                        {{ $page->firstText }}
                         {{-- Mayores informes: <a href="http://www.therobotcenter.com/encuentro-mentes-brillantes" target="_blank" style="color:#ffffff">Click Aquí</a> --}}
                     </div>
                     <!-- LAYER NR. 4 -->

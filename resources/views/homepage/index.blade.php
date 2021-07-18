@@ -12,10 +12,10 @@
     <!-- Breadcrumb Menu-->
     <li class="breadcrumb-menu d-md-down-none">
     <div class="btn-group" role="group" aria-label="Button group">
-        @can('homepage.edit')
+        {{-- @can('homepage.edit') --}}
             <a class="btn" href="{{ route('homepage.edit', $page) }}">
                 <i class="icon-pencil"></i> Editar</a>
-        @endcan
+        {{-- @endcan --}}
     </div>
     </li>
 </ol>

@@ -35,26 +35,26 @@ Route::middleware(['auth', 'Dashboard'])->group(function () {
 	// Route::get('pages/group/clase/{id}', 'WellcomeConroller@class')->name('class');
 
 	// HomePage
-    Route::post('homepage/store', 'PageController@store')->name('homepage.store')
-        ->middleware('permission:homepage.create');
+    Route::post('homepage/store', 'PageController@store')->name('homepage.store');
+        // ->middleware('permission:homepage.create');
 
-	Route::get('homepage', 'PageController@index')->name('homepage.index')
-        ->middleware('permission:homepage.index');
+	Route::get('homepage', 'PageController@index')->name('homepage.index');
+        // ->middleware('permission:homepage.index');
 
-    Route::get('homepage/create', 'PageController@create')->name('homepage.create')
-		->middleware('permission:homepage.create');
+    Route::get('homepage/create', 'PageController@create')->name('homepage.create');
+		// ->middleware('permission:homepage.create');
 
-	Route::put('homepage/{page}', 'PageController@update')->name('homepage.update')
-		->middleware('permission:homepage.edit');
+	Route::put('homepage/{page}', 'PageController@update')->name('homepage.update');
+		// ->middleware('permission:homepage.edit');
 
-	Route::get('homepage/{page}', 'PageController@show')->name('homepage.show')
-		->middleware('permission:homepage.show');
+	Route::get('homepage/{page}', 'PageController@show')->name('homepage.show');
+		// ->middleware('permission:homepage.show');
 
-	Route::delete('homepage/{page}', 'PageController@destroy')->name('homepage.destroy')
-		->middleware('permission:homepage.destroy');
+	Route::delete('homepage/{page}', 'PageController@destroy')->name('homepage.destroy');
+		// ->middleware('permission:homepage.destroy');
 
-	Route::get('homepage/{page}/edit', 'PageController@edit')->name('homepage.edit')
-        ->middleware('permission:homepage.edit');
+	Route::get('homepage/{page}/edit', 'PageController@edit')->name('homepage.edit');
+        // ->middleware('permission:homepage.edit');
 
 	//Roles
 	Route::post('roles/store', 'RoleController@store')->name('roles.store')
